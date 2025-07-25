@@ -35,6 +35,16 @@ Capacitar o aluno a:
   * Laços de repetição (`for`, `while`, `do while`).
   * Aplicações práticas e exercícios.
 
+* **Unidade IV - Estruturas de Controle**
+    * Seleção.
+    * Iteração.
+    * Ninho de estruturas.
+    * Algoritmos de aplicação.
+      
+* **Unidade V - Conceito de Abstração de Processos**
+    * Sub-algoritmos.
+    * Função.
+    * Procedimento.
 ---
 
 ## 🛠 **Tecnologias e Ferramentas**
