@@ -1,0 +1,151 @@
+<!-- Seção da Aula 4 -->
+<section id="aula4" class="mb-16 pt-16">
+    <header class="mb-12">
+        <h2 class="text-4xl font-bold text-slate-900">Aula 4: Do Pseudocódigo ao Primeiro Programa em C</h2>
+        <p class="text-lg text-slate-600 mt-2">A transição do planeamento em Portugol para a implementação em Linguagem C.</p>
+    </header>
+
+    <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+        <h3 class="font-bold text-2xl text-slate-800 mb-4">Plano de Voo da Aula de Hoje</h3>
+        <ul class="list-disc list-inside space-y-2 text-slate-700">
+<li>O que é Pseudocódigo (Portugol) e por que é uma ferramenta essencial.</li>
+<li>Estrutura e comandos básicos de um algoritmo em Portugol.</li>
+<li>Introdução à Linguagem C: a sintaxe e a estrutura de um programa básico.</li>
+<li>Comparativo lado a lado: traduzindo um algoritmo de Portugol para C.</li>
+<li>Atividade prática em duplas: criar e traduzir pequenos algoritmos.</li>
+<li>Apresentação da tarefa (TED) da Aula 4.</li>
+        </ul>
+    </div>
+    
+    <div class="mb-16">
+        <h3 class="text-3xl font-bold text-slate-800 mb-6">Pseudocódigo: A Ponte Entre a Lógica e o Código</h3>
+        <div class="bg-white p-8 rounded-lg shadow-md">
+<p class="text-lg mb-4">Até agora, planeámos os nossos algoritmos usando a linguagem do dia a dia. Isso é ótimo para a lógica, mas os computadores precisam de mais estrutura. É aqui que entra o <strong>Pseudocódigo</strong> (que chamaremos de <strong>Portugol</strong>).</p>
+<p class="mb-4">O Portugol é uma linguagem intermediária. Não é tão informal como o português, mas também não é tão rígida e cheia de regras como uma linguagem de programação real (como C). Ele permite-nos escrever a nossa lógica de forma estruturada, focando no "o quê" fazer, sem nos preocuparmos com os detalhes técnicos do "como".</p>
+<div class="callout callout-good-practice">
+    <h5 class="font-bold mb-2">Por que usar Portugol?</h5>
+    <p>Ele força-nos a organizar o pensamento em variáveis, comandos de entrada, processamento e saída, tornando a tradução para qualquer linguagem de programação (C, Python, Java, etc.) uma tarefa muito mais simples e direta.</p>
+</div>
+        </div>
+    </div>
+
+    <div class="mb-16">
+        <h3 class="text-3xl font-bold text-slate-800 mb-6">Estrutura e Comandos Básicos do Portugol</h3>
+        <div class="bg-white p-8 rounded-lg shadow-md">
+<p class="mb-4">Um algoritmo em Portugol tem uma estrutura bem definida:</p>
+<div class="bg-slate-800 text-white p-4 rounded-md mono text-sm">
+    <pre><code>ALGORITMO "nome_do_algoritmo"
+// Seção de Declaração de Variáveis
+VAR
+  nome_variavel_1 : TIPO_DE_DADO
+  nome_variavel_2 : TIPO_DE_DADO
+
+// Seção de Comandos
+INICIO
+  // Comandos de entrada, processamento e saída
+FIM_ALGORITMO</code></pre>
+</div>
+<h4 class="font-semibold text-xl text-indigo-700 mt-6 mb-3">Comandos Essenciais:</h4>
+<ul class="list-disc list-inside space-y-3 mt-4">
+    <li><code>LEIA(variavel)</code>: Lê um valor digitado pelo utilizador e guarda-o na variável especificada.</li>
+    <li><code>ESCREVA("texto", variavel)</code>: Mostra uma mensagem ou o conteúdo de uma variável no ecrã.</li>
+    <li><code>variavel &lt;- valor_ou_expressao</code>: Atribui um valor (ou o resultado de um cálculo) a uma variável. A seta `&lt;-` significa "recebe".</li>
+</ul>
+        </div>
+    </div>
+
+    <div class="mb-16">
+        <h3 class="text-3xl font-bold text-slate-800 mb-6">Comparativo: Somar Dois Números</h3>
+        <p class="mb-4">A melhor forma de entender a transição é ver um exemplo prático. Vamos traduzir um algoritmo que soma dois números de Portugol para C.</p>
+        <div class="grid lg:grid-cols-2 gap-8">
+<!-- Coluna do Pseudocódigo -->
+<div class="bg-white p-6 rounded-lg shadow-md">
+    <h4 class="font-bold text-xl text-slate-800 mb-4 text-center">1. O Plano (Portugol)</h4>
+    <div class="bg-slate-800 text-white p-4 rounded-md mono text-sm h-full">
+<pre><code>ALGORITMO "SomaDoisNumeros"
+VAR
+  num1, num2, soma: INTEIRO
+
+INICIO
+  ESCREVA("Digite o primeiro número: ")
+  LEIA(num1)
+  
+  ESCREVA("Digite o segundo número: ")
+  LEIA(num2)
+  
+  soma &lt;- num1 + num2
+  
+  ESCREVA("A soma é: ", soma)
+FIM_ALGORITMO</code></pre>
+    </div>
+</div>
+<!-- Coluna do Código C -->
+<div class="bg-white p-6 rounded-lg shadow-md">
+    <h4 class="font-bold text-xl text-slate-800 mb-4 text-center">2. A Execução (Linguagem C)</h4>
+    <div class="bg-slate-800 text-white p-4 rounded-md mono text-sm h-full">
+<pre><code>#include <stdio.h>
+
+int main() {
+  int num1, num2, soma;
+
+  printf("Digite o primeiro número: ");
+  scanf("%d", &num1);
+  
+  printf("Digite o segundo número: ");
+  scanf("%d", &num2);
+  
+  soma = num1 + num2;
+  
+  printf("A soma é: %d\n", soma);
+  
+  return 0;
+}</code></pre>
+    </div>
+</div>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md mt-8">
+<h4 class="font-bold text-xl text-slate-800 mb-4">Análise da Tradução</h4>
+<ul class="list-disc list-inside space-y-2">
+    <li>A seção <code>VAR</code> em Portugol corresponde à declaração de variáveis em C (ex: <code>int num1;</code>).</li>
+    <li>O comando <code>ESCREVA</code> é traduzido para a função <code>printf()</code> em C.</li>
+    <li>O comando <code>LEIA</code> é traduzido para a função <code>scanf()</code> em C. Note os detalhes técnicos como <code>%d</code> e o <code>&</code>.</li>
+    <li>A atribuição <code>&lt;-</code> torna-se o sinal de igual <code>=</code> em C.</li>
+    <li>Todo programa em C precisa da estrutura <code>#include <stdio.h></code> e da função principal <code>int main() { ... }</code>.</li>
+</ul>
+        </div>
+    </div>
+
+    <div class="mb-16">
+        <h3 class="text-3xl font-bold text-slate-800 mb-6">Atividade Prática em Duplas</h3>
+        <div class="bg-white p-8 rounded-lg shadow-md">
+<p class="mb-4">Agora, em duplas, escolham um dos problemas abaixo. Primeiro, criem a solução em <strong>Portugol</strong> no papel. Depois, abram um editor de texto e tentem traduzir o vosso algoritmo para a <strong>Linguagem C</strong>, usando o exemplo da soma como guia.</p>
+<div class="grid md:grid-cols-2 gap-6 mt-4">
+    <div class="bg-indigo-50 p-6 rounded-lg">
+        <h5 class="font-bold text-indigo-800 mb-2">Problema A: Área do Retângulo</h5>
+        <p>Crie um algoritmo que leia a base e a altura de um retângulo, calcule a sua área (Área = Base * Altura) e mostre o resultado.</p>
+    </div>
+    <div class="bg-indigo-50 p-6 rounded-lg">
+        <h5 class="font-bold text-indigo-800 mb-2">Problema B: Antecessor e Sucessor</h5>
+        <p>Crie um algoritmo que leia um número inteiro e mostre na tela o seu antecessor e o seu sucessor.</p>
+    </div>
+</div>
+        </div>
+    </div>
+
+    <!-- Tarefa da Aula 4 -->
+    <div id="proximos-passos-aula4">
+        <h3 class="text-3xl font-bold text-slate-800 mb-6">Próximos Passos e Tarefa (TED)</h3>
+         <div class="bg-indigo-100 border-l-4 border-indigo-500 text-indigo-800 p-6 rounded-r-lg">
+<h4 class="font-bold text-xl mb-4">Tarefa para a próxima aula</h4>
+<p class="mb-4">O objetivo é praticar o ciclo completo: planear em Portugol e implementar em C.</p>
+<ol class="list-decimal list-inside space-y-2 font-semibold">
+    <li>Acesse o Moodle da disciplina.</li>
+    <li>Encontre o fórum da "Aula 4".</li>
+    <li>Poste o algoritmo em <strong>Portugol</strong> e também o código em <strong>Linguagem C</strong> que leia dois números e mostre a soma deles.</li>
+</ol>
+<div class="mt-6">
+    <a href="https://eadsp.unichristus.edu.br" target="_blank" class="inline-block bg-slate-800 text-white font-bold py-2 px-4 rounded hover:bg-slate-700 transition-colors mr-2">Acessar Moodle</a>
+</div>
+        </div>
+    </div>
+</section>

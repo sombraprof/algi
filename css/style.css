@@ -67,3 +67,113 @@ body {
   border-right: 6px solid transparent;
   border-top: 8px solid #6366f1; /* Seta para baixo */
 }
+
+/* Tabela-Verdade (Novo Estilo) */
+.truth-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.truth-table th {
+    background-color: #f1f5f9; /* slate-100 */
+    color: #1e293b; /* slate-800 */
+    font-weight: 600;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0; /* slate-200 */
+}
+
+.truth-table td {
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0; /* slate-200 */
+    text-align: center;
+}
+
+.truth-table .result {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.truth-table .true {
+    color: #16a34a; /* green-600 */
+}
+
+.truth-table .false {
+    color: #dc2626; /* red-600 */
+}
+
+/* Estrutura para Bifurcação */
+.flowchart-bifurcation {
+    display: flex;
+    justify-content: center;
+    width: 350px; /* Largura para os ramos */
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.flowchart-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    position: relative;
+}
+
+/* Linhas da Bifurcação */
+.flowchart-bifurcation::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 50%;
+    height: 2px;
+    background: #6366f1;
+    transform: translateX(-50%);
+}
+.flowchart-branch::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background: #6366f1;
+    transform: translateX(-50%);
+}
+.flowchart-branch-label {
+    position: absolute;
+    top: -28px;
+    font-weight: 600;
+    color: #475569;
+    background-color: #f8fafc;
+    padding: 0 0.25rem;
+}
+
+/* Estrutura para Junção */
+.flowchart-junction-point {
+    width: 350px;
+    height: 30px;
+    position: relative;
+}
+.flowchart-junction-point::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: #6366f1;
+}
+.flowchart-branch::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    width: 2px;
+    height: 30px;
+    background: #6366f1;
+    transform: translateX(-50%);
+}

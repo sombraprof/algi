@@ -1,23 +1,44 @@
 [
   {
     "id": "aula1",
-    "titulo": "Aula 1: Lógica e Algoritmos",
-    "descricao": "Entenda o que são algoritmos e por que a lógica é importante para um programador.",
+    "titulo": "Aula 1: Apresentação e Lógica",
+    "descricao": "Apresentação do plano de ensino, ambientação no Moodle e importância da lógica para programação.",
     "arquivo": "aula1.html",
     "ativo": true
   },
   {
     "id": "aula2",
     "titulo": "Aula 2: Raciocínio Lógico",
-    "descricao": "Conteúdo em breve...",
+    "descricao": "A importância do raciocínio lógico na computação e exemplos do cotidiano.",
     "arquivo": "aula2.html",
     "ativo": true
   },
   {
     "id": "aula3",
-    "titulo": "Aula 3: Pseudocódigo e C",
-    "descricao": "Conteúdo em breve...",
+    "titulo": "Aula 3: Estruturação de Algoritmos",
+    "descricao": "Estruturação do raciocínio em etapas. Algoritmo como sequência ordenada de instruções.",
     "arquivo": "aula3.html",
-    "ativo": false
+    "ativo": true
+  },
+  {
+    "id": "aula4",
+    "titulo": "Aula 4: Do Pseudocódigo ao C",
+    "descricao": "A transição do planeamento em Portugol para a implementação em Linguagem C.",
+    "arquivo": "aula4.html",
+    "ativo": true
+  },
+  {
+    "id": "aula5",
+    "titulo": "Aula 5: Representação Gráfica com Fluxogramas",
+    "descricao": "Aprendendo a representar algoritmos visualmente usando fluxogramas e simbologia padrão.",
+    "arquivo": "aula5.html",
+    "ativo": true
+  },
+  {
+    "id": "aula6",
+    "titulo": "Aula 6: Variáveis e Constantes",
+    "descricao": "Declaração e uso de variáveis e constantes. Tipos primitivos em C.",
+    "arquivo": "aula6.html",
+    "ativo": true
   }
 ]

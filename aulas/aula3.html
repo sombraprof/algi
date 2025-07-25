@@ -1,7 +1,159 @@
 <!-- Seção da Aula 3 -->
-<section id="aula3" class="min-h-screen flex items-center justify-center pt-16">
-  <div class="text-center">
-    <h2 class="text-4xl font-bold text-slate-900">Aula 3: Pseudocódigo e C</h2>
-    <p class="text-xl text-slate-600 mt-4">Conteúdo em breve...</p>
+<section id="aula3" class="mb-16 pt-16">
+  <header class="mb-12">
+    <h2 class="text-4xl font-bold text-slate-900">
+      Aula 3: Estruturando o Raciocínio em Passos
+    </h2>
+    <p class="text-lg text-slate-600 mt-2">
+      Aprendendo a organizar o pensamento como um computador.
+    </p>
+  </header>
+
+  <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+    <h3 class="font-bold text-2xl text-slate-800 mb-4">
+      Plano de Voo da Aula de Hoje
+    </h3>
+    <ul class="list-disc list-inside space-y-2 text-slate-700">
+      <li>A importância crítica da ordem e do detalhe nos algoritmos.</li>
+      <li>
+        Como transformar uma ideia caótica numa sequência de instruções claras.
+      </li>
+      <li>
+        Atividade prática em grupo (Fishbowl) para construir algoritmos do
+        cotidiano.
+      </li>
+      <li>
+        Análise dos algoritmos criados: o que funciona e o que pode ser
+        melhorado.
+      </li>
+      <li>Apresentação da tarefa (TED) da Aula 3.</li>
+    </ul>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+      A Ordem dos Fatores Altera (e Muito) o Produto
+    </h3>
+    <div class="bg-white p-8 rounded-lg shadow-md">
+      <p class="text-lg mb-4">
+        Um computador não tem "bom senso". Ele executa as instruções na ordem
+        exata em que as recebe. Se a ordem estiver errada, o resultado será, na
+        melhor das hipóteses, incorreto e, na pior, um desastre.
+      </p>
+      <h4 class="font-semibold text-xl text-indigo-700 mt-6 mb-3">
+        Exemplo: Calçar Meias e Sapatos
+      </h4>
+      <div class="grid md:grid-cols-2 gap-8 mt-4">
+        <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+          <h5 class="font-bold text-red-800 mb-2">Ordem Incorreta</h5>
+          <ol class="list-decimal list-inside text-red-700">
+            <li>Pegar o sapato.</li>
+            <li>Calçar o sapato.</li>
+            <li>Pegar a meia.</li>
+            <li>Calçar a meia. ⬅️ Impossível!</li>
+          </ol>
+        </div>
+        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+          <h5 class="font-bold text-green-800 mb-2">Ordem Correta</h5>
+          <ol class="list-decimal list-inside text-green-700">
+            <li>Pegar a meia.</li>
+            <li>Calçar a meia.</li>
+            <li>Pegar o sapato.</li>
+            <li>Calçar o sapato. ✔️ Sucesso!</li>
+          </ol>
+        </div>
+      </div>
+      <p class="mt-6">
+        Esta analogia simples ilustra um princípio fundamental: a
+        <strong>sequência de um algoritmo é sagrada</strong>. Mudar a ordem de
+        duas linhas de código pode mudar completamente o comportamento de um
+        programa.
+      </p>
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+      Atividade Prática: O Desafio do "Fishbowl"
+    </h3>
+    <div class="bg-white p-8 rounded-lg shadow-md">
+      <p class="mb-4">
+        Agora, vamos praticar a criação de algoritmos em grupo. A metodologia
+        "Fishbowl" (aquário) funciona da seguinte forma:
+      </p>
+      <ul class="list-disc list-inside space-y-2 bg-slate-50 p-4 rounded-md">
+        <li>
+          Um pequeno grupo de alunos senta-se no centro da sala (o "aquário").
+        </li>
+        <li>
+          Este grupo recebe um problema e deve discuti-lo e criar um algoritmo
+          no quadro para o resolver.
+        </li>
+        <li>Os restantes alunos observam de fora, sem intervir.</li>
+        <li>
+          Após um tempo, os grupos trocam. Os observadores entram no "aquário"
+          para refinar, corrigir ou criar uma nova solução para o mesmo problema
+          (ou um novo).
+        </li>
+      </ul>
+      <h4 class="font-semibold text-xl text-indigo-700 mt-8 mb-3">
+        Problemas para a Atividade:
+      </h4>
+      <div class="grid md:grid-cols-2 gap-6 mt-4">
+        <div class="bg-indigo-50 p-6 rounded-lg">
+          <h5 class="font-bold text-indigo-800 mb-2">
+            Problema A: Trocar uma Lâmpada
+          </h5>
+          <p>
+            Crie um algoritmo detalhado para trocar uma lâmpada queimada num
+            candeeiro de teto. Pense em segurança, ferramentas necessárias e
+            possíveis problemas.
+          </p>
+        </div>
+        <div class="bg-indigo-50 p-6 rounded-lg">
+          <h5 class="font-bold text-indigo-800 mb-2">
+            Problema B: Fazer Matrícula
+          </h5>
+          <p>
+            Crie um algoritmo com os passos que um aluno deve seguir para se
+            matricular numa nova disciplina da faculdade, desde a consulta de
+            horários até à confirmação.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tarefa da Aula 3 -->
+  <div id="proximos-passos-aula3">
+    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+      Próximos Passos e Tarefa (TED)
+    </h3>
+    <div
+      class="bg-indigo-100 border-l-4 border-indigo-500 text-indigo-800 p-6 rounded-r-lg"
+    >
+      <h4 class="font-bold text-xl mb-4">Tarefa para a próxima aula</h4>
+      <p class="mb-4">
+        O objetivo é praticar a criação de sequências lógicas, como fizemos na
+        atividade de hoje.
+      </p>
+      <ol class="list-decimal list-inside space-y-2 font-semibold">
+        <li>Acesse o Moodle da disciplina.</li>
+        <li>Encontre o fórum da "Aula 3".</li>
+        <li>
+          Crie uma lista numerada com pelo menos 5 passos para resolver um
+          problema simples do seu cotidiano (ex: abastecer o carro, fazer
+          pipocas no micro-ondas, etc.).
+        </li>
+      </ol>
+      <div class="mt-6">
+        <a
+          href="https://eadsp.unichristus.edu.br"
+          target="_blank"
+          class="inline-block bg-slate-800 text-white font-bold py-2 px-4 rounded hover:bg-slate-700 transition-colors mr-2"
+          >Acessar Moodle</a
+        >
+      </div>
+    </div>
   </div>
 </section>

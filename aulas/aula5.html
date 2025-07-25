@@ -1,0 +1,245 @@
+<!-- Seção da Aula 5 -->
+<section id="aula5" class="mb-16 pt-16">
+  <header class="mb-12">
+    <h2 class="text-4xl font-bold text-slate-900">
+      Aula 5: Representação Gráfica com Fluxogramas
+    </h2>
+    <p class="text-lg text-slate-600 mt-2">
+      Aprendendo a "desenhar" a lógica de um algoritmo.
+    </p>
+  </header>
+
+  <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+    <h3 class="font-bold text-2xl text-slate-800 mb-4">
+      Plano de Voo da Aula de Hoje
+    </h3>
+    <ul class="list-disc list-inside space-y-2 text-slate-700">
+      <li>Por que usar uma representação visual para algoritmos?</li>
+      <li>Apresentação da simbologia padrão dos fluxogramas.</li>
+      <li>
+        Construção de um fluxograma passo a passo, incluindo um ponto de
+        decisão.
+      </li>
+      <li>
+        Atividade prática em duplas: desenhando fluxogramas para problemas
+        simples.
+      </li>
+      <li>Ferramentas úteis para criar fluxogramas digitais.</li>
+      <li>Apresentação da tarefa (TED) da Aula 5.</li>
+    </ul>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+      Simbologia Essencial dos Fluxogramas
+    </h3>
+    <div class="bg-white p-8 rounded-lg shadow-md">
+      <p class="text-lg mb-6">
+        Um fluxograma utiliza símbolos padronizados para representar diferentes
+        tipos de ações ou passos num algoritmo. Conhecer estes símbolos é como
+        aprender o vocabulário básico de uma nova língua.
+      </p>
+      <div class="space-y-6">
+        <!-- Terminal -->
+        <div class="flex items-center gap-6">
+          <div class="flowchart-shape flowchart-terminal w-48 flex-shrink-0">
+            Início / Fim
+          </div>
+          <div>
+            <h4 class="font-bold text-lg">Terminal</h4>
+            <p>
+              Representado por uma elipse, marca o ponto de início e de fim do
+              algoritmo. Todo fluxograma deve ter um início e pelo menos um fim.
+            </p>
+          </div>
+        </div>
+        <!-- Processamento -->
+        <div class="flex items-center gap-6">
+          <div class="flowchart-shape flowchart-process w-48 flex-shrink-0">
+            Processamento
+          </div>
+          <div>
+            <h4 class="font-bold text-lg">Processamento</h4>
+            <p>
+              Representado por um retângulo, indica qualquer tipo de operação,
+              cálculo ou atribuição de valor. Ex:
+              <code>soma = num1 + num2</code>.
+            </p>
+          </div>
+        </div>
+        <!-- Entrada/Saída -->
+        <div class="flex items-center gap-6">
+          <div class="flowchart-shape flowchart-io w-48 flex-shrink-0">
+            <span>Entrada / Saída</span>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg">Entrada e Saída</h4>
+            <p>
+              Representado por um paralelogramo, é usado para indicar a entrada
+              de dados (ex: `Leia nota1`) ou a saída de informações (ex:
+              `Escreva media`).
+            </p>
+          </div>
+        </div>
+        <!-- Decisão -->
+        <div class="flex items-center gap-6">
+          <div class="flowchart-shape flowchart-decision w-48 flex-shrink-0">
+            Decisão?
+          </div>
+          <div>
+            <h4 class="font-bold text-lg">Decisão</h4>
+            <p>
+              Representado por um losango, indica um ponto onde o fluxo se
+              divide com base numa condição (ex: `media >= 7?`). Terá sempre
+              duas saídas: "Sim" e "Não".
+            </p>
+          </div>
+        </div>
+        <!-- Seta de Fluxo -->
+        <div class="flex items-center gap-6">
+          <div class="w-48 flex-shrink-0 flex justify-center">
+            <div class="flowchart-arrow"></div>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg">Seta de Fluxo</h4>
+            <p>
+              Indica a direção e a sequência do algoritmo, conectando os
+              símbolos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+      Construindo um Fluxograma: Passo a Passo
+    </h3>
+    <div class="bg-white p-8 rounded-lg shadow-md">
+      <h4 class="font-semibold text-xl text-indigo-700 mb-3">
+        Problema: Verificar se um aluno foi aprovado.
+      </h4>
+      <p class="mb-6">
+        Regra: Um aluno é aprovado se a sua média for maior ou igual a 7.0. O
+        algoritmo deve ler a média e exibir "Aprovado" ou "Reprovado".
+      </p>
+      <div class="bg-slate-50 p-6 rounded-md border overflow-x-auto">
+        <div class="flowchart-container">
+          <div class="flowchart-shape flowchart-terminal">Início</div>
+          <div class="flowchart-arrow"></div>
+          <div class="flowchart-shape flowchart-io">
+            <span>Leia Média</span>
+          </div>
+          <div class="flowchart-arrow"></div>
+          <div class="flowchart-shape flowchart-decision">Média >= 7.0 ?</div>
+
+          <!-- Bifurcação -->
+          <div class="flowchart-bifurcation">
+            <!-- Ramo Sim -->
+            <div class="flowchart-branch">
+              <div class="flowchart-branch-label">Sim</div>
+              <div class="flowchart-shape flowchart-io">
+                <span>Escreva "Aprovado"</span>
+              </div>
+            </div>
+            <!-- Ramo Não -->
+            <div class="flowchart-branch">
+              <div class="flowchart-branch-label">Não</div>
+              <div class="flowchart-shape flowchart-io">
+                <span>Escreva "Reprovado"</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Junção -->
+          <div class="flowchart-junction-point"></div>
+
+          <div class="flowchart-arrow"></div>
+          <div class="flowchart-shape flowchart-terminal">Fim</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+      Atividade Prática em Duplas
+    </h3>
+    <div class="bg-white p-8 rounded-lg shadow-md">
+      <p class="mb-4">
+        Agora é a vossa vez! Em duplas, usem uma folha A4 ou um software online
+        para desenhar os fluxogramas para os seguintes problemas:
+      </p>
+      <div class="grid md:grid-cols-2 gap-6 mt-4">
+        <div class="bg-indigo-50 p-6 rounded-lg">
+          <h5 class="font-bold text-indigo-800 mb-2">
+            Problema A: Verificação de Idade
+          </h5>
+          <p>
+            Crie um fluxograma que leia a idade de uma pessoa e exiba "Maior de
+            idade" se a idade for 18 ou mais, ou "Menor de idade" caso
+            contrário.
+          </p>
+        </div>
+        <div class="bg-indigo-50 p-6 rounded-lg">
+          <h5 class="font-bold text-indigo-800 mb-2">
+            Problema B: Par ou Ímpar
+          </h5>
+          <p>
+            Crie um fluxograma que leia um número inteiro e verifique se ele é
+            par ou ímpar. (Dica: um número é par se o resto da sua divisão por 2
+            for igual a 0).
+          </p>
+        </div>
+      </div>
+      <div class="mt-6 callout callout-good-practice">
+        <h5 class="font-bold mb-2">Ferramenta Recomendada</h5>
+        <p>
+          Para criar fluxogramas digitais de forma fácil e gratuita,
+          recomendamos o
+          <a
+            href="https://app.diagrams.net/"
+            target="_blank"
+            class="font-bold underline"
+            >draw.io</a
+          >
+          (agora diagrams.net).
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tarefa da Aula 5 -->
+  <div id="proximos-passos-aula5">
+    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+      Próximos Passos e Tarefa (TED)
+    </h3>
+    <div
+      class="bg-indigo-100 border-l-4 border-indigo-500 text-indigo-800 p-6 rounded-r-lg"
+    >
+      <h4 class="font-bold text-xl mb-4">Tarefa para a próxima aula</h4>
+      <p class="mb-4">
+        O desafio agora é criar um fluxograma que envolva múltiplas decisões.
+      </p>
+      <ol class="list-decimal list-inside space-y-2 font-semibold">
+        <li>
+          Crie um fluxograma (em papel ou no draw.io) para um algoritmo que leia
+          três números diferentes e exiba qual deles é o maior.
+        </li>
+        <li>
+          Acesse o Moodle da disciplina e submeta uma foto ou o arquivo do seu
+          fluxograma na "Aula 5 - TED: Fluxograma com Múltiplas Decisões".
+        </li>
+      </ol>
+      <div class="mt-6">
+        <a
+          href="https://eadsp.unichristus.edu.br"
+          target="_blank"
+          class="inline-block bg-slate-800 text-white font-bold py-2 px-4 rounded hover:bg-slate-700 transition-colors mr-2"
+          >Acessar Moodle</a
+        >
+      </div>
+    </div>
+  </div>
+</section>

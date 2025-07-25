@@ -1,3 +1,4 @@
+// Carrega lista de aulas e gera sidebar/cards
 async function loadAulas() {
   try {
     const res = await fetch("aulas/aulas.json");
@@ -19,7 +20,7 @@ async function loadAulas() {
       // Cards
       const card = document.createElement("a");
       card.className = `block bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all ${
-        !aula.ativo ? "cursor-not-allowed opacity-70" : ""
+        !aula.ativo ? "cursor-not-allowed opacity-70" : "cursor-pointer"
       }`;
       if (aula.ativo)
         card.setAttribute("onclick", `loadAula('aulas/${aula.arquivo}')`);
@@ -28,16 +29,12 @@ async function loadAulas() {
       }</h3><p>${aula.descricao}</p>`;
       cards.appendChild(card);
     });
-
-    // Carrega a primeira aula ativa por padrão
-    const primeira = aulas.find((a) => a.ativo);
-    if (primeira) loadAula(`aulas/${primeira.arquivo}`);
   } catch (err) {
     console.error("Erro ao carregar aulas.json:", err);
   }
 }
 
-// Função para carregar o HTML de uma aula
+// Carrega o HTML de uma aula
 function loadAula(file) {
   fetch(file)
     .then((r) => r.text())
@@ -45,12 +42,13 @@ function loadAula(file) {
       const conteudo = document.getElementById("conteudo");
       conteudo.innerHTML = html;
       initAccordions();
+      initCopyButtons();
       window.scrollTo({ top: conteudo.offsetTop - 20, behavior: "smooth" });
     })
     .catch((err) => console.error("Erro ao carregar aula:", err));
 }
 
-// Acordeão
+// Inicializa acordeões
 function initAccordions() {
   const accordions = document.querySelectorAll(".accordion-toggle");
   accordions.forEach((button) => {
@@ -68,5 +66,35 @@ function initAccordions() {
   });
 }
 
-// Inicialização
-document.addEventListener("DOMContentLoaded", loadAulas);
+// Inicializa botão de copiar código
+function initCopyButtons() {
+  const copyButton = document.querySelector(".copy-code-btn");
+  if (copyButton) {
+    copyButton.addEventListener("click", () => {
+      const codeToCopy = document.getElementById("code-sizeof").innerText;
+      navigator.clipboard.writeText(codeToCopy).then(() => {
+        copyButton.innerText = "Copiado!";
+        setTimeout(() => {
+          copyButton.innerText = "Copiar Código";
+        }, 2000);
+      }).catch(err => {
+        console.error("Erro ao copiar o texto: ", err);
+        const textarea = document.createElement("textarea");
+        textarea.value = codeToCopy;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+        copyButton.innerText = "Copiado!";
+        setTimeout(() => {
+          copyButton.innerText = "Copiar Código";
+        }, 2000);
+      });
+    });
+  }
+}
+
+// Quando o DOM estiver pronto, carrega aulas
+document.addEventListener("DOMContentLoaded", () => {
+  loadAulas();
+});
