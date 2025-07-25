@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Palette: Slate Gray & Indigo -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -83,6 +84,7 @@
 <body class="bg-slate-50">
 
     <div class="flex min-h-screen">
+        <!-- Sidebar de Navegação -->
         <aside class="w-64 bg-slate-800 text-slate-100 p-6 fixed h-full hidden lg:block">
             <h2 class="text-xl font-bold mb-2 mono">Algo & Prog I</h2>
             <p class="text-sm text-slate-400 mb-8">ADS & SI | UniChristus</p>
@@ -98,6 +100,7 @@
 
         <main class="flex-1 lg:ml-64 p-6 md:p-10">
             
+            <!-- Seção Inicial (Home) -->
             <section id="home" class="min-h-screen flex flex-col justify-center">
                 <header>
                     <h1 class="text-5xl font-bold text-slate-900 leading-tight">Algoritmos e Programação I</h1>
@@ -119,12 +122,23 @@
                 </div>
             </section>
 
+            <!-- Seção da Aula 1 -->
             <section id="aula1" class="mb-16 pt-16">
                 <header class="mb-12">
                     <h2 class="text-4xl font-bold text-slate-900">Aula 1: Introdução à Lógica e Algoritmos</h2>
                     <p class="text-lg text-slate-600 mt-2">O objetivo desta aula é conhecer o plano de ensino e entender a lógica como a base para criar soluções computacionais.</p>
                 </header>
 
+                <!-- Resumo em Áudio -->
+                <div class="my-8 bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="font-bold text-xl text-slate-800 mb-4">Resumo em Áudio da Aula</h3>
+                    <audio controls class="w-full">
+                        <source src="resumo_aula_1.mp3" type="audio/mpeg">
+                        O seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+
+                <!-- Plano de Voo da Aula -->
                 <div class="bg-white p-6 rounded-lg shadow-md mb-12">
                     <h3 class="font-bold text-2xl text-slate-800 mb-4">Plano de Voo da Aula de Hoje</h3>
                     <ul class="list-disc list-inside space-y-2 text-slate-700">
@@ -138,6 +152,7 @@
                     </ul>
                 </div>
 
+                <!-- Apresentação da Disciplina (Acordeão) -->
                 <div id="objetivos" class="space-y-4 mb-12">
                      <div class="bg-white border border-slate-200 rounded-lg">
                         <button class="accordion-toggle w-full flex justify-between items-center p-5 font-semibold text-left" aria-expanded="false">
@@ -179,6 +194,7 @@
                     </div>
                 </div>
 
+                <!-- A Importância da Lógica -->
                 <div class="mb-16">
                     <h3 class="text-3xl font-bold text-slate-800 mb-6">A Ferramenta Essencial: Lógica</h3>
                     <div class="bg-white p-8 rounded-lg shadow-md">
@@ -201,6 +217,7 @@
                     </div>
                 </div>
 
+                <!-- O que é um Algoritmo? -->
                 <div id="o-que-e-algoritmo" class="mb-16">
                     <h3 class="text-3xl font-bold text-slate-800 mb-8">Anatomia de um Algoritmo</h3>
                     <div class="bg-white p-8 rounded-lg shadow-md">
@@ -215,6 +232,7 @@
                     </div>
                 </div>
 
+                <!-- Como Construir um Algoritmo -->
                 <div class="mb-16">
                     <h3 class="text-3xl font-bold text-slate-800 mb-6">Como Construir um Algoritmo: Um Método de 5 Passos</h3>
                     <div class="bg-white p-8 rounded-lg shadow-md space-y-6">
@@ -249,10 +267,12 @@
                     </div>
                 </div>
 
+                <!-- Formas de Representação -->
                 <div class="mb-16">
                     <h3 class="text-3xl font-bold text-slate-800 mb-6">Formas de Representar um Algoritmo</h3>
                     <p class="mb-6">Vamos usar o mesmo problema simples para ver como ele é representado em cada formato: <strong>"Calcular a média de duas notas"</strong>.</p>
                     <div class="space-y-8">
+                        <!-- Descrição Narrativa -->
                         <div class="bg-white p-6 rounded-lg shadow-md">
                             <h4 class="font-bold text-xl text-slate-800 mb-4">1. Descrição Narrativa</h4>
                             <p class="mb-4">Usa a linguagem natural para descrever os passos. É fácil de criar, mas pode ser ambígua.</p>
@@ -266,6 +286,7 @@
                                 </ol>
                             </div>
                         </div>
+                        <!-- Fluxograma -->
                         <div class="bg-white p-6 rounded-lg shadow-md">
                             <h4 class="font-bold text-xl text-slate-800 mb-4">2. Fluxograma</h4>
                             <p class="mb-4">Usa símbolos gráficos padronizados para representar cada tipo de ação. É muito visual e ajuda a entender o fluxo do programa.</p>
@@ -283,6 +304,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Pseudocódigo -->
                         <div class="bg-white p-6 rounded-lg shadow-md">
                             <h4 class="font-bold text-xl text-slate-800 mb-4">3. Pseudocódigo (Portugol)</h4>
                             <p class="mb-4">Uma linguagem intermediária, com regras e palavras-chave, que se aproxima de uma linguagem de programação real. É o método ideal para a transição para o código.</p>
@@ -303,6 +325,7 @@ FIM_ALGORITMO</code></pre>
                     </div>
                 </div>
                 
+                <!-- Leituras e Recursos -->
                 <div class="mb-16">
                     <h3 class="text-3xl font-bold text-slate-800 mb-6">Para Ir Além: Leituras e Recursos</h3>
                     <div class="bg-slate-100 p-8 rounded-lg">
@@ -326,6 +349,7 @@ FIM_ALGORITMO</code></pre>
                     </div>
                 </div>
 
+                <!-- Próximos Passos e TED -->
                 <div id="proximos-passos">
                     <h3 class="text-3xl font-bold text-slate-800 mb-6">Próximos Passos e Tarefa (TED)</h3>
                      <div class="bg-indigo-100 border-l-4 border-indigo-500 text-indigo-800 p-6 rounded-r-lg">
@@ -343,12 +367,14 @@ FIM_ALGORITMO</code></pre>
                 </div>
             </section>
 
+            <!-- Seção da Aula 2 -->
             <section id="aula2" class="min-h-screen flex items-center justify-center pt-16">
                 <div class="text-center">
                     <h2 class="text-4xl font-bold text-slate-900">Aula 2: Raciocínio Lógico</h2>
                     <p class="text-xl text-slate-600 mt-4">Conteúdo em breve...</p>
                 </div>
             </section>
+            <!-- Seção da Aula 3 -->
             <section id="aula3" class="min-h-screen flex items-center justify-center pt-16">
                 <div class="text-center">
                     <h2 class="text-4xl font-bold text-slate-900">Aula 3: Pseudocódigo e C</h2>
