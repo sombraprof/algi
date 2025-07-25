@@ -1,0 +1,23 @@
+[
+  {
+    "id": "aula1",
+    "titulo": "Aula 1: Lógica e Algoritmos",
+    "descricao": "Entenda o que são algoritmos e por que a lógica é importante para um programador.",
+    "arquivo": "aula1.html",
+    "ativo": true
+  },
+  {
+    "id": "aula2",
+    "titulo": "Aula 2: Raciocínio Lógico",
+    "descricao": "Conteúdo em breve...",
+    "arquivo": "aula2.html",
+    "ativo": true
+  },
+  {
+    "id": "aula3",
+    "titulo": "Aula 3: Pseudocódigo e C",
+    "descricao": "Conteúdo em breve...",
+    "arquivo": "aula3.html",
+    "ativo": false
+  }
+]
