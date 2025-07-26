@@ -1,4 +1,3 @@
-// Carrega lista de aulas e gera sidebar/cards
 async function loadAulas() {
   try {
     const res = await fetch("aulas/aulas.json");
@@ -7,8 +6,16 @@ async function loadAulas() {
     const sidebar = document.getElementById("sidebar-links");
     const cards = document.getElementById("cards-container");
 
+    // 🔹 Cabeçalho de Aulas
+    if (sidebar && aulas.length > 0) {
+      const header = document.createElement("div");
+      header.className =
+        "mt-4 mb-2 px-2 py-1 bg-slate-700 text-slate-100 text-sm font-bold rounded";
+      header.textContent = "Aulas";
+      sidebar.appendChild(header);
+    }
+
     aulas.forEach((aula) => {
-      // Sidebar
       const li = document.createElement("li");
       li.innerHTML = `<a href="#" class="block font-bold ${
         aula.ativo ? "hover:text-indigo-400" : "nav-link-disabled"
@@ -17,7 +24,6 @@ async function loadAulas() {
       }>${aula.titulo}</a>`;
       sidebar.appendChild(li);
 
-      // Cards
       const card = document.createElement("a");
       card.className = `block bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transition-all ${
         !aula.ativo ? "cursor-not-allowed opacity-70" : "cursor-pointer"
@@ -48,25 +54,42 @@ function loadAula(file) {
     .catch((err) => console.error("Erro ao carregar aula:", err));
 }
 
-// Carrega listas dinamicamente no index.html
 async function loadListas() {
   try {
-    // 🔹 Arquivo com índice de listas (pode ser fixo ou gerado dinamicamente)
     const res = await fetch("listas/listas.json");
     const listas = await res.json();
 
     const container = document.getElementById("listas-container");
+    const sidebar = document.getElementById("sidebar-links");
+
+    // 🔹 Cabeçalho de Listas
+    if (sidebar && listas.length > 0) {
+      const headerListas = document.createElement("div");
+      headerListas.className =
+        "mt-6 mb-2 px-2 py-1 bg-indigo-600 text-white text-sm font-bold rounded";
+      headerListas.textContent = "Listas de Exercícios";
+      sidebar.appendChild(headerListas);
+    }
 
     listas.forEach((lista) => {
-      const card = document.createElement("div");
-      card.className =
-        "bg-white p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer";
-      card.innerHTML = `
-        <h3 class="font-bold text-xl text-indigo-600 mb-2">${lista.titulo}</h3>
-        <p class="text-slate-600">${lista.descricao}</p>
-      `;
-      card.onclick = () => loadListaDetalhe(lista.arquivo);
-      container.appendChild(card);
+      if (container) {
+        const card = document.createElement("div");
+        card.className =
+          "bg-white p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer";
+        card.innerHTML = `
+          <h3 class="font-bold text-xl text-indigo-600 mb-2">${lista.titulo}</h3>
+          <p class="text-slate-600">${lista.descricao}</p>
+        `;
+        card.onclick = () => loadListaDetalhe(lista.arquivo);
+        container.appendChild(card);
+      }
+
+      if (sidebar) {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="#" class="block font-bold hover:text-indigo-400 transition-colors"
+          onclick="loadListaDetalhe('${lista.arquivo}')">${lista.titulo}</a>`;
+        sidebar.appendChild(li);
+      }
     });
   } catch (err) {
     console.error("Erro ao carregar listas:", err);

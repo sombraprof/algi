@@ -9,6 +9,7 @@
   </head>
   <body class="bg-slate-50">
     <div class="flex min-h-screen">
+      
       <!-- Sidebar -->
       <aside
         class="w-64 bg-slate-800 text-slate-100 p-6 fixed h-full hidden lg:block"
@@ -22,7 +23,8 @@
 
       <!-- Main -->
       <main class="flex-1 lg:ml-64 p-6 md:p-10">
-        <!-- Cards -->
+
+        <!-- Cards Aulas -->
         <section id="home" class="min-h-screen flex flex-col justify-center">
           <header>
             <h1 class="text-5xl font-bold text-slate-900 leading-tight">
@@ -36,7 +38,18 @@
           ></div>
         </section>
 
-        <!-- Conteúdo dinâmico -->
+        <!-- Cards Exercicios -->
+        <section id="listas" class="mt-12">
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">
+            Listas de Exercícios
+          </h2>
+          <div
+            id="listas-container"
+            class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          ></div>
+        </section>
+
+        <!-- Conteúdo dinâmico Aulas / Exercicios -->
         <div id="conteudo" class="mt-12"></div>
       </main>
     </div>
