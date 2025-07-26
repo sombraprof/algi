@@ -1,0 +1,325 @@
+{
+  "id": "lista1",
+  "titulo": "Lista de Exercícios 01: Variáveis e Expressões",
+  "descricao": "Pratique os conceitos de declaração de variáveis, entrada, processamento e saída de dados em C com exemplos contextualizados no cotidiano cearense.",
+  "questoes": [
+    {
+      "id": 1,
+      "enunciado": "Leia a quantidade de rapaduras vendidas em um dia por um feirante de Juazeiro do Norte e imprima o valor.",
+      "dica": "Use uma variável do tipo `int` e `scanf` para ler o valor inteiro.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    int rapaduras;\n    printf(\"Digite a quantidade de rapaduras vendidas: \");\n    scanf(\"%d\", &rapaduras); // leitura do número inteiro\n    printf(\"O feirante vendeu %d rapaduras hoje.\\n\", rapaduras);\n    return 0;\n}"
+    },
+    {
+      "id": 2,
+      "enunciado": "Leia a temperatura atual da praia do Cumbuco em graus Celsius (com casas decimais) e imprima o valor.",
+      "dica": "Use `float` e formate a saída com duas casas decimais.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float temperatura;\n    printf(\"Digite a temperatura da praia do Cumbuco em Celsius: \");\n    scanf(\"%f\", &temperatura); // leitura de número real\n    printf(\"A temperatura atual no Cumbuco e %.2f graus Celsius.\\n\", temperatura);\n    return 0;\n}"
+    },
+    {
+      "id": 3,
+      "enunciado": "Peça ao usuário para informar o número de pescarias feitas em três dias seguidos em Icapuí e imprima a soma.",
+      "dica": "Use três variáveis `int` para os valores e uma para a soma.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    int d1, d2, d3, total;\n    printf(\"Digite o numero de pescarias feitas em 3 dias: \");\n    scanf(\"%d %d %d\", &d1, &d2, &d3); // lê três valores inteiros\n    total = d1 + d2 + d3; // soma dos valores\n    printf(\"Total de pescarias em Icapui: %d\\n\", total);\n    return 0;\n}"
+    },
+    {
+      "id": 4,
+      "enunciado": "Leia o valor de um litro de caldo de cana vendido na feira de Maranguape e imprima o quadrado desse valor.",
+      "dica": "Use `float` para valores com casas decimais.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float preco, resultado;\n    printf(\"Digite o preco do litro de caldo de cana em Maranguape: \");\n    scanf(\"%f\", &preco);\n    resultado = preco * preco; // cálculo do quadrado\n    printf(\"O quadrado do valor e %.2f\\n\", resultado);\n    return 0;\n}"
+    },
+    {
+      "id": 5,
+      "enunciado": "Leia o preço de uma tapioca vendida na Beira Mar de Fortaleza e imprima a quinta parte desse valor.",
+      "dica": "A quinta parte de um número é o número dividido por 5.0.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float preco;\n    printf(\"Digite o preco da tapioca na Beira Mar: \");\n    scanf(\"%f\", &preco);\n    printf(\"A quinta parte do preco e %.2f\\n\", preco / 5.0);\n    return 0;\n}"
+    },
+    {
+      "id": 6,
+      "enunciado": "Leia a temperatura em graus Celsius registrada no sertão de Quixadá e apresente-a em Fahrenheit.",
+      "dica": "Use `float` e a fórmula F = C * (9.0/5.0) + 32.0.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float celsius, fahrenheit;\n    printf(\"Digite a temperatura em Celsius no sertao de Quixada: \");\n    scanf(\"%f\", &celsius);\n    fahrenheit = celsius * (9.0 / 5.0) + 32.0; // conversão\n    printf(\"%.2f C equivale a %.2f F\\n\", celsius, fahrenheit);\n    return 0;\n}"
+    },
+    {
+      "id": 7,
+      "enunciado": "Leia a temperatura em Fahrenheit em um dia de festa em Canindé e converta para Celsius.",
+      "dica": "Use `float` e a fórmula C = (F − 32.0) * (5.0/9.0).",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float fahrenheit, celsius;\n    printf(\"Digite a temperatura em Fahrenheit em Caninde: \");\n    scanf(\"%f\", &fahrenheit);\n    celsius = (fahrenheit - 32.0) * (5.0 / 9.0); // conversão inversa\n    printf(\"%.2f F equivale a %.2f C\\n\", fahrenheit, celsius);\n    return 0;\n}"
+    },
+    {
+      "id": 8,
+      "enunciado": "Leia a temperatura em graus Celsius na Chapada do Araripe e apresente-a em Kelvin.",
+      "dica": "Use `float`. A fórmula é K = C + 273.15.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float celsius;\n    printf(\"Digite a temperatura na Chapada do Araripe em Celsius: \");\n    scanf(\"%f\", &celsius);\n    printf(\"%.2f C equivale a %.2f K\\n\", celsius, celsius + 273.15);\n    return 0;\n}"
+    },
+    {
+      "id": 9,
+      "enunciado": "Leia a temperatura em Kelvin de um estudo climático feito no Cariri e apresente-a em Celsius.",
+      "dica": "Use `float` e subtraia 273.15 do valor em Kelvin.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float kelvin;\n    printf(\"Digite a temperatura em Kelvin no Cariri: \");\n    scanf(\"%f\", &kelvin);\n    printf(\"%.2f K equivale a %.2f C\\n\", kelvin, kelvin - 273.15);\n    return 0;\n}"
+    },
+    {
+      "id": 10,
+      "enunciado": "Leia uma velocidade em km/h de uma jangada navegando em Jericoacoara e converta para m/s.",
+      "dica": "Use `float` e divida o valor por 3.6.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float kmh;\n    printf(\"Digite a velocidade da jangada em km/h em Jericoacoara: \");\n    scanf(\"%f\", &kmh);\n    printf(\"%.2f km/h equivale a %.2f m/s\\n\", kmh, kmh / 3.6);\n    return 0;\n}"
+    },
+    {
+      "id": 11,
+      "enunciado": "Leia uma velocidade em m/s de um surfista em Paracuru e converta para km/h.",
+      "dica": "Use `float` e multiplique o valor por 3.6.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float ms;\n    printf(\"Digite a velocidade do surfista em m/s: \");\n    scanf(\"%f\", &ms);\n    printf(\"%.2f m/s equivale a %.2f km/h\\n\", ms, ms * 3.6);\n    return 0;\n}"
+    },
+    {
+      "id": 12,
+      "enunciado": "Leia uma distância em milhas de uma trilha no sertão cearense e apresente-a em quilômetros.",
+      "dica": "Use `float` e multiplique o valor por 1.60934.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float milhas;\n    printf(\"Digite a distancia da trilha em milhas: \");\n    scanf(\"%f\", &milhas);\n    printf(\"%.2f milhas equivale a %.2f km\\n\", milhas, milhas * 1.60934);\n    return 0;\n}"
+    },
+    {
+      "id": 13,
+      "enunciado": "Leia uma distância em quilômetros da estrada entre Fortaleza e Aquiraz e apresente-a em milhas.",
+      "dica": "Use `float` e divida o valor por 1.60934.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float km;\n    printf(\"Digite a distancia em km: \");\n    scanf(\"%f\", &km);\n    printf(\"%.2f km equivale a %.2f milhas\\n\", km, km / 1.60934);\n    return 0;\n}"
+    },
+    {
+      "id": 14,
+      "enunciado": "Leia um ângulo em graus usado para posicionar uma antena parabólica em Sobral e converta para radianos.",
+      "dica": "Use `float` e defina PI como 3.14159.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float graus;\n    const float PI = 3.14159;\n    printf(\"Digite o angulo em graus: \");\n    scanf(\"%f\", &graus);\n    printf(\"%.2f graus equivale a %.4f rad\\n\", graus, graus * PI / 180);\n    return 0;\n}"
+    },
+    {
+      "id": 15,
+      "enunciado": "Leia um ângulo em radianos utilizado em um projeto de roda-gigante em Fortaleza e converta para graus.",
+      "dica": "Use `float` e a fórmula G = R * 180 / π.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float rad;\n    const float PI = 3.14159;\n    printf(\"Digite o angulo em radianos: \");\n    scanf(\"%f\", &rad);\n    printf(\"%.4f rad equivale a %.2f graus\\n\", rad, rad * 180 / PI);\n    return 0;\n}"
+    },
+    {
+      "id": 16,
+      "enunciado": "Leia um valor em polegadas de uma peça de artesanato em Aracati e apresente-o em centímetros.",
+      "dica": "Use `float` e multiplique o valor por 2.54.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float pol;\n    printf(\"Digite o comprimento em polegadas: \");\n    scanf(\"%f\", &pol);\n    printf(\"%.2f pol equivale a %.2f cm\\n\", pol, pol * 2.54);\n    return 0;\n}"
+    },
+    {
+      "id": 17,
+      "enunciado": "Leia um valor em centímetros de um bordado de renda de bilro em Trairi e apresente-o em polegadas.",
+      "dica": "Use `float` e divida o valor por 2.54.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float cm;\n    printf(\"Digite o comprimento em cm: \");\n    scanf(\"%f\", &cm);\n    printf(\"%.2f cm equivale a %.2f pol\\n\", cm, cm / 2.54);\n    return 0;\n}"
+    },
+    {
+      "id": 18,
+      "enunciado": "Leia um volume em litros de água armazenada em uma cisterna no sertão e apresente-o em metros cúbicos.",
+      "dica": "Use `float` e divida o valor por 1000.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float litros;\n    printf(\"Digite o volume em litros: \");\n    scanf(\"%f\", &litros);\n    printf(\"%.2f litros equivale a %.4f m3\\n\", litros, litros / 1000);\n    return 0;\n}"
+    },
+    {
+      "id": 19,
+      "enunciado": "Leia um volume em metros cúbicos de uma caixa d'água em Quixeramobim e apresente-o em litros.",
+      "dica": "Use `float` e multiplique o valor por 1000.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float m3;\n    printf(\"Digite o volume em metros cubicos: \");\n    scanf(\"%f\", &m3);\n    printf(\"%.4f m3 equivale a %.2f litros\\n\", m3, m3 * 1000);\n    return 0;\n}"
+    },
+    {
+      "id": 20,
+      "enunciado": "Leia uma massa em quilogramas de castanhas compradas em uma feira de Itapipoca e converta para libras.",
+      "dica": "Use `float` e multiplique o valor por 2.20462.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float kg;\n    printf(\"Digite a massa de castanhas em kg: \");\n    scanf(\"%f\", &kg);\n    printf(\"%.2f kg equivale a %.2f lbs\\n\", kg, kg * 2.20462);\n    return 0;\n}"
+    },
+    {
+      "id": 21,
+      "enunciado": "Leia uma massa em libras de peixe vendido em uma barraca na Beira-Mar de Fortaleza e apresente-a em quilogramas.",
+      "dica": "Use `float` e divida o valor em libras por 2.20462.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float lbs;\n    printf(\"Digite a massa do peixe em libras: \");\n    scanf(\"%f\", &lbs);\n    printf(\"%.2f lbs equivale a %.2f kg\\n\", lbs, lbs / 2.20462);\n    return 0;\n}"
+    },
+    {
+      "id": 22,
+      "enunciado": "Leia um comprimento em jardas de uma área de campo de futebol no interior do Ceará e apresente-o em metros.",
+      "dica": "Use `float` e multiplique o valor por 0.9144.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float jardas;\n    printf(\"Digite o comprimento em jardas: \");\n    scanf(\"%f\", &jardas);\n    printf(\"%.2f jardas equivale a %.2f m\\n\", jardas, jardas * 0.9144);\n    return 0;\n}"
+    },
+    {
+      "id": 23,
+      "enunciado": "Leia um comprimento em metros de uma pista de corrida em Juazeiro do Norte e apresente-o em jardas.",
+      "dica": "Use `float` e divida o valor em metros por 0.9144.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float metros;\n    printf(\"Digite o comprimento em metros: \");\n    scanf(\"%f\", &metros);\n    printf(\"%.2f m equivale a %.2f jardas\\n\", metros, metros / 0.9144);\n    return 0;\n}"
+    },
+    {
+      "id": 24,
+      "enunciado": "Leia um comprimento em metros de uma jangada em Canoa Quebrada e apresente-o em pés.",
+      "dica": "Use `float` e multiplique o valor por 3.28084.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float metros;\n    printf(\"Digite o comprimento da jangada em metros: \");\n    scanf(\"%f\", &metros);\n    printf(\"%.2f m equivale a %.2f pes\\n\", metros, metros * 3.28084);\n    return 0;\n}"
+    },
+    {
+      "id": 25,
+      "enunciado": "Leia um comprimento em pés de uma prancha de surf em Jericoacoara e apresente-o em metros.",
+      "dica": "Use `float` e divida o valor em pés por 3.28084.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float pes;\n    printf(\"Digite o comprimento da prancha em pes: \");\n    scanf(\"%f\", &pes);\n    printf(\"%.2f pes equivale a %.2f m\\n\", pes, pes / 3.28084);\n    return 0;\n}"
+    },
+    {
+      "id": 26,
+      "enunciado": "Leia uma área em acres de uma plantação de milho em Quixadá e apresente-a em metros quadrados.",
+      "dica": "Use `float` e multiplique o valor por 4048.58.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float acres;\n    printf(\"Digite a area em acres: \");\n    scanf(\"%f\", &acres);\n    printf(\"%.2f acres equivale a %.2f m2\\n\", acres, acres * 4048.58);\n    return 0;\n}"
+    },
+    {
+      "id": 27,
+      "enunciado": "Leia uma área em metros quadrados de um terreno em Sobral e apresente-a em acres.",
+      "dica": "Use `float` e divida o valor em m² por 4048.58.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float m2;\n    printf(\"Digite a area em m2: \");\n    scanf(\"%f\", &m2);\n    printf(\"%.2f m2 equivale a %.4f acres\\n\", m2, m2 / 4048.58);\n    return 0;\n}"
+    },
+    {
+      "id": 28,
+      "enunciado": "Leia uma área em metros quadrados de uma roça em Canindé e apresente-a em hectares.",
+      "dica": "Use `float` e divida o valor em m² por 10000.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float m2;\n    printf(\"Digite a area em m2: \");\n    scanf(\"%f\", &m2);\n    printf(\"%.2f m2 equivale a %.4f hectares\\n\", m2, m2 / 10000);\n    return 0;\n}"
+    },
+    {
+      "id": 29,
+      "enunciado": "Leia uma área em hectares de uma fazenda em Crateús e apresente-a em metros quadrados.",
+      "dica": "Use `float` e multiplique o valor em hectares por 10000.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float hectares;\n    printf(\"Digite a area em hectares: \");\n    scanf(\"%f\", &hectares);\n    printf(\"%.2f hectares equivale a %.2f m2\\n\", hectares, hectares * 10000);\n    return 0;\n}"
+    },
+    {
+      "id": 30,
+      "enunciado": "Leia um número inteiro representando a quantidade de redes de dormir produzidas em uma oficina de artesanato em Russas e imprima seu antecessor e sucessor.",
+      "dica": "Use `int`. O antecessor é `n-1` e o sucessor é `n+1`.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    int n;\n    printf(\"Digite a quantidade de redes de dormir: \");\n    scanf(\"%d\", &n);\n    printf(\"Antecessor: %d\\nSucessor: %d\\n\", n-1, n+1);\n    return 0;\n}"
+    },
+    {
+      "id": 31,
+      "enunciado": "Leia um número inteiro representando a quantidade de peixes capturados em Camocim e imprima o dobro e o triplo desse valor.",
+      "dica": "Use `int`. O dobro é `n*2` e o triplo é `n*3`.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    int n;\n    printf(\"Digite a quantidade de peixes: \");\n    scanf(\"%d\", &n);\n    printf(\"Dobro: %d\\nTriplo: %d\\n\", n*2, n*3);\n    return 0;\n}"
+    },
+    {
+      "id": 32,
+      "enunciado": "Leia um número real representando a quantidade de litros de água consumida em uma residência em Sobral e imprima a metade e o dobro.",
+      "dica": "Use `float`. Metade é `n/2.0` e dobro é `n*2.0`.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float n;\n    printf(\"Digite a quantidade de agua consumida em litros: \");\n    scanf(\"%f\", &n);\n    printf(\"Metade: %.2f\\nDobro: %.2f\\n\", n/2.0, n*2.0);\n    return 0;\n}"
+    },
+    {
+      "id": 33,
+      "enunciado": "Leia três números reais representando a quantidade de chuva (em mm) em três cidades do Cariri e imprima a média.",
+      "dica": "Use três variáveis `float` e calcule `(a+b+c)/3.0`.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float a, b, c;\n    printf(\"Digite a quantidade de chuva em tres cidades: \");\n    scanf(\"%f %f %f\", &a, &b, &c);\n    printf(\"Media: %.2f mm\\n\", (a+b+c)/3.0);\n    return 0;\n}"
+    },
+    {
+      "id": 34,
+      "enunciado": "Leia um número real representando a quantidade de litros de cajuína produzida em Iguatu e imprima a terça parte desse valor.",
+      "dica": "Use `float` e divida o valor por 3.0.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float n;\n    printf(\"Digite a quantidade de cajuina em litros: \");\n    scanf(\"%f\", &n);\n    printf(\"A terca parte de %.2f litros e %.2f litros\\n\", n, n/3.0);\n    return 0;\n}"
+    },
+    {
+      "id": 35,
+      "enunciado": "Leia dois números reais representando a quantidade de rapaduras vendidas em duas feiras de Quixeramobim e imprima a soma e o produto.",
+      "dica": "Use duas variáveis `float` e calcule `a+b` e `a*b`.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float a, b;\n    printf(\"Digite a quantidade de rapaduras vendidas em duas feiras: \");\n    scanf(\"%f %f\", &a, &b);\n    printf(\"Soma: %.2f\\nProduto: %.2f\\n\", a+b, a*b);\n    return 0;\n}"
+    },
+    {
+      "id": 36,
+      "enunciado": "Leia um número real representando a quantidade de cocos vendidos em Beberibe e imprima o quadrado e o cubo desse valor.",
+      "dica": "Use `float`. Quadrado é `n*n`, cubo é `n*n*n`.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float n;\n    printf(\"Digite a quantidade de cocos vendidos: \");\n    scanf(\"%f\", &n);\n    printf(\"Quadrado: %.2f\\nCubo: %.2f\\n\", n*n, n*n*n);\n    return 0;\n}"
+    },
+    {
+      "id": 37,
+      "enunciado": "Leia um valor em reais representando a venda de castanhas em uma feira de Fortaleza e a cotação do dólar, e imprima o valor em dólares.",
+      "dica": "Use duas variáveis `float`. Valor em dólar = reais / cotação.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float reais, cotacao;\n    printf(\"Digite o valor em reais: \");\n    scanf(\"%f\", &reais);\n    printf(\"Digite a cotacao do dolar: \");\n    scanf(\"%f\", &cotacao);\n    printf(\"Valor em dolares: %.2f\\n\", reais / cotacao);\n    return 0;\n}"
+    },
+    {
+      "id": 38,
+      "enunciado": "Leia um valor em dólares de uma venda internacional de artesanato cearense e a cotação, e imprima o valor em reais.",
+      "dica": "Use duas variáveis `float`. Valor em reais = dólares * cotação.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float dolares, cotacao;\n    printf(\"Digite o valor em dolares: \");\n    scanf(\"%f\", &dolares);\n    printf(\"Digite a cotacao do dolar: \");\n    scanf(\"%f\", &cotacao);\n    printf(\"Valor em reais: %.2f\\n\", dolares * cotacao);\n    return 0;\n}"
+    },
+    {
+      "id": 39,
+      "enunciado": "Leia um número inteiro representando a quantidade de turistas e um número real representando o gasto médio de cada um em Jericoacoara, e imprima a soma total dos gastos.",
+      "dica": "Use `int` e `float` e converta na soma.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    int turistas;\n    float gasto;\n    printf(\"Digite a quantidade de turistas e o gasto medio: \");\n    scanf(\"%d %f\", &turistas, &gasto);\n    printf(\"Gasto total: %.2f\\n\", turistas * gasto);\n    return 0;\n}"
+    },
+    {
+      "id": 40,
+      "enunciado": "Leia um número real representando a temperatura registrada na Praia do Futuro e imprima o valor absoluto.",
+      "dica": "Use `float` e a função `fabs()` de `<math.h>`.",
+      "solucao": "#include <stdio.h>\n#include <math.h>\n\nint main() {\n    float temp;\n    printf(\"Digite a temperatura na Praia do Futuro: \");\n    scanf(\"%f\", &temp);\n    printf(\"Valor absoluto: %.2f\\n\", fabs(temp));\n    return 0;\n}"
+    },
+    {
+      "id": 41,
+      "enunciado": "Leia um número inteiro positivo representando a quantidade de ingressos vendidos no Festival de Quadrilhas de Limoeiro do Norte e imprima a soma dos dígitos.",
+      "dica": "Use divisões e resto (%) para separar os dígitos.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    int n, soma = 0;\n    printf(\"Digite a quantidade de ingressos vendidos: \");\n    scanf(\"%d\", &n);\n    while (n > 0) {\n        soma += n % 10;\n        n /= 10;\n    }\n    printf(\"Soma dos digitos: %d\\n\", soma);\n    return 0;\n}"
+    },
+    {
+      "id": 42,
+      "enunciado": "Leia dois números inteiros representando as quantidades de rapaduras em duas bancas diferentes de Quixadá e troque os valores entre elas.",
+      "dica": "Use uma variável auxiliar para trocar os valores.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    int a, b, aux;\n    printf(\"Digite as quantidades de rapaduras em duas bancas: \");\n    scanf(\"%d %d\", &a, &b);\n    aux = a;\n    a = b;\n    b = aux;\n    printf(\"Depois da troca: banca 1 = %d, banca 2 = %d\\n\", a, b);\n    return 0;\n}"
+    },
+    {
+      "id": 43,
+      "enunciado": "Leia dois números reais representando os preços de dois tipos de castanhas vendidos em Icapuí e troque os valores entre eles.",
+      "dica": "Similar ao anterior, mas com `float`.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float a, b, aux;\n    printf(\"Digite os precos de dois tipos de castanhas: \");\n    scanf(\"%f %f\", &a, &b);\n    aux = a;\n    a = b;\n    b = aux;\n    printf(\"Depois da troca: preco 1 = %.2f, preco 2 = %.2f\\n\", a, b);\n    return 0;\n}"
+    },
+    {
+      "id": 44,
+      "enunciado": "Leia três números inteiros representando a quantidade de redes vendidas em três feiras de artesanato e imprima o maior valor.",
+      "dica": "Use estruturas condicionais para comparar os três valores.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    int a, b, c, maior;\n    printf(\"Digite as quantidades de redes vendidas: \");\n    scanf(\"%d %d %d\", &a, &b, &c);\n    maior = a;\n    if (b > maior) maior = b;\n    if (c > maior) maior = c;\n    printf(\"Maior quantidade: %d\\n\", maior);\n    return 0;\n}"
+    },
+    {
+      "id": 45,
+      "enunciado": "Leia três números inteiros representando a quantidade de panelas de barro vendidas em três feiras de artesanato e imprima o menor valor.",
+      "dica": "Use estruturas condicionais para comparar os três valores.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    int a, b, c, menor;\n    printf(\"Digite as quantidades de panelas de barro vendidas: \");\n    scanf(\"%d %d %d\", &a, &b, &c);\n    menor = a;\n    if (b < menor) menor = b;\n    if (c < menor) menor = c;\n    printf(\"Menor quantidade: %d\\n\", menor);\n    return 0;\n}"
+    },
+    {
+      "id": 46,
+      "enunciado": "Leia um número inteiro positivo de três dígitos representando um código de produto de uma feira de artesanato e imprima o código invertido.",
+      "dica": "Use divisão inteira e resto (%) para separar e recompor os dígitos.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    int num, c, d, u;\n    printf(\"Digite o codigo do produto (3 digitos): \");\n    scanf(\"%d\", &num);\n    c = num / 100;\n    d = (num % 100) / 10;\n    u = num % 10;\n    printf(\"Codigo invertido: %d%d%d\\n\", u, d, c);\n    return 0;\n}"
+    },
+    {
+      "id": 47,
+      "enunciado": "Leia um número inteiro representando o número de visitantes em uma praia de Aracati e imprima a soma do primeiro e do último dígito.",
+      "dica": "Pegue o último dígito com `% 10` e o primeiro dividindo até restar 1 dígito.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    int num, primeiro, ultimo;\n    printf(\"Digite o numero de visitantes: \");\n    scanf(\"%d\", &num);\n    ultimo = num % 10;\n    primeiro = num;\n    while (primeiro >= 10) primeiro /= 10;\n    printf(\"Soma do primeiro e ultimo digito: %d\\n\", primeiro + ultimo);\n    return 0;\n}"
+    },
+    {
+      "id": 48,
+      "enunciado": "Leia dois números inteiros representando o número de jangadas em duas praias do litoral cearense e verifique se são iguais.",
+      "dica": "Use uma estrutura condicional simples para comparar.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    int a, b;\n    printf(\"Digite a quantidade de jangadas em duas praias: \");\n    scanf(\"%d %d\", &a, &b);\n    if (a == b)\n        printf(\"As praias tem o mesmo numero de jangadas\\n\");\n    else\n        printf(\"As praias tem numeros diferentes de jangadas\\n\");\n    return 0;\n}"
+    },
+    {
+      "id": 49,
+      "enunciado": "Leia um número inteiro representando o número de barracas de comida em um festival de São João e verifique se o número é par ou ímpar.",
+      "dica": "Use `if` e `% 2` para verificar a paridade.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    int n;\n    printf(\"Digite o numero de barracas de comida: \");\n    scanf(\"%d\", &n);\n    if (n % 2 == 0)\n        printf(\"Numero par de barracas\\n\");\n    else\n        printf(\"Numero impar de barracas\\n\");\n    return 0;\n}"
+    },
+    {
+      "id": 50,
+      "enunciado": "Leia um número inteiro representando a quantidade de cocos colhidos e verifique se é múltiplo de 3 e de 5 ao mesmo tempo.",
+      "dica": "Use operadores lógicos para testar as duas condições simultâneas.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    int n;\n    printf(\"Digite a quantidade de cocos colhidos: \");\n    scanf(\"%d\", &n);\n    if (n % 3 == 0 && n % 5 == 0)\n        printf(\"Multiplo de 3 e 5\\n\");\n    else\n        printf(\"Nao e multiplo de 3 e 5 ao mesmo tempo\\n\");\n    return 0;\n}"
+    },
+    {
+      "id": 51,
+      "enunciado": "Leia um número inteiro representando a quantidade de peixes pescados no açude de Orós e verifique se é divisível por 2 ou por 7.",
+      "dica": "Use operadores lógicos `||` para verificar divisibilidade por 2 ou 7.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    int n;\n    printf(\"Digite a quantidade de peixes pescados: \");\n    scanf(\"%d\", &n);\n    if (n % 2 == 0 || n % 7 == 0)\n        printf(\"Quantidade divisivel por 2 ou 7\\n\");\n    else\n        printf(\"Quantidade nao divisivel por 2 nem 7\\n\");\n    return 0;\n}"
+    },
+    {
+      "id": 52,
+      "enunciado": "Leia três números inteiros representando o comprimento de troncos usados em uma obra de casa de taipa no interior do Ceará e verifique se podem formar um triângulo.",
+      "dica": "Cada lado deve ser menor que a soma dos outros dois.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    int a, b, c;\n    printf(\"Digite os comprimentos dos tres troncos: \");\n    scanf(\"%d %d %d\", &a, &b, &c);\n    if (a < b + c && b < a + c && c < a + b)\n        printf(\"Os troncos podem formar um triangulo\\n\");\n    else\n        printf(\"Os troncos nao formam um triangulo\\n\");\n    return 0;\n}"
+    },
+    {
+      "id": 53,
+      "enunciado": "Leia três notas de uma avaliação de culinária típica cearense e calcule a média ponderada, considerando os pesos 2, 3 e 5.",
+      "dica": "Use `float`. Média ponderada = (n1*2 + n2*3 + n3*5) / 10.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    float n1, n2, n3, media;\n    printf(\"Digite as tres notas: \");\n    scanf(\"%f %f %f\", &n1, &n2, &n3);\n    media = (n1*2 + n2*3 + n3*5) / 10.0;\n    printf(\"Media ponderada: %.2f\\n\", media);\n    return 0;\n}"
+    }
+  ]
+}

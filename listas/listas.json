@@ -1,0 +1,8 @@
+[
+  {
+    "titulo": "Lista de Exercícios 01: Variáveis e Expressões",
+    "descricao": "Pratique os conceitos de declaração de variáveis, entrada, processamento e saída de dados em C.",
+    "arquivo": "lista1.json",
+    "mostrar_solucoes": false
+  }
+]
