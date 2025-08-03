@@ -5,52 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Algoritmos e Programação I - UniChristus</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="bg-slate-50">
     <div class="flex min-h-screen">
-      
-      <!-- Sidebar -->
+      <!-- Sidebar de Navegação (Carregada dinamicamente) -->
       <aside
         class="w-64 bg-slate-800 text-slate-100 p-6 fixed h-full hidden lg:block"
       >
         <h2 class="text-xl font-bold mb-2 mono">Algo & Prog I</h2>
         <p class="text-sm text-slate-400 mb-8">ADS & SI | UniChristus</p>
         <nav>
-          <ul id="sidebar-links" class="space-y-4"></ul>
+          <ul id="sidebar-links" class="space-y-4">
+            <!-- Links serão inseridos aqui via JS -->
+          </ul>
         </nav>
       </aside>
 
-      <!-- Main -->
+      <!-- Conteúdo Principal -->
       <main class="flex-1 lg:ml-64 p-6 md:p-10">
-
-        <!-- Cards Aulas -->
-        <section id="home" class="min-h-screen flex flex-col justify-center">
+        <!-- Página Inicial com os Cards -->
+        <section id="home-content">
           <header>
             <h1 class="text-5xl font-bold text-slate-900 leading-tight">
               Algoritmos e Programação I
             </h1>
             <p class="text-xl text-slate-600 mt-4">Prof. Tiago Sombra</p>
           </header>
+          <!-- Cards das Aulas (Carregados dinamicamente) -->
+          <h2 class="text-3xl font-bold text-slate-800 mt-12 mb-6">Aulas</h2>
           <div
             id="cards-container"
-            class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           ></div>
-        </section>
 
-        <!-- Cards Exercicios -->
-        <section id="listas" class="mt-12">
-          <h2 class="text-3xl font-bold text-slate-900 mb-6">
+          <!-- Cards das Listas de Exercícios (Carregados dinamicamente) -->
+          <h2 class="text-3xl font-bold text-slate-800 mt-12 mb-6">
             Listas de Exercícios
           </h2>
           <div
             id="listas-container"
-            class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           ></div>
         </section>
 
-        <!-- Conteúdo dinâmico Aulas / Exercicios -->
-        <div id="conteudo" class="mt-12"></div>
+        <!-- Container para o conteúdo dinâmico (Aulas/Exercícios) -->
+        <div id="dynamic-content" class="mt-12"></div>
       </main>
     </div>
     <script src="js/main.js"></script>
