@@ -40,5 +40,12 @@
     "descricao": "Declaração e uso de variáveis e constantes. Tipos primitivos em C.",
     "arquivo": "aula6.html",
     "ativo": true
+  },
+  {
+    "id": "aula7",
+    "titulo": "Aula 7: Operadores e Expressões em C",
+    "descricao": "Identificação e uso de operadores aritméticos, relacionais e lógicos em expressões. Ordem de precedência e impacto do agrupamento com parênteses.",
+    "arquivo": "aula7.html",
+    "ativo": true
   }
 ]
