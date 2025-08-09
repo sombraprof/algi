@@ -1,0 +1,261 @@
+<section id="aula8" class="mb-16 pt-16">
+    <header class="mb-12">
+        <h2 class="text-4xl font-bold text-slate-900">Aula 8: Leitura Múltipla, Cálculos Encadeados e <code-text>printf</code-text> Formatado</h2>
+        <p class="text-lg text-slate-600 mt-2">Consolidando o fluxo sequencial: Entrada → Processamento → Saída</p>
+    </header>
+
+    <!-- Seção: Plano da Aula -->
+    <section id="plano-aula" class="mb-16 bg-indigo-50 border border-indigo-200 p-8 rounded-2xl shadow-lg" aria-labelledby="plano-aula8-heading">
+        <h2 id="plano-aula8-heading" class="text-3xl font-bold text-indigo-700 mb-6 text-center">
+            Plano da Aula
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+                    <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+                </h3>
+                <p class="text-slate-600">
+                    Algoritmos sequenciais em C, múltiplas leituras com <code-text>scanf</code-text>, cálculos com variáveis intermediárias e formatação avançada de saída com <code-text>printf</code-text>.
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+                    <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO
+                </h3>
+                <p class="text-slate-600">
+                    Construir programas que realizem múltiplas leituras e cálculos combinados, exibindo resultados claros e formatados, consolidando o fluxo Entrada → Processamento → Saída.
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+                    <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA
+                </h3>
+                <p class="text-slate-600">
+                    Aula expositiva dialogada com exemplos práticos, seguida de atividade colaborativa em duplas para a criação de um recibo formatado.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-white p-8 rounded-lg shadow-md mb-12">
+        <h3 class="font-bold text-2xl text-slate-800 mb-4">Plano de Voo da Aula de Hoje</h3>
+        <ul class="list-disc list-inside space-y-2 text-slate-700">
+            <li>Aquecimento: Resolvendo um problema de descontos sucessivos.</li>
+            <li>Dominando o <code-text>scanf</code-text> para múltiplas entradas de dados.</li>
+            <li>A importância de variáveis intermediárias para cálculos claros.</li>
+            <li>Explorando as máscaras do <code-text>printf</code-text> para saídas profissionais.</li>
+            <li>Prática guiada em duplas: construção de um recibo de compras.</li>
+            <li>Apresentação da tarefa (TED) da Aula 8.</li>
+        </ul>
+    </div>
+
+    <div class="mb-16">
+        <h3 class="text-3xl font-bold text-slate-800 mb-6">Fluxo Sequencial e Múltiplas Leituras com <code-text>scanf</code-text></h3>
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <p class="text-lg mb-4">Até agora, focámos em ler um ou dois valores. No mundo real, os programas precisam de lidar com múltiplas entradas de dados. A função <code-text>scanf</code-text> é poderosa e permite-nos ler vários valores de uma só vez, consolidando a etapa de **Entrada** do nosso fluxo.</p>
+            <div class="bg-slate-800 text-white p-4 rounded-md mono text-sm mt-3">
+<pre><code>// Read two prices in a single line
+float p1, p2;
+printf("Digite o preço de dois produtos (ex: 10.50 8.75): ");
+scanf("%f %f", &p1, &p2); // Make sure to pass addresses (&)
+</code></pre>
+            </div>
+            <div class="callout callout-danger mt-6">
+                <h5 class="font-bold mb-2">Atenção com <code-text>scanf</code-text>!</h5>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong>O "Enter" Fantasma:</strong> Após ler um número, a tecla "Enter" (<code-text>\n</code-text>) que você pressiona fica no "buffer" de entrada. Se a próxima leitura for de um caractere (<code-text>%c</code-text>), ela pode ler esse "Enter" em vez do que você quer. Uma forma de resolver é adicionar um espaço antes do <code-text>%c</code-text>: <code-text>scanf(" %c", &variavel);</code-text>.</li>
+                    <li><strong>Tipos Corretos:</strong> Usar <code-text>%d</code-text> para ler um <code-text>float</code-text> (ou vice-versa) pode causar erros imprevisíveis. Verifique sempre se o especificador de formato corresponde ao tipo da variável.</li>
+                    <li><strong>O <code-text>&</code-text> é Obrigatório:</strong> Esquecer o <code-text>&</code-text> antes do nome da variável em <code-text>scanf</code-text> é um dos erros mais comuns. Lembre-se que <code-text>scanf</code-text> precisa saber o **endereço** da "caixa" onde vai guardar o valor.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-16">
+        <h3 class="text-3xl font-bold text-slate-800 mb-6">Cálculos Encadeados e Variáveis Intermediárias</h3>
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <p class="text-lg mb-4">Para problemas mais complexos, raramente chegamos ao resultado final num único passo. A etapa de **Processamento** muitas vezes envolve cálculos sequenciais, onde o resultado de uma operação serve de entrada para a próxima. Usar **variáveis intermediárias** para guardar estes resultados torna o código mais legível e fácil de depurar.</p>
+            <h4 class="font-semibold text-xl text-indigo-700 mt-6 mb-3">Exemplo: Descontos Sucessivos</h4>
+            <p>Um desconto de 10% seguido por um de 5% não é o mesmo que um desconto de 15%. A ordem importa, e o segundo desconto aplica-se sobre o novo valor.</p>
+            <div class="bg-slate-800 text-white p-4 rounded-md mono text-sm mt-3">
+<pre><code>// Apply 10% then 5% sequential discounts
+float price = 100.0f;
+float afterFirst, finalPrice;
+
+afterFirst = price * 0.90f;          // First 10% discount (price becomes 90.00)
+finalPrice = afterFirst * 0.95f;     // Then 5% discount over the new base (90.00 * 0.95)
+
+printf("Final price: R$ %.2f\n", finalPrice); // Prints R$ 85.50
+</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-16">
+        <h3 class="text-3xl font-bold text-slate-800 mb-6">Saída Formatada com <code-text>printf</code-text></h3>
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <p class="text-lg mb-4">A etapa de **Saída** é a forma como o nosso programa comunica os resultados ao utilizador. Uma saída bem formatada é crucial para que a informação seja clara e profissional.</p>
+            <div class="callout callout-good-practice">
+                <h5 class="font-bold mb-2">Boas Práticas de <code-text>printf</code-text></h5>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong>Controle de Decimais:</strong> Use <code-text>%.2f</code-text> para formatar valores monetários ou outros números que precisem de exatamente duas casas decimais.</li>
+                    <li><strong>Alinhamento:</strong> Pode controlar a largura de um campo. Por exemplo, <code-text>%8.2f</code-text> reserva 8 espaços para o número, alinhando-o à direita, o que é ótimo para criar tabelas e recibos.</li>
+                    <li><strong>Caracteres de Escape:</strong> Use <code-text>\n</code-text> para quebrar uma linha e <code-text>\t</code-text> para adicionar uma tabulação (um espaçamento padronizado).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-16">
+        <h3 class="text-3xl font-bold text-slate-800 mb-6">Atividade Prática em Duplas: Recibo de Compras</h3>
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <p class="mb-4">Em duplas, vamos criar um programa que simula um recibo de compras. O programa deve ler o preço e a quantidade de 3 produtos, calcular o subtotal de cada um, o total geral, aplicar um desconto de 10% e exibir um recibo bem formatado.</p>
+            <div class="bg-slate-800 text-white p-4 rounded-md mono text-sm mt-4">
+<pre><code>#include <stdio.h>
+
+int main() {
+    // --- INPUT VARIABLES ---
+    float price1, price2, price3;
+    int qty1, qty2, qty3;
+
+    // --- PROCESSING VARIABLES ---
+    float subtotal1, subtotal2, subtotal3;
+    float total, discount, finalTotal;
+
+    // --- INPUT STAGE ---
+    printf("Digite o preco e a quantidade do produto 1: ");
+    scanf("%f %d", &price1, &qty1);
+
+    printf("Digite o preco e a quantidade do produto 2: ");
+    scanf("%f %d", &price2, &qty2);
+    
+    printf("Digite o preco e a quantidade do produto 3: ");
+    scanf("%f %d", &price3, &qty3);
+
+    // --- PROCESSING STAGE ---
+    subtotal1 = price1 * qty1;
+    subtotal2 = price2 * qty2;
+    subtotal3 = price3 * qty3;
+    total = subtotal1 + subtotal2 + subtotal3;
+    discount = total * 0.10f; // 10% discount
+    finalTotal = total - discount;
+
+    // --- OUTPUT STAGE ---
+    printf("\n\n--- RECIBO DE COMPRAS ---\n");
+    printf("Produto 1: %d x R$ %.2f = R$ %8.2f\n", qty1, price1, subtotal1);
+    printf("Produto 2: %d x R$ %.2f = R$ %8.2f\n", qty2, price2, subtotal2);
+    printf("Produto 3: %d x R$ %.2f = R$ %8.2f\n", qty3, price3, subtotal3);
+    printf("----------------------------------\n");
+    printf("Total Bruto:              R$ %8.2f\n", total);
+    printf("Desconto (10%%):           R$ %8.2f\n", discount);
+    printf("Total a Pagar:            R$ %8.2f\n", finalTotal);
+    printf("----------------------------------\n");
+
+    return 0;
+}
+</code></pre>
+        <button class="copy-code-btn mt-4 bg-slate-600 text-white font-bold py-1 px-3 rounded hover:bg-slate-500 transition-colors">Copiar Código</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tarefa da Aula 8 -->
+    <section id="proximos-passos-aula8" class="mb-16" aria-labelledby="ted8-heading">
+        <h3 id="ted8-heading" class="text-3xl font-bold text-slate-800 mb-6">Próximos Passos e Tarefa (TED)</h3>
+        <div class="bg-indigo-100 border-l-4 border-indigo-500 text-indigo-800 p-6 rounded-r-lg shadow-md">
+            <h4 class="font-bold text-xl mb-4">Tarefa para a próxima aula</h4>
+            <p class="mb-4">O objetivo é praticar o conceito de cálculos sequenciais e a formatação de saída.</p>
+            <ol class="list-decimal list-inside space-y-3 font-semibold">
+                <li>Crie um programa em C chamado <code-text>aula8_descontos_sucessivos.c</code-text>.</li>
+                <li>O programa deve ler o valor de um produto.</li>
+                <li>Aplique um desconto de 10% sobre o valor inicial.</li>
+                <li>Sobre o **novo valor**, aplique um segundo desconto de 5%.</li>
+                <li>Exiba o valor original, o valor após o primeiro desconto e o valor final, todos formatados com duas casas decimais. A saída deve ser clara e autoexplicativa.</li>
+                <li>Adicione comentários em inglês no seu código explicando cada etapa.</li>
+                <li>Teste com valores diferentes (ex: 100.00, 85.50, 123.45) para garantir que a lógica está correta.</li>
+                <li>Poste o ficheiro <code-text>.c</code-text> na Atividade da "Aula 8" no Moodle.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="teste-codigo-aula8" class="mb-16" aria-labelledby="teste-codigo-heading8">
+        <h2 id="teste-codigo-heading8" class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-8">
+            💻 Área de Testes Interativa
+        </h2>
+        <div class="bg-white p-4 rounded-lg shadow mb-8">
+            <h3 class="font-bold text-lg text-indigo-800 mb-2">
+                Teste seu Código Aqui
+            </h3>
+            <div class="w-full aspect-video">
+                <iframe src="https://www.onlinegdb.com/online_c_compiler" class="w-full h-full rounded" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+   <section id="recursos-apoio-aula8" class="mb-16" aria-labelledby="recursos-heading8">
+  <h2 id="recursos-heading8"
+      class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-8">
+    🎥 Vídeos de Apoio
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+        Entrada e Saída em C (scanf e printf)
+      </h3>
+      <div class="aspect-video w-full">
+        <iframe class="w-full h-full rounded-md"
+                src="https://www.youtube.com/embed/uX0r1JlyDFg"
+                title="AEDS 2: SCANF e PRINTF - Entrada e Saída em Linguagem C"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+        Quase tudo que você precisa saber sobre printf
+      </h3>
+      <div class="aspect-video w-full">
+        <iframe class="w-full h-full rounded-md"
+                src="https://www.youtube.com/embed/0EEXxcTa7Ok"
+                title="Quase tudo que VC precisa saber sobre printf"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section id="checklist-aula8" class="mt-16">
+        <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+            <h3 class="font-bold text-lg mb-3">✅ Ao final desta aula você deve ser capaz de:</h3>
+            <ul class="list-none space-y-2">
+                <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Ler múltiplos valores numa única chamada <code-text>scanf</code-text>.</li>
+                <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Explicar a importância de variáveis intermediárias em cálculos complexos.</li>
+                <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Formatar a saída de números <code-text>float</code-text> com <code-text>%.2f</code-text>.</li>
+                <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Usar <code-text>\n</code-text> e <code-text>\t</code-text> para organizar a saída no console.</li>
+                <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Construir um programa sequencial completo que lê, processa e exibe dados.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="bibliografia-aula8" class="mt-16" aria-labelledby="bibliografia-heading8">
+        <h2 id="bibliografia-heading8" class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-6">
+            📚 Bibliografia de Apoio
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow space-y-4">
+            <p>
+                <strong>BACKES, André.</strong> <em>Linguagem C: completa e descomplicada.</em> Rio de Janeiro: Elsevier, 2019.
+            </p>
+            <p>
+                <strong>MANZANO, José Augusto N.G.; OLIVEIRA, Jayr Figueiredo.</strong> <em>Algoritmos: lógica para desenvolvimento de programação de computadores.</em> São Paulo: Érica, 2019.
+            </p>
+            <p>
+                <strong>KERNIGHAN, Brian W.; RITCHIE, Dennis M.</strong> <em>A Linguagem de Programação C.</em> 2. ed. Rio de Janeiro: LTC, 2018. (Leitura complementar)
+            </p>
+        </div>
+    </section>
+
+</section>

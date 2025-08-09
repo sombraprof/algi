@@ -4,5 +4,11 @@
     "descricao": "Pratique os conceitos de declaração de variáveis, entrada, processamento e saída de dados em C.",
     "arquivo": "lista1.json",
     "mostrar_solucoes": false
+  },
+   {
+    "titulo": "Lista de Exercícios 02: Decisões em C (if-else e switch-case)",
+    "descricao": "Questões objetivas, discursivas e de programação sobre estruturas condicionais.",
+    "arquivo": "lista2.json",
+    "mostrar_solucoes": false
   }
 ]

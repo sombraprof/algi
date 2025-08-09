@@ -47,5 +47,33 @@
     "descricao": "Identificação e uso de operadores aritméticos, relacionais e lógicos em expressões. Ordem de precedência e impacto do agrupamento com parênteses.",
     "arquivo": "aula7.html",
     "ativo": true
-  }
+  },
+ {
+  "id": "aula8",
+  "titulo": "Aula 8: Leitura Múltipla, Cálculos Encadeados e printf Formatado",
+  "descricao": "Construção de programas sequenciais em C utilizando múltiplas leituras com scanf, cálculos encadeados com variáveis intermediárias e formatação de saída profissional com printf.",
+  "arquivo": "aula8.html",
+  "ativo": true
+},
+ {
+  "id": "aula9",
+  "titulo": "Aula 9: Problemas Sequenciais Aplicados em C",
+  "descricao": "Resolução de problemas do cotidiano (salário líquido, IMC, descontos cumulativos) com programas sequenciais em C, integrando leitura com scanf, cálculos encadeados e saída formatada com printf — sem uso de estruturas de seleção ou repetição.",
+  "arquivo": "aula9.html",
+  "ativo": true
+},
+ {
+  "id": "aula10",
+  "titulo": "Aula 10: Estruturas de Controle Condicional com if e else",
+  "descricao": "Introdução prática às estruturas condicionais em C: if, if-else e else if, aplicando operadores relacionais e lógicos para controlar o fluxo do programa e formatar saídas com printf.",
+  "arquivo": "aula10.html",
+  "ativo": true
+},
+{
+  "id": "aula11",
+  "titulo": "Aula 11: Estruturas de Controle com switch case",
+  "descricao": "Uso da estrutura switch case em C para seleção múltipla, facilitando a escolha de um entre vários caminhos de execução a partir de um único valor.",
+  "arquivo": "aula11.html",
+  "ativo": true
+}
 ]

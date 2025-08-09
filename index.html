@@ -15,7 +15,7 @@
     <div class="flex min-h-screen">
       <!-- Sidebar de Navegação (Carregada dinamicamente) -->
       <aside
-        class="w-64 bg-slate-800 text-slate-100 p-6 fixed h-full hidden lg:block"
+        class="w-64 bg-slate-800 text-slate-100 p-6 fixed h-full hidden lg:block overflow-y-auto"
       >
         <h2 class="text-xl font-bold mb-2 mono">Algo & Prog I</h2>
         <p class="text-sm text-slate-400 mb-8">ADS & SI | UniChristus</p>
@@ -30,27 +30,38 @@
       <main class="flex-1 lg:ml-64 p-6 md:p-10">
         <!-- Página Inicial com os Cards -->
         <section id="home-content">
-          <header>
+          <header class="mb-10">
             <h1 class="text-5xl font-bold text-slate-900 leading-tight">
               Algoritmos e Programação I
             </h1>
             <p class="text-xl text-slate-600 mt-4">Prof. Tiago Sombra</p>
           </header>
-          <!-- Cards das Aulas (Carregados dinamicamente) -->
-          <h2 class="text-3xl font-bold text-slate-800 mt-12 mb-6">Aulas</h2>
-          <div
-            id="cards-container"
-            class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-          ></div>
 
-          <!-- Cards das Listas de Exercícios (Carregados dinamicamente) -->
-          <h2 class="text-3xl font-bold text-slate-800 mt-12 mb-6">
-            Listas de Exercícios
-          </h2>
-          <div
-            id="listas-container"
-            class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-          ></div>
+          <!-- Bloco Aulas -->
+          <section id="aulas-section" class="mb-12">
+            <div class="border border-slate-200 rounded-2xl bg-white shadow-sm">
+              <div class="px-6 py-4 border-b border-slate-200 bg-indigo-50 rounded-t-2xl">
+                <h2 class="text-2xl font-semibold text-indigo-800">Aulas</h2>
+              </div>
+              <div
+                id="cards-container"
+                class="p-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+              ></div>
+            </div>
+          </section>
+
+          <!-- Bloco Listas de Exercícios -->
+          <section id="listas-section" class="mb-12">
+            <div class="border border-slate-200 rounded-2xl bg-white shadow-sm">
+              <div class="px-6 py-4 border-b border-slate-200 bg-emerald-50 rounded-t-2xl">
+                <h2 class="text-2xl font-semibold text-emerald-800">Listas de Exercícios</h2>
+              </div>
+              <div
+                id="listas-container"
+                class="p-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+              ></div>
+            </div>
+          </section>
         </section>
 
         <!-- Container para o conteúdo dinâmico (Aulas/Exercícios) -->

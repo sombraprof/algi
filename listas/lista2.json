@@ -1,0 +1,69 @@
+{
+  "id": "lista2",
+  "titulo": "Lista de Exercícios 02: Decisões em C (if-else e switch-case)",
+  "descricao": "Pratique estruturas condicionais em C (if, if-else, else if e switch-case) com questões objetivas, discursivas e de programação em nível iniciante/ENADE.",
+  "questoes": [
+    {
+      "id": 1,
+      "tipo": "objetiva",
+      "enunciado": "Considere o trecho de código a seguir para aplicar desconto progressivo em uma compra:\n\n```c\nfloat valor = 200.0f, desc = 0.0f, final = valor;\nif (valor >= 300.0f) {\n    desc = 0.15f;\n} else if (valor >= 200.0f) {\n    desc = 0.10f;\n} else if (valor >= 100.0f) {\n    desc = 0.05f;\n}\nfinal = valor * (1.0f - desc);\nprintf(\"Final: R$ %.2f\\n\", final);\n```\nQual será a saída exibida?",
+      "alternativas": [
+        "A) Final: R$ 190.00",
+        "B) Final: R$ 180.00",
+        "C) Final: R$ 170.00",
+        "D) Final: R$ 200.00"
+      ],
+      "gabarito": "B",
+      "justificativa": "Para valor = 200, a primeira condição falsa (>= 300), a segunda verdadeira (>= 200). Desconto = 10%. Final = 200 × (1 − 0,10) = 180,00.",
+      "competencia": "Aplicação de cadeias if-else e raciocínio de curto-circuito por ordem de avaliação.",
+      "nivel": "Aplicação"
+    },
+    {
+      "id": 2,
+      "tipo": "programacao",
+      "enunciado": "Classificação acadêmica: leia idade e média final (0 a 10) e imprima a situação do aluno segundo as regras: \n- “Aprovado com Mérito” se média ≥ 9.0 e idade ≥ 18; \n- “Aprovado” se média ≥ 7.0; \n- “Reprovado” caso contrário.\nUse apenas if/else/else if.",
+      "dica": "Atente à ordem das condições: teste primeiro o caso mais específico (mérito) antes do caso geral (aprovado).",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    // Read age and average grade, classify result using if-else chain\n    int idade;\n    float media;\n\n    printf(\"Digite idade e media final: \");\n    scanf(\"%d %f\", &idade, &media);\n\n    // Check the most specific condition first\n    if (media >= 9.0f && idade >= 18) {\n        printf(\"Aprovado com Merito\\n\");\n    } else if (media >= 7.0f) {\n        printf(\"Aprovado\\n\");\n    } else {\n        printf(\"Reprovado\\n\");\n    }\n\n    return 0;\n}\n",
+      "competencia": "Construção de decisões compostas e encadeadas com operadores lógicos.",
+      "nivel": "Aplicação"
+    },
+    {
+      "id": 3,
+      "tipo": "objetiva",
+      "enunciado": "Analise o comportamento do switch-case com queda (fall-through). Considere o código:\n\n```c\nint op = 2;\nswitch (op) {\n    case 1:\n        printf(\"Cadastro \");\n        break;\n    case 2:\n        printf(\"Listagem \"); // (sem break)\n    case 3:\n        printf(\"Sair\");\n        break;\n    default:\n        printf(\"Invalido\");\n}\n```\nQual é a saída?",
+      "alternativas": [
+        "A) Cadastro",
+        "B) Listagem",
+        "C) Listagem Sair",
+        "D) Sair"
+      ],
+      "gabarito": "C",
+      "justificativa": "No case 2 não há break; portanto executa \"Listagem \" e continua para o case 3 imprimindo \"Sair\".",
+      "competencia": "Compreensão de execução sequencial por fall-through em switch-case.",
+      "nivel": "Compreensão"
+    },
+    {
+      "id": 4,
+      "tipo": "programacao",
+      "enunciado": "Classifique o dia em \"Dia útil\" (1 a 5), \"Fim de semana\" (6 a 7) ou \"Dia inválido\" (fora de 1..7) usando switch-case. Leia um inteiro de 1 a 7.",
+      "dica": "Agrupe rótulos (case 1: case 2: ...). Use default para inválidos.",
+      "solucao": "#include <stdio.h>\n\nint main() {\n    // Map weekday number to category using switch-case\n    int dia;\n    printf(\"Digite um numero de 1 a 7: \");\n    scanf(\"%d\", &dia);\n\n    switch (dia) {\n        case 1: case 2: case 3: case 4: case 5:\n            printf(\"Dia util\\n\");\n            break;\n        case 6: case 7:\n            printf(\"Fim de semana\\n\");\n            break;\n        default:\n            printf(\"Dia invalido\\n\");\n    }\n    return 0;\n}\n",
+      "competencia": "Uso de seleção múltipla com agrupamento de casos e default.",
+      "nivel": "Aplicação"
+    },
+    {
+      "id": 5,
+      "tipo": "discursiva-programacao",
+      "enunciado": "Refatore. Dado o código abaixo usando if-else, reescreva com switch-case para melhorar legibilidade. Considere que a variável `char opc` recebe 'A', 'B', 'C' ou 'D'.\n\nVersão original:\n```c\nif (opc == 'A') printf(\"Cadastrar\\n\");\nelse if (opc == 'B') printf(\"Listar\\n\");\nelse if (opc == 'C') printf(\"Atualizar\\n\");\nelse if (opc == 'D') printf(\"Sair\\n\");\nelse printf(\"Opcao invalida\\n\");\n```\nAlém de reescrever, explique em 2-3 linhas quando `switch-case` é mais adequado do que `if-else`.",
+      "criterios_correcao": [
+        "Usa switch com casos 'A', 'B', 'C', 'D' e default.",
+        "Inclui break em cada case.",
+        "Mantém as mesmas mensagens.",
+        "Explica adequadamente a vantagem do switch quando há muitas comparações por igualdade sobre o MESMO operando."
+      ],
+      "solucao": "#include <stdio.h>\n\nint main() {\n    // Replace if-else chain with switch-case for clarity on discrete options\n    char opc;\n    printf(\"Digite a opcao (A/B/C/D): \");\n    scanf(\" %c\", &opc); // space before %c to skip whitespace\n\n    switch (opc) {\n        case 'A':\n            printf(\"Cadastrar\\n\");\n            break;\n        case 'B':\n            printf(\"Listar\\n\");\n            break;\n        case 'C':\n            printf(\"Atualizar\\n\");\n            break;\n        case 'D':\n            printf(\"Sair\\n\");\n            break;\n        default:\n            printf(\"Opcao invalida\\n\");\n    }\n    return 0;\n}\n\n/* Rationale (short essay):\n * Prefer switch-case when you compare the SAME variable against\n * MANY discrete constant values (chars/ints/enums). It improves\n * readability and can avoid long if-else chains; it's also less\n * error-prone and communicates the intent of a menu/selector.\n */",
+      "competencia": "Refatoração de decisões e argumentação técnica sobre adequação de estruturas.",
+      "nivel": "Análise"
+    }
+  ]
+}
