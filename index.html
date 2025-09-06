@@ -1,72 +1,186 @@
 <!DOCTYPE html>
-<html lang="pt-PT" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Algoritmos e Programação I - UniChristus</title>
+    <meta name="description" content="Materiais, aulas e listas da disciplina." />
+    <meta name="theme-color" content="#0f172a" />
+    <title>Curso - Materiais e Aulas</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+    <!-- Fonts and Icons centralized -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <script src="js/config.js"></script>
+    <style> .brand-ph{ visibility: hidden; } </style>
+    <!-- Highlight.js (syntax highlight) -->
+    <link id="hljs-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" integrity="sha256-Oppd74ucMR5a5Dq96FxjEzGF7tTw2fZ/6ksAqDCM8GY=" crossorigin="anonymous" />
+    <link id="hljs-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" integrity="sha256-nyCNAiECsdDHrr/s2OQsp5l9XeY2ZJ0rMepjCT2AkBk=" crossorigin="anonymous" disabled />
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha256-g3pvpbDHNrUrveKythkPMF2j/J7UFoHbUyFQcFe1yEY=" crossorigin="anonymous"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(()=>{});
+        });
+      }
+    </script>
+    <link id="favicon" rel="icon" type="image/svg+xml" href="" />
+    <link id="favicon-16" rel="icon" type="image/png" sizes="16x16" href="" />
+    <link id="favicon-32" rel="icon" type="image/png" sizes="32x32" href="" />
+    <link id="favicon-48" rel="icon" type="image/png" sizes="48x48" href="" />
+    <link id="favicon-png" rel="icon" type="image/png" sizes="192x192" href="" />
+    <link id="apple-icon-120" rel="apple-touch-icon" sizes="120x120" type="image/png" href="" />
+    <link id="apple-icon-152" rel="apple-touch-icon" sizes="152x152" type="image/png" href="" />
+    <link id="apple-icon-167" rel="apple-touch-icon" sizes="167x167" type="image/png" href="" />
+    <link id="apple-icon-180" rel="apple-touch-icon" sizes="180x180" type="image/png" href="" />
   </head>
-  <body class="bg-slate-50">
+  <body>
+    <a href="#main-root" class="skip-link">Ir para o conteúdo principal</a>
     <div class="flex min-h-screen">
-      <!-- Sidebar de Navegação (Carregada dinamicamente) -->
-      <aside
-        class="w-64 bg-slate-800 text-slate-100 p-6 fixed h-full hidden lg:block overflow-y-auto"
+      <!-- Sidebar -->
+      <aside id="sidebar"
+        class="fixed inset-y-0 left-0 w-64 bg-slate-800 text-slate-100 p-6 transform -translate-x-full transition-transform duration-300 z-40 lg:translate-x-0 lg:static lg:inset-auto lg:block h-full"
       >
-        <h2 class="text-xl font-bold mb-2 mono">Algo & Prog I</h2>
-        <p class="text-sm text-slate-400 mb-8">ADS & SI | UniChristus</p>
-        <nav>
-          <ul id="sidebar-links" class="space-y-4">
-            <!-- Links serão inseridos aqui via JS -->
-          </ul>
-        </nav>
+        <div id="sidebar-header" class="mb-2">
+          <div class="flex items-center justify-start">
+            <h2 class="text-xl font-bold mono inline-flex items-center gap-2"><span class="icon"><i class="fa-solid fa-graduation-cap"></i></span><span class="label brand-ph">Curso</span></h2>
+          </div>
+          <p class="text-sm text-slate-400 mt-1"><span class="label brand-ph">Instituição</span></p>
+        </div>
+        <div id="sidebar-fade-top" aria-hidden="true"></div>
+        <div id="sidebar-scroll">
+          <nav>
+            <ul id="sidebar-links" class="space-y-3"></ul>
+          </nav>
+        </div>
+        <div id="sidebar-fade-bottom" aria-hidden="true"></div>
       </aside>
 
-      <!-- Conteúdo Principal -->
-      <main class="flex-1 lg:ml-64 p-6 md:p-10">
-        <!-- Página Inicial com os Cards -->
-        <section id="home-content">
-          <header class="mb-10">
-            <h1 class="text-5xl font-bold text-slate-900 leading-tight">
-              Algoritmos e Programação I
-            </h1>
-            <p class="text-xl text-slate-600 mt-4">Prof. Tiago Sombra</p>
+      <!-- Overlay (mobile) -->
+      <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 hidden z-30 lg:hidden"></div>
+
+      <!-- Main -->
+      <main id="main-root" class="flex-1 p-6 md:p-10">
+        <!-- Topbar -->
+        <header class="mb-6">
+            <div class="flex items-center justify-between gap-4">
+            <nav class="text-sm font-semibold text-slate-600 flex items-center gap-4">
+              <a href="#home" class="hover:text-indigo-600">Início</a>
+              <a href="#listas" class="hover:text-indigo-600">Listas</a>
+              <a href="politica_uso/politica-uso.html" target="_blank" class="hover:text-indigo-600">Política de Uso</a>
+            </nav>
+            <div class="flex items-center gap-3">
+              <div class="relative w-full max-w-md">
+                <input id="search-input" type="search" placeholder="Buscar aulas e listas..." aria-label="Buscar"
+                  class="w-full rounded-md border border-slate-300 bg-white px-3 py-2 pr-9 text-sm shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200" />
+                <span class="absolute right-2 top-2.5 text-slate-400"><i class="fa-solid fa-magnifying-glass"></i></span>
+              </div>
+              <button id="theme-toggle" aria-pressed="false" title="Alternar tema" aria-label="Alternar tema"
+                class="inline-flex items-center justify-center w-10 h-10 rounded bg-slate-800 text-white hover:bg-slate-700">
+                <i class="fa-solid fa-moon"></i>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Controls: filtros e exibição -->
+        <div id="controls-bar" class="mb-6 flex flex-wrap items-center gap-3">
+          <div class="inline-flex items-center gap-2">
+            <button class="filter-chip" data-filter="all">Todos</button>
+            <button class="filter-chip" data-filter="aulas">Aulas</button>
+            <button class="filter-chip" data-filter="listas">Listas</button>
+          </div>
+          <div class="ml-auto inline-flex items-center gap-2">
+            <span class="text-sm text-slate-500">Exibição</span>
+            <button id="view-grid" class="view-toggle active" title="Grade" aria-label="Exibição em grade"><i class="fa-solid fa-table-cells-large"></i></button>
+            <button id="view-list" class="view-toggle" title="Lista" aria-label="Exibição em lista"><i class="fa-solid fa-list"></i></button>
+          </div>
+          <!-- Filtro de estado das listas -->
+          <div id="lists-filters" class="w-full flex flex-wrap items-center gap-2 mt-3">
+            <span class="text-sm text-slate-500">Listas:</span>
+            <button class="filter-chip" data-list-filter="all">Todas</button>
+            <button class="filter-chip" data-list-filter="inprogress">Em andamento</button>
+            <button class="filter-chip" data-list-filter="completed">Concluídas</button>
+            <button class="filter-chip" data-list-filter="new">Novas</button>
+          </div>
+        </div>
+        <!-- Mobile menu button -->
+        <button id="menu-btn" aria-controls="sidebar" aria-expanded="false"
+          class="lg:hidden inline-flex items-center gap-2 bg-slate-800 text-white px-3 py-2 rounded shadow focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <i class="fa-solid fa-bars"></i>
+          Menu
+        </button>
+
+        <!-- Cards Aulas -->
+        <section id="home" class="pt-2 md:pt-3 pb-6">
+          <header class="sticky top-0 bg-[var(--bg)]/80 backdrop-blur z-10 py-2">
+            <div class="text-sm md:text-base font-semibold text-slate-700 brand-ph" id="brand-header"></div>
           </header>
-
-          <!-- Bloco Aulas -->
-          <section id="aulas-section" class="mb-12">
-            <div class="border border-slate-200 rounded-2xl bg-white shadow-sm">
-              <div class="px-6 py-4 border-b border-slate-200 bg-indigo-50 rounded-t-2xl">
-                <h2 class="text-2xl font-semibold text-indigo-800">Aulas</h2>
-              </div>
-              <div
-                id="cards-container"
-                class="p-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-              ></div>
-            </div>
-          </section>
-
-          <!-- Bloco Listas de Exercícios -->
-          <section id="listas-section" class="mb-12">
-            <div class="border border-slate-200 rounded-2xl bg-white shadow-sm">
-              <div class="px-6 py-4 border-b border-slate-200 bg-emerald-50 rounded-t-2xl">
-                <h2 class="text-2xl font-semibold text-emerald-800">Listas de Exercícios</h2>
-              </div>
-              <div
-                id="listas-container"
-                class="p-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-              ></div>
-            </div>
-          </section>
+          <h2 class="mt-3 mb-3 text-2xl font-bold text-slate-900">Aulas</h2>
+          <div
+            id="cards-container"
+            class="mt-4 grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6"
+          ></div>
         </section>
 
-        <!-- Container para o conteúdo dinâmico (Aulas/Exercícios) -->
-        <div id="dynamic-content" class="mt-12"></div>
+        <!-- Cards Exercicios -->
+        <section id="listas" class="mt-12">
+          <h2 class="text-3xl font-bold text-slate-900 mb-6">
+            Lista de Exercícios
+          </h2>
+          <div
+            id="listas-container"
+            class="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6"
+          ></div>
+        </section>
+
+        <!-- Conteúdo dinâmico Aulas / Exercicios -->
+        <div id="conteudo" class="mt-12"></div>
+
+        <!-- Prev/Next navigation for aulas -->
+        <nav id="aula-nav" class="mt-12 hidden">
+          <div class="flex justify-between items-center gap-3">
+            <a id="aula-prev" data-tooltip="Aula anterior" href="#" class="inline-flex items-center gap-2 px-4 py-2 rounded bg-slate-200 text-slate-800 hover:bg-slate-300 disabled:opacity-50 disabled:pointer-events-none"><i class="fa-solid fa-arrow-left"></i> Anterior</a>
+            <a id="aula-next" data-tooltip="Próxima aula" href="#" class="inline-flex items-center gap-2 px-4 py-2 rounded bg-indigo-600 text-white hover:bg-indigo-700 disabled:opacity-50 disabled:pointer-events-none">Próxima <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </nav>
       </main>
+    </div>
+    <!-- Right-side TOC (desktop) -->
+    <aside id="toc" class="hidden fixed right-6 top-24 w-64 z-20"></aside>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" title="Voltar ao topo" aria-label="Voltar ao topo"
+      class="hidden fixed bottom-6 right-6 z-40 rounded-full bg-indigo-600 text-white w-10 h-10 shadow-lg hover:bg-indigo-700">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <!-- TOC Floating Toggle -->
+    <button id="toc-fab" title="Sumário" aria-label="Abrir sumário"
+      class="hidden fixed bottom-20 right-6 z-40 rounded-full bg-slate-800 text-white w-10 h-10 shadow-lg hover:bg-slate-700">
+      <i class="fa-solid fa-list"></i>
+    </button>
+    <div id="aria-live" class="sr-only" aria-live="polite"></div>
+    <!-- Toast -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden"></div>
+    <!-- Shortcut modal (a11y) -->
+    <div id="shortcut-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="shortcut-title">
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="relative mx-auto mt-24 w-[90%] max-w-md bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6">
+        <div class="flex items-center justify-between mb-3">
+          <h3 id="shortcut-title" class="text-lg font-bold">Atalhos do Teclado</h3>
+          <button id="shortcut-close" class="px-2 py-1 rounded border border-slate-300 text-sm" aria-label="Fechar">Fechar</button>
+        </div>
+        <ul class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+          <li><code-text>t</code-text> — Alternar tema claro/escuro</li>
+          <li><code-text>s</code-text> — Abrir/fechar sumário (TOC)</li>
+          <li><code-text>f</code-text> — Focar na busca</li>
+          <li><code-text>?</code-text> — Mostrar esta ajuda</li>
+        </ul>
+      </div>
     </div>
     <script src="js/main.js"></script>
   </body>
