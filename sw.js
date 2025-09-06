@@ -1,6 +1,13 @@
 // Config do Service Worker
 try { importScripts('./js/sw-config.js'); } catch(e) {}
-const CACHE_NAME = (self.APP_CACHE_PREFIX || 'spa-starter') + '-' + (self.APP_CACHE_VERSION || 'v1');
+// Usa um identificador de build para versionar o cache automaticamente a cada deploy
+let __BUILD_ID = 'v1';
+try {
+  const u = new URL(self.location);
+  const b = u.searchParams.get('build');
+  if (b) __BUILD_ID = 'v-' + b;
+} catch(_) {}
+const CACHE_NAME = (self.APP_CACHE_PREFIX || 'spa-starter') + '-' + (self.APP_CACHE_VERSION || __BUILD_ID);
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -41,7 +48,8 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       (async () => {
         try {
-          const res = await fetch(req);
+          const freshReq = new Request(req.url, { cache: 'reload' });
+          const res = await fetch(freshReq);
           const copy = res.clone();
           caches.open(CACHE_NAME).then((c) => c.put(req, copy));
           return res;
@@ -57,7 +65,8 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       (async () => {
         try {
-          const res = await fetch(req);
+          const freshReq = new Request(req.url, { cache: 'reload' });
+          const res = await fetch(freshReq);
           const copy = res.clone();
           caches.open(CACHE_NAME).then((c) => c.put(req, copy));
           return res;

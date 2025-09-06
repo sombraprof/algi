@@ -22,29 +22,63 @@
     <link id="hljs-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" integrity="sha256-nyCNAiECsdDHrr/s2OQsp5l9XeY2ZJ0rMepjCT2AkBk=" crossorigin="anonymous" disabled />
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha256-g3pvpbDHNrUrveKythkPMF2j/J7UFoHbUyFQcFe1yEY=" crossorigin="anonymous"></script>
     <script>
-      if ('serviceWorker' in navigator) {
+      (function(){
+        if (!('serviceWorker' in navigator)) return;
+
+        let newWorker = null;
+
+        function showUpdateBanner() {
+          const el = document.getElementById('update-banner');
+          if (!el) return;
+          el.classList.remove('hidden');
+          const reloadBtn = document.getElementById('update-reload');
+          const laterBtn  = document.getElementById('update-later');
+          if (reloadBtn) reloadBtn.onclick = () => {
+            if (newWorker) newWorker.postMessage({ type: 'SKIP_WAITING' });
+          };
+          if (laterBtn) laterBtn.onclick = () => {
+            el.classList.add('hidden');
+          };
+          try { const live = document.getElementById('aria-live'); if (live) live.textContent = 'Atualização disponível para o site.'; } catch(_){}
+        }
+
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js', { scope: './' }).then((reg) => {
-            // Se já houver um SW novo esperando, peça para assumir
-            if (reg.waiting) { reg.waiting.postMessage({ type: 'SKIP_WAITING' }); }
-            // Detecta SW novo sendo instalado e acelera a ativação
+          // Deriva um buildId estável por deploy: usa lastModified do HTML
+          let buildId = '';
+          try {
+            const lm = document.lastModified; // ex: "09/06/2025, 12:34:56"
+            if (lm) {
+              const dt = new Date(lm);
+              if (!isNaN(dt.getTime())) {
+                buildId = dt.toISOString().replace(/[-:TZ.]/g, '').slice(0, 12);
+              }
+            }
+          } catch (_) {}
+          if (!buildId) { buildId = String(Date.now()); }
+
+          navigator.serviceWorker.register(`./sw.js?build=${encodeURIComponent(buildId)}`, { scope: './' }).then((reg) => {
+            // Se já houver um SW novo esperando, ofereça atualização
+            if (reg.waiting) { newWorker = reg.waiting; showUpdateBanner(); }
+            // Detecta SW novo sendo instalado
             reg.addEventListener('updatefound', () => {
               const nw = reg.installing;
               if (!nw) return;
               nw.addEventListener('statechange', () => {
                 if (nw.state === 'installed' && navigator.serviceWorker.controller) {
-                  nw.postMessage({ type: 'SKIP_WAITING' });
+                  newWorker = nw;
+                  showUpdateBanner();
                 }
               });
             });
           }).catch(()=>{});
         });
-        // Recarrega uma vez quando o novo SW assume o controle
+
+        // Recarrega uma vez quando o novo SW assume o controle (após clicar em Atualizar)
         let refreshing = false;
         navigator.serviceWorker.addEventListener('controllerchange', () => {
           if (refreshing) return; refreshing = true; window.location.reload();
         });
-      }
+      })();
     </script>
     <link id="favicon" rel="icon" type="image/svg+xml" href="" />
     <link id="favicon-16" rel="icon" type="image/png" sizes="16x16" href="" />
@@ -184,6 +218,20 @@
     <div id="aria-live" class="sr-only" aria-live="polite"></div>
     <!-- Toast -->
     <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden"></div>
+    <!-- Update banner -->
+    <div id="update-banner" class="hidden fixed left-0 right-0 bottom-0 z-50">
+      <div class="mx-auto max-w-4xl m-3 p-3 rounded-lg border shadow-lg" style="background: var(--panel-bg); color: var(--text); border-color: var(--panel-border);">
+        <div class="flex flex-col md:flex-row md:items-center gap-3 justify-between">
+          <div class="text-sm">
+            <strong>Atualização disponível:</strong> Uma nova versão do site foi instalada.
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="update-reload" class="px-3 py-1 rounded text-sm" style="background: var(--accent); color: #fff; border: 1px solid var(--accent);">Atualizar agora</button>
+            <button id="update-later" class="px-3 py-1 rounded border text-sm" style="background: var(--panel-bg); color: var(--text); border-color: var(--panel-border);">Depois</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Shortcut modal (a11y) -->
     <div id="shortcut-modal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="shortcut-title">
       <div class="absolute inset-0 bg-black/50"></div>
