@@ -1126,6 +1126,10 @@ function renderSidebar() {
     }
     return val || Infinity;
   }
+  function romanFromNumber(n) {
+    const map = {1:'I',2:'II',3:'III',4:'IV',5:'V',6:'VI',7:'VII',8:'VIII',9:'IX',10:'X',11:'XI',12:'XII'};
+    return map[n] || String(n);
+  }
 
   function renderSection(title, sectionKey, items) {
     const collapsed = getCollapse(sectionKey);
@@ -1205,7 +1209,17 @@ function renderSidebar() {
     const av = romanValueFromUnit(a), bv = romanValueFromUnit(b);
     if (av!==bv) return av-bv; return a.localeCompare(b,'pt');
   });
-  units.forEach((u)=> { html += renderSection(u, `aulas-${u}`, aulaGroupsMap[u]); });
+  units.forEach((u)=> {
+    const n = romanValueFromUnit(u);
+    let display = u;
+    if (isFinite(n)) display = `Unidade ${romanFromNumber(n)}`;
+    else if (/\baval/i.test(u)) display = 'Avaliação';
+    else {
+      const base = (u.split('–')[0] || u).trim();
+      display = base || u;
+    }
+    html += renderSection(display, `aulas-${u}`, aulaGroupsMap[u]);
+  });
   html += renderSection('Exercícios', 'listas', listaItems);
 
   sidebar.innerHTML = html;
