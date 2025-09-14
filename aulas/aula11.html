@@ -1,10 +1,10 @@
 <!-- Seção da Aula 11 -->
 <section id="aula11" class="mb-16 pt-16">
   <header class="mb-12">
-    <h2 class="text-4xl font-bold text-slate-900">
+    <h2 class="section__title">
       Aula 11: Seleção Múltipla com <code-text>switch-case</code-text>
     </h2>
-    <p class="text-lg text-slate-600 mt-2">
+    <p class="text-body-large text-neutral-700 dark:text-neutral-300 mt-2">
       Organizando decisões complexas de forma limpa e eficiente.
     </p>
   </header>
@@ -12,42 +12,42 @@
   <!-- Seção: Plano da Aula -->
   <section
     id="plano-aula"
-    class="mb-16 bg-indigo-50 border border-indigo-200 p-8 rounded-2xl shadow-lg"
+    class="mb-16 bg-primary-50 border border-primary-200 p-8 rounded-2xl shadow-elevation-3"
     aria-labelledby="plano-aula11-heading"
   >
     <h2
       id="plano-aula11-heading"
-      class="text-3xl font-bold text-indigo-700 mb-6 text-center"
+      class="text-3xl font-bold text-primary-700 mb-6 text-center"
     >
       Plano da Aula
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
           <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
         </h3>
-        <p class="text-slate-600">
+        <p class="text-neutral-600">
           Estrutura de seleção múltipla <code-text>switch-case</code-text>, a
           importância do <code-text>break</code-text> e do
           <code-text>default</code-text>, e a comparação com cadeias de
           <code-text>if-else if</code-text>.
         </p>
       </div>
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
           <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO
         </h3>
-        <p class="text-slate-600">
+        <p class="text-neutral-600">
           Escrever programas em C que selecionem um entre vários blocos de
           código com base no valor de uma variável, utilizando
           <code-text>switch-case</code-text> de forma eficiente.
         </p>
       </div>
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
           <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA
         </h3>
-        <p class="text-slate-600">
+        <p class="text-neutral-600">
           Aula expositiva com exemplos progressivos, demonstração de casos de
           uso e atividade prática em duplas para criar programas de seleção
           múltipla.
@@ -57,10 +57,10 @@
   </section>
 
   <div class="mb-16">
-    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+    <h3 class="section__subtitle mb-6">
       Quando o <code-text>if-else</code-text> não é suficiente?
     </h3>
-    <div class="bg-white p-8 rounded-lg shadow-md">
+    <div class="card p-8 shadow-elevation-2">
       <p class="text-lg mb-4">
         Na última aula, vimos como o <code-text>else if</code-text> nos permite
         criar múltiplos caminhos. No entanto, quando todas as comparações são
@@ -83,15 +83,15 @@
   </div>
 
   <div class="mb-16">
-    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+    <h3 class="section__subtitle mb-6">
       Anatomia do <code-text>switch-case</code-text>
     </h3>
-    <div class="bg-white p-8 rounded-lg shadow-md">
+    <div class="card p-8 shadow-elevation-2">
       <p class="mb-4">
         A estrutura <code-text>switch</code-text> avalia uma variável e "salta"
         para o <code-text>case</code-text> que corresponde ao valor encontrado.
       </p>
-      <div class="bg-slate-800 text-white p-4 rounded-md mono text-sm">
+      <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm">
         <pre><code>switch (variavel_ou_expressao) {
     case valor1:
         // Bloco de código para o valor1
@@ -133,15 +133,15 @@
   </div>
 
   <div class="mb-16">
-    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+    <h3 class="section__subtitle mb-6">
       Exemplo Prático 1: Menu de Opções
     </h3>
-    <div class="bg-white p-8 rounded-lg shadow-md">
+    <div class="card p-8 shadow-elevation-2">
       <p class="mb-4">
         Vamos implementar um menu de opções simples, um dos usos mais comuns
         para o <code-text>switch-case</code-text>.
       </p>
-      <div class="bg-slate-800 text-white p-4 rounded-md mono text-sm mt-6">
+      <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-6">
         <pre id="code-switch-menu"><code>#include &lt;stdio.h&gt;
 
 int main() {
@@ -175,7 +175,7 @@ int main() {
 }
 </code></pre>
         <button
-          class="copy-code-btn mt-4 bg-slate-600 text-white font-bold py-1 px-3 rounded hover:bg-slate-500 transition-colors"
+          class="copy-code-btn mt-4 btn btn-tonal"
         >
           Copiar Código
         </button>
@@ -184,24 +184,24 @@ int main() {
   </div>
 
   <div class="mb-16">
-    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+    <h3 class="section__subtitle mb-6">
       Agrupando <code-text>case</code-text>s
     </h3>
-    <div class="bg-white p-8 rounded-lg shadow-md">
+    <div class="card p-8 shadow-elevation-2">
       <p class="mb-4">
         Uma técnica poderosa é agrupar vários <code-text>case</code-text>s para
         que executem o mesmo bloco de código. Como a execução continua até
         encontrar um <code-text>break</code-text>, podemos omiti-lo para criar
         este efeito.
       </p>
-      <h4 class="font-semibold text-xl text-indigo-700 mt-6 mb-3">
+      <h4 class="font-semibold text-xl text-primary-700 mt-6 mb-3">
         Exemplo: Dias do Mês
       </h4>
       <p>
         Este programa lê o número de um mês e informa quantos dias ele tem
         (ignorando anos bissextos).
       </p>
-      <div class="bg-slate-800 text-white p-4 rounded-md mono text-sm mt-6">
+      <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-6">
         <pre id="code-switch-meses"><code>#include &lt;stdio.h&gt;
 
 int main() {
@@ -243,7 +243,7 @@ int main() {
 }
 </code></pre>
         <button
-          class="copy-code-btn mt-4 bg-slate-600 text-white font-bold py-1 px-3 rounded hover:bg-slate-500 transition-colors"
+          class="copy-code-btn mt-4 btn btn-tonal"
         >
           Copiar Código
         </button>
@@ -252,10 +252,10 @@ int main() {
   </div>
 
   <div class="mb-16">
-    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+    <h3 class="section__subtitle mb-6">
       Atividade Prática em Duplas
     </h3>
-    <div class="bg-white p-8 rounded-lg shadow-md">
+    <div class="card p-8 shadow-elevation-2">
       <p class="mb-4">
         Em duplas, criem um programa que leia um único caractere representando o
         estado civil de uma pessoa (<code-text>S</code-text> para Solteiro,
@@ -281,11 +281,11 @@ int main() {
     class="mb-16"
     aria-labelledby="ted11-heading"
   >
-    <h3 id="ted11-heading" class="text-3xl font-bold text-slate-800 mb-6">
+    <h3 id="ted11-heading" class="section__subtitle mb-6">
       Próximos Passos e Tarefa (TED)
     </h3>
     <div
-      class="bg-indigo-100 border-l-4 border-indigo-500 text-indigo-800 p-6 rounded-r-lg shadow-md"
+      class="callout callout-info"
     >
       <h4 class="font-bold text-xl mb-4">Tarefa para a próxima aula</h4>
       <p class="mb-4">
@@ -322,20 +322,11 @@ int main() {
   >
     <h2
       id="teste-codigo-heading11"
-      class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-8"
+      class="section__title mb-8"
     >
       💻 Área de Testes Interativa
     </h2>
-    <div class="bg-white p-4 rounded-lg shadow mb-8">
-      <div class="w-full aspect-video">
-        <iframe
-          src="https://www.onlinegdb.com/online_c_compiler"
-          class="w-full h-full rounded"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
+    <md3-code-test title="Teste seu Código Aqui" src="https://www.onlinegdb.com/online_c_compiler"></md3-code-test>
   </section>
 
   <!-- Vídeos de Apoio - Aula 11 (atualizados) -->
@@ -346,24 +337,24 @@ int main() {
   >
     <h2
       id="recursos-heading11"
-      class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-8"
+      class="section__title mb-8"
     >
       🎥 Vídeos de Apoio
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <!-- Vídeo 1: Switch Case em C (PT-BR) -->
-      <div class="bg-white p-4 rounded-lg shadow">
-        <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+      <div class="card p-4">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
           Entenda <code-text>switch case</code-text> em C (PT-BR)
         </h3>
-        <p class="text-sm text-slate-600 mb-3">
+        <p class="text-sm text-neutral-600 mb-3">
           Introdução clara ao <code>switch</code>, sintaxe, <code>case</code>,
           <code>break</code> e <code>default</code> — com exemplos práticos.
         </p>
         <div class="aspect-video w-full">
           <iframe
-            class="w-full h-full rounded-md"
+            class="w-full h-full rounded-xl"
             src="https://www.youtube.com/embed/w78aBu9cByo"
             title="Entenda SWITCH CASE [Curso C] - Aula"
             frameborder="0"
@@ -374,18 +365,18 @@ int main() {
       </div>
 
       <!-- Vídeo 2: Estrutura de decisão switch-case (PT-BR) -->
-      <div class="bg-white p-4 rounded-lg shadow">
-        <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+      <div class="card p-4">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
           Estrutura de decisão <code-text>switch-case</code-text> (C em
           Português)
         </h3>
-        <p class="text-sm text-slate-600 mb-3">
+        <p class="text-sm text-neutral-600 mb-3">
           Quando usar <code>switch</code> vs. <code>if-else</code>, organização
           dos casos e boas práticas com <code>break</code>.
         </p>
         <div class="aspect-video w-full">
           <iframe
-            class="w-full h-full rounded-md"
+            class="w-full h-full rounded-xl"
             src="https://www.youtube.com/embed/TWMJkFnLjtw"
             title="Curso Linguagem C - Estrutura de decisão switch-case"
             frameborder="0"
@@ -398,7 +389,7 @@ int main() {
   </section>
 
   <section id="checklist-aula11" class="mt-16">
-    <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+    <div class="callout callout-success">
       <h3 class="font-bold text-lg mb-3">
         ✅ Ao final desta aula você deve ser capaz de:
       </h3>
@@ -432,11 +423,11 @@ int main() {
   >
     <h2
       id="bibliografia-heading11"
-      class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-6"
+      class="section__title mb-6"
     >
       📚 Bibliografia de Apoio
     </h2>
-    <div class="bg-white p-8 rounded-lg shadow space-y-4">
+    <div class="card p-8 space-y-4">
       <p>
         <strong>BACKES, André.</strong>
         <em>Linguagem C: completa e descomplicada.</em> Rio de Janeiro:

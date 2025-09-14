@@ -5,10 +5,7 @@
     "descricao": "Apresentação do plano de ensino, ambientação no Moodle e importância da lógica para programação.",
     "arquivo": "aula1.html",
     "unidade": "Unidade I – Noções básicas de lógica e de algoritmos",
-    "ativo": true,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": true
   },
   {
     "id": "aula2",
@@ -16,10 +13,7 @@
     "descricao": "A importância do raciocínio lógico na computação e exemplos do cotidiano.",
     "arquivo": "aula2.html",
     "unidade": "Unidade I – Noções básicas de lógica e de algoritmos",
-    "ativo": true,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": true
   },
   {
     "id": "aula3",
@@ -27,10 +21,7 @@
     "descricao": "Estruturação do raciocínio em etapas. Algoritmo como sequência ordenada de instruções.",
     "arquivo": "aula3.html",
     "unidade": "Unidade I – Noções básicas de lógica e de algoritmos",
-    "ativo": true,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": true
   },
   {
     "id": "aula4",
@@ -38,10 +29,7 @@
     "descricao": "Introdução ao pseudocódigo e comparação inicial com a sintaxe básica do C.",
     "arquivo": "aula4.html",
     "unidade": "Unidade II – Pensamento Algorítmico",
-    "ativo": true,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": true
   },
   {
     "id": "aula5",
@@ -49,10 +37,7 @@
     "descricao": "Representação gráfica de algoritmos por meio de fluxogramas. Símbolos, regras e leitura de fluxos.",
     "arquivo": "aula5.html",
     "unidade": "Unidade II – Pensamento Algorítmico",
-    "ativo": true,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": true
   },
   {
     "id": "aula6",
@@ -60,10 +45,7 @@
     "descricao": "Declaração e uso de variáveis e constantes. Tipos primitivos (int, float, char).",
     "arquivo": "aula6.html",
     "unidade": "Unidade III – Modelo Algoritmo (em C)",
-    "ativo": true,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": true
   },
   {
     "id": "aula7",
@@ -71,10 +53,7 @@
     "descricao": "Operadores aritméticos, relacionais e lógicos em C. Precedência e agrupamento de operações.",
     "arquivo": "aula7.html",
     "unidade": "Unidade III – Modelo Algoritmo (em C)",
-    "ativo": true,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": true
   },
   {
     "id": "aula8",
@@ -82,10 +61,7 @@
     "descricao": "Algoritmos sequenciais em C: leitura múltipla com scanf, cálculos encadeados e exibição formatada com printf.",
     "arquivo": "aula8.html",
     "unidade": "Unidade III – Modelo Algoritmo (em C)",
-    "ativo": true,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": true
   },
   {
     "id": "aula9",
@@ -93,10 +69,7 @@
     "descricao": "Problemas sequenciais aplicados em C: salário líquido, cálculo de IMC, desconto cumulativo em compras.",
     "arquivo": "aula9.html",
     "unidade": "Unidade III – Modelo Algoritmo (em C)",
-    "ativo": true,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": true
   },
   {
     "id": "aula10",
@@ -104,10 +77,7 @@
     "descricao": "Criar programas que leem dados, realizam diversos cálculos interdependentes e exibem saídas organizadas, fixando o modelo sequencial.",
     "arquivo": "aula10.html",
     "unidade": "Unidade III – Modelo Algoritmo (em C)",
-    "ativo": true,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": true
   },
   {
     "id": "aula11",
@@ -115,10 +85,7 @@
     "descricao": "Revisão geral da Unidade III e exercício prático com problemas sequenciais em C.",
     "arquivo": "aula11.html",
     "unidade": "Unidade III – Modelo Algoritmo (em C)",
-    "ativo": true,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": true
   },
   {
     "id": "aula12",
@@ -126,10 +93,7 @@
     "descricao": "Estrutura condicional simples e composta: if, else e operadores relacionais/lógicos aplicados.",
     "arquivo": "aula12.html",
     "unidade": "Unidade IV – Estruturas de Controle (em C)",
-    "ativo": true,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": true
   },
   {
     "id": "aula13",
@@ -137,10 +101,7 @@
     "descricao": "Condições compostas e encadeamento de decisões usando if, else if e operadores lógicos.",
     "arquivo": "aula13.html",
     "unidade": "Unidade IV – Estruturas de Controle (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": true
   },
   {
     "id": "aula14",
@@ -148,10 +109,7 @@
     "descricao": "Avaliação NP1 abrangendo conteúdos das Unidades I, II, III e início da IV. Data de aplicação: 22/09/2025.",
     "arquivo": "aula14.html",
     "unidade": "Avaliação",
-    "ativo": true,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": true
   },
   {
     "id": "aula15",
@@ -159,10 +117,7 @@
     "descricao": "Correção comentada de questões típicas da NP1 e aprofundamento em if-else compostos.",
     "arquivo": "aula15.html",
     "unidade": "Unidade IV – Estruturas de Controle (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula16",
@@ -170,10 +125,7 @@
     "descricao": "Atividade prática a distância com problemas que combinam if, else if e operadores lógicos.",
     "arquivo": "aula16.html",
     "unidade": "Unidade IV – Estruturas de Controle (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula17",
@@ -181,10 +133,7 @@
     "descricao": "Estrutura de repetição while em C: execução controlada por condição no início do laço.",
     "arquivo": "aula17.html",
     "unidade": "Unidade IV – Estruturas de Controle (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula18",
@@ -192,10 +141,7 @@
     "descricao": "Estrutura de repetição for em C: inicialização, condição, incremento.",
     "arquivo": "aula18.html",
     "unidade": "Unidade IV – Estruturas de Controle (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula19",
@@ -203,10 +149,7 @@
     "descricao": "Comparação entre for e while: quando usar cada um, vantagens, variações e casos equivalentes.",
     "arquivo": "aula19.html",
     "unidade": "Unidade IV – Estruturas de Controle (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula20",
@@ -214,10 +157,7 @@
     "descricao": "Estrutura de repetição do-while em C: execução com teste ao final do bloco.",
     "arquivo": "aula20.html",
     "unidade": "Unidade IV – Estruturas de Controle (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula21",
@@ -225,10 +165,7 @@
     "descricao": "Problemas integradores utilizando while, for e do-while; introdução a laços aninhados simples.",
     "arquivo": "aula21.html",
     "unidade": "Unidade IV – Estruturas de Controle (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula22",
@@ -236,10 +173,7 @@
     "descricao": "Problemas integradores combinando if, while, for e do-while, simulando pequenos sistemas.",
     "arquivo": "aula22.html",
     "unidade": "Unidade IV – Estruturas de Controle (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula23",
@@ -247,10 +181,7 @@
     "descricao": "Exercícios integradores: revisão geral de if, else if, while, for e do-while em problemas mistos.",
     "arquivo": "aula23.html",
     "unidade": "Unidade IV – Estruturas de Controle (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula24",
@@ -258,10 +189,7 @@
     "descricao": "Atividade prática integradora a distância: desenvolvimento de programas que combinem condicionais e laços.",
     "arquivo": "aula24.html",
     "unidade": "Unidade IV – Estruturas de Controle (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula25",
@@ -269,10 +197,7 @@
     "descricao": "Introdução ao conceito de modularização e funções em C: motivação, sintaxe básica (void e return).",
     "arquivo": "aula25.html",
     "unidade": "Unidade V – Modularização e Funções (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula26",
@@ -280,10 +205,7 @@
     "descricao": "Funções em C com passagem de parâmetros e retorno de valores (int, float, char).",
     "arquivo": "aula26.html",
     "unidade": "Unidade V – Modularização e Funções (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula27",
@@ -291,10 +213,7 @@
     "descricao": "Problemas integradores com funções: decomposição de tarefas, múltiplas funções chamadas em sequência.",
     "arquivo": "aula27.html",
     "unidade": "Unidade V – Modularização e Funções (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula28",
@@ -302,10 +221,7 @@
     "descricao": "Boas práticas em funções: protótipos, escopo local/global e exemplos com múltiplas funções se comunicando.",
     "arquivo": "aula28.html",
     "unidade": "Unidade V – Modularização e Funções (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula29",
@@ -313,10 +229,7 @@
     "descricao": "Avaliação NP2 sobre estruturas de controle e funções. Data de aplicação: 10/11/2025.",
     "arquivo": "aula29.html",
     "unidade": "Avaliação",
-    "ativo": true,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": true
   },
   {
     "id": "aula30",
@@ -324,10 +237,7 @@
     "descricao": "Introdução a vetores (arrays unidimensionais) em C: declaração, inicialização, leitura e escrita sequencial.",
     "arquivo": "aula30.html",
     "unidade": "Unidade VI – Vetores, Structs e Arrays (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula31",
@@ -335,10 +245,7 @@
     "descricao": "Operações sobre vetores: somatório, média, busca do maior e do menor valor.",
     "arquivo": "aula31.html",
     "unidade": "Unidade VI – Vetores, Structs e Arrays (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula32",
@@ -346,10 +253,7 @@
     "descricao": "Busca linear em vetores e contagem de elementos que atendam a um critério.",
     "arquivo": "aula32.html",
     "unidade": "Unidade VI – Vetores, Structs e Arrays (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula33",
@@ -357,10 +261,7 @@
     "descricao": "Matrizes em C: declaração, inicialização, leitura e escrita em arrays bidimensionais.",
     "arquivo": "aula33.html",
     "unidade": "Unidade VI – Vetores, Structs e Arrays (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula34",
@@ -368,10 +269,7 @@
     "descricao": "Soma de linhas, soma de colunas, totais e busca do maior elemento em matrizes.",
     "arquivo": "aula34.html",
     "unidade": "Unidade VI – Vetores, Structs e Arrays (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula35",
@@ -379,10 +277,7 @@
     "descricao": "Introdução a structs (registros) em C: definição, declaração e acesso a campos.",
     "arquivo": "aula35.html",
     "unidade": "Unidade VI – Vetores, Structs e Arrays (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula36",
@@ -390,10 +285,7 @@
     "descricao": "Vetores de structs em C: armazenamento e processamento de coleções de registros.",
     "arquivo": "aula36.html",
     "unidade": "Unidade VI – Vetores, Structs e Arrays (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula37",
@@ -401,10 +293,7 @@
     "descricao": "Busca e atualização de dados em vetores de structs.",
     "arquivo": "aula37.html",
     "unidade": "Unidade VI – Vetores, Structs e Arrays (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula38",
@@ -412,10 +301,7 @@
     "descricao": "Revisão geral: lógica, pseudocódigo, fluxogramas, sequenciais, condicionais, repetição, funções, vetores, matrizes e structs.",
     "arquivo": "aula38.html",
     "unidade": "Unidade VI – Vetores, Structs e Arrays (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   },
   {
     "id": "aula39",
@@ -423,10 +309,7 @@
     "descricao": "Avaliação NP3 envolvendo conteúdos integradores do semestre. Data de aplicação: 15/12/2025.",
     "arquivo": "aula39.html",
     "unidade": "Avaliação",
-    "ativo": true,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": true
   },
   {
     "id": "aula40",
@@ -434,9 +317,6 @@
     "descricao": "Encerramento do semestre: devolutiva geral das provas, comentários e orientações futuras.",
     "arquivo": "aula40.html",
     "unidade": "Unidade VI – Vetores, Structs e Arrays (em C)",
-    "ativo": false,
-    "styles": [],
-    "scripts": [],
-    "init": null
+    "ativo": false
   }
 ]

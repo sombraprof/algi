@@ -1,25 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-PORT=8000
-SERVE_DIR="$(dirname "$0")" # raiz do projeto
+# Config
+ROOT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PORTS=(5173 5174 5175 5176 5177 5178 5179 5180)
+PRIMARY_PORT=5173
 
-# 1️⃣ Matar qualquer instância do Firefox
-pkill -f firefox
+echo "🔧 Encerrando processos que estejam usando portas ${PORTS[*]}..."
+for p in "${PORTS[@]}"; do
+  if lsof -i :"$p" >/dev/null 2>&1; then
+    pids=$(lsof -t -i :"$p" | sort -u)
+    if [ -n "$pids" ]; then
+      echo "  ➜ Porta $p em uso por PID(s): $pids — encerrando"
+      kill -9 $pids || true
+    fi
+  fi
+done
 
-# 2️⃣ Checar se a porta está ocupada e matar processo se necessário
-if lsof -i :$PORT >/dev/null 2>&1; then
-  echo "⚠️ Porta $PORT já está em uso. Matando processo..."
-  kill -9 $(lsof -t -i :$PORT)
-  sleep 1
-fi
-
-# 3️⃣ Iniciar o servidor HTTP
-python3 -m http.server $PORT --bind 127.0.0.1 --directory "$SERVE_DIR" --cgi &
-SERVER_PID=$!
-
-# 4️⃣ Esperar o servidor subir
-sleep 2
-
-# 5️⃣ Abrir Firefox em aba privada
-firefox --private-window http://127.0.0.1:$PORT
-
+echo "🚀 Iniciando Vite (npm run dev) em :$PRIMARY_PORT com --strictPort e --open"
+cd "$ROOT_DIR"
+npm run dev -- --port "$PRIMARY_PORT" --strictPort --open

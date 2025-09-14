@@ -1,10 +1,10 @@
 <!-- Seção da Aula 3 -->
 <section id="aula3" class="mb-16 pt-16">
   <header class="mb-12">
-    <h2 class="text-4xl font-bold text-slate-900">
+    <h2 class="section__title">
       Aula 3: Estruturando o Raciocínio em Passos
     </h2>
-    <p class="text-lg text-slate-600 mt-2">
+    <p class="text-body-large text-neutral-700 dark:text-neutral-300 mt-2">
       Aprendendo a organizar o pensamento como um computador.
     </p>
   </header>
@@ -12,39 +12,39 @@
   <!-- NOVA SEÇÃO: Plano da Aula -->
   <section
     id="plano-aula3"
-    class="mb-16 bg-indigo-50 border border-indigo-200 p-8 rounded-2xl shadow-lg"
+    class="mb-16 bg-primary-50 border border-primary-200 p-8 rounded-2xl shadow-elevation-3"
     aria-labelledby="plano-aula3-heading"
   >
     <h2
       id="plano-aula3-heading"
-      class="text-3xl font-bold text-indigo-700 mb-6 text-center"
+      class="text-3xl font-bold text-primary-700 mb-6 text-center"
     >
       Plano da Aula
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
           <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
         </h3>
-        <p class="text-slate-600">
+        <p class="text-neutral-600">
           Estruturação de algoritmos, importância da sequência de passos, erros
           comuns ao organizar instruções e prática de decomposição.
         </p>
       </div>
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
           <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO
         </h3>
-        <p class="text-slate-600">
+        <p class="text-neutral-600">
           Desenvolver a capacidade de transformar ideias em sequências lógicas
           ordenadas, preparando o raciocínio para a implementação em código.
         </p>
       </div>
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
           <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA
         </h3>
-        <p class="text-slate-600">
+        <p class="text-neutral-600">
           Aula expositiva com exemplos visuais, seguida de dinâmica "Fishbowl"
           para construção coletiva de algoritmos e debate crítico.
         </p>
@@ -52,11 +52,11 @@
     </div>
   </section>
 
-  <div class="bg-white p-8 rounded-lg shadow-md mb-12">
-    <h3 class="font-bold text-2xl text-slate-800 mb-4">
+  <div class="card p-8 shadow-elevation-2 mb-12">
+    <h3 class="section__subtitle mb-4">
       Plano de Voo da Aula de Hoje
     </h3>
-    <ul class="list-disc list-inside space-y-2 text-slate-700">
+    <ul class="list-disc list-inside space-y-2 text-neutral-700">
       <li>A importância crítica da ordem e do detalhe nos algoritmos.</li>
       <li>
         Como transformar uma ideia caótica numa sequência de instruções claras.
@@ -74,20 +74,20 @@
   </div>
 
   <div class="mb-16">
-    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+    <h3 class="section__subtitle mb-6">
       A Ordem dos Fatores Altera (e Muito) o Produto
     </h3>
-    <div class="bg-white p-8 rounded-lg shadow-md">
+    <div class="card p-8 shadow-elevation-2">
       <p class="text-lg mb-4">
         Um computador não tem "bom senso". Ele executa as instruções na ordem
         exata em que as recebe. Se a ordem estiver errada, o resultado será, na
         melhor das hipóteses, incorreto e, na pior, um desastre.
       </p>
-      <h4 class="font-semibold text-xl text-indigo-700 mt-6 mb-3">
+      <h4 class="font-semibold text-xl text-primary-700 mt-6 mb-3">
         Exemplo: Calçar Meias e Sapatos
       </h4>
       <div class="grid md:grid-cols-2 gap-8 mt-4">
-        <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+        <div class="callout callout-danger">
           <h5 class="font-bold text-red-800 mb-2">Ordem Incorreta</h5>
           <ol class="list-decimal list-inside text-red-700">
             <li>Pegar o sapato.</li>
@@ -96,7 +96,7 @@
             <li>Calçar a meia. ⬅️ Impossível!</li>
           </ol>
         </div>
-        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+        <div class="callout callout-success">
           <h5 class="font-bold text-green-800 mb-2">Ordem Correta</h5>
           <ol class="list-decimal list-inside text-green-700">
             <li>Pegar a meia.</li>
@@ -116,15 +116,15 @@
   </div>
 
   <div class="mb-16">
-    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+    <h3 class="section__subtitle mb-6">
       Atividade Prática: O Desafio do "Fishbowl"
     </h3>
-    <div class="bg-white p-8 rounded-lg shadow-md">
+    <div class="card p-8 shadow-elevation-2">
       <p class="mb-4">
         Agora, vamos praticar a criação de algoritmos em grupo. A metodologia
         "Fishbowl" (aquário) funciona da seguinte forma:
       </p>
-      <ul class="list-disc list-inside space-y-2 bg-slate-50 p-4 rounded-md">
+      <ul class="list-disc list-inside space-y-2 bg-neutral-50 p-4 rounded-xl">
         <li>
           Um pequeno grupo de alunos senta-se no centro da sala (o "aquário").
         </li>
@@ -139,12 +139,12 @@
           (ou um novo).
         </li>
       </ul>
-      <h4 class="font-semibold text-xl text-indigo-700 mt-8 mb-3">
+      <h4 class="font-semibold text-xl text-primary-700 mt-8 mb-3">
         Problemas para a Atividade:
       </h4>
       <div class="grid md:grid-cols-2 gap-6 mt-4">
-        <div class="bg-indigo-50 p-6 rounded-lg">
-          <h5 class="font-bold text-indigo-800 mb-2">
+        <div class="bg-primary-50 p-6 rounded-2xl">
+          <h5 class="font-bold text-primary-800 mb-2">
             Problema A: Trocar uma Lâmpada
           </h5>
           <p>
@@ -153,8 +153,8 @@
             possíveis problemas.
           </p>
         </div>
-        <div class="bg-indigo-50 p-6 rounded-lg">
-          <h5 class="font-bold text-indigo-800 mb-2">
+        <div class="bg-primary-50 p-6 rounded-2xl">
+          <h5 class="font-bold text-primary-800 mb-2">
             Problema B: Fazer Matrícula
           </h5>
           <p>
@@ -175,51 +175,25 @@
   >
     <h2
       id="videos-heading"
-      class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-8"
+      class="section__title mb-8"
     >
       🎥 Vídeos de Apoio
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <!-- Vídeo 1 -->
-      <div class="bg-white p-4 rounded-lg shadow">
-        <h3 class="font-semibold text-lg text-indigo-800 mb-2">
-          O que é um Algoritmo? (Curso em Vídeo)
-        </h3>
-        <div class="aspect-video w-full">
-          <iframe
-            class="w-full h-full rounded-md"
-            src="https://www.youtube.com/embed/8mei6uVttho"
-            title="O que é um Algoritmo"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
+      <md3-video title="O que é um Algoritmo? (Curso em Vídeo)" src="https://www.youtube.com/embed/8mei6uVttho"></md3-video>
       <!-- Vídeo 2 -->
-      <div class="bg-white p-4 rounded-lg shadow">
-        <h3 class="font-semibold text-lg text-indigo-800 mb-2">
-          Estruturação de Algoritmos (CFBCursos)
-        </h3>
-        <div class="aspect-video w-full">
-          <iframe
-            class="w-full h-full rounded-md"
-            src="https://www.youtube.com/embed/zyj5vOPA1vA"
-            title="Estruturação de Algoritmos"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
+      <md3-video title="Estruturação de Algoritmos (CFBCursos)" src="https://www.youtube.com/embed/zyj5vOPA1vA"></md3-video>
     </div>
   </section>
 
   <!-- Tarefa da Aula 3 -->
   <section id="proximos-passos-aula3" class="mt-16">
-    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+    <h3 class="section__subtitle mb-6">
       Próximos Passos e Tarefa (TED)
     </h3>
     <div
-      class="bg-indigo-100 border-l-4 border-indigo-500 text-indigo-800 p-6 rounded-r-lg"
+      class="callout callout-info"
     >
       <h4 class="font-bold text-xl mb-4">Objetivo da Tarefa</h4>
       <p class="mb-4">
@@ -239,7 +213,7 @@
         <a
           href="https://eadsp.unichristus.edu.br"
           target="_blank"
-          class="inline-block bg-slate-800 text-white font-bold py-2 px-4 rounded hover:bg-slate-700 transition-colors"
+          class="inline-block bg-neutral-800 text-white font-bold py-2 px-4 rounded hover:bg-neutral-700 transition-colors"
         >
           <i class="fa-solid fa-graduation-cap mr-2"></i>Acessar Moodle
         </a>
@@ -255,32 +229,32 @@
   >
     <h2
       id="checklist-heading"
-      class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-6"
+      class="section__title mb-6"
     >
       ✅ Checklist da Aula
     </h2>
-    <div class="bg-white p-8 rounded-lg shadow space-y-4">
-      <p class="text-slate-700 mb-4">Verifique se você:</p>
+    <div class="card p-8 space-y-4">
+      <p class="text-neutral-700 mb-4">Verifique se você:</p>
       <ul class="space-y-3">
         <li class="flex items-start gap-3">
-          <input type="checkbox" class="mt-1 accent-indigo-600" />
+          <input type="checkbox" class="mt-1 accent-primary-600" />
           <span
             >Entendeu a importância da ordem de execução em algoritmos.</span
           >
         </li>
         <li class="flex items-start gap-3">
-          <input type="checkbox" class="mt-1 accent-indigo-600" />
+          <input type="checkbox" class="mt-1 accent-primary-600" />
           <span>Praticou a decomposição de problemas em passos lógicos.</span>
         </li>
         <li class="flex items-start gap-3">
-          <input type="checkbox" class="mt-1 accent-indigo-600" />
+          <input type="checkbox" class="mt-1 accent-primary-600" />
           <span
             >Participou da atividade Fishbowl criando ou analisando
             algoritmos.</span
           >
         </li>
         <li class="flex items-start gap-3">
-          <input type="checkbox" class="mt-1 accent-indigo-600" />
+          <input type="checkbox" class="mt-1 accent-primary-600" />
           <span
             >Postou a TED no Moodle com pelo menos 5 passos lógicos para um
             problema real.</span
@@ -298,11 +272,11 @@
   >
     <h2
       id="bibliografia-heading"
-      class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-6"
+      class="section__title mb-6"
     >
       📚 Bibliografia de Apoio
     </h2>
-    <div class="bg-white p-8 rounded-lg shadow space-y-4">
+    <div class="card p-8 space-y-4">
       <p>
         <strong>FORBELLONE, A. L. V; EBERSPÄCHER, H. F.</strong>
         <em>Lógica de Programação</em>. 3. ed. Pearson, 2021.

@@ -1,45 +1,45 @@
 <section id="aula8" class="mb-16 pt-16">
     <header class="mb-12">
-        <h2 class="text-4xl font-bold text-slate-900">Aula 8: Leitura Múltipla, Cálculos Encadeados e <code-text>printf</code-text> Formatado</h2>
-        <p class="text-lg text-slate-600 mt-2">Consolidando o fluxo sequencial: Entrada → Processamento → Saída</p>
+        <h2 class="section__title">Aula 8: Leitura Múltipla, Cálculos Encadeados e <code-text>printf</code-text> Formatado</h2>
+        <p class="text-body-large text-neutral-700 dark:text-neutral-300 mt-2">Consolidando o fluxo sequencial: Entrada → Processamento → Saída</p>
     </header>
 
     <!-- Seção: Plano da Aula -->
-    <section id="plano-aula" class="mb-16 bg-indigo-50 border border-indigo-200 p-8 rounded-2xl shadow-lg" aria-labelledby="plano-aula8-heading">
-        <h2 id="plano-aula8-heading" class="text-3xl font-bold text-indigo-700 mb-6 text-center">
+    <section id="plano-aula" class="mb-16 bg-primary-50 border border-primary-200 p-8 rounded-2xl shadow-elevation-3" aria-labelledby="plano-aula8-heading">
+        <h2 id="plano-aula8-heading" class="text-3xl font-bold text-primary-700 mb-6 text-center">
             Plano da Aula
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+            <div class="card">
+                <h3 class="font-semibold text-lg text-primary-800 mb-2">
                     <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
                 </h3>
-                <p class="text-slate-600">
+                <p class="text-neutral-600">
                     Algoritmos sequenciais em C, múltiplas leituras com <code-text>scanf</code-text>, cálculos com variáveis intermediárias e formatação avançada de saída com <code-text>printf</code-text>.
                 </p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+            <div class="card">
+                <h3 class="font-semibold text-lg text-primary-800 mb-2">
                     <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO
                 </h3>
-                <p class="text-slate-600">
+                <p class="text-neutral-600">
                     Construir programas que realizem múltiplas leituras e cálculos combinados, exibindo resultados claros e formatados, consolidando o fluxo Entrada → Processamento → Saída.
                 </p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+            <div class="card">
+                <h3 class="font-semibold text-lg text-primary-800 mb-2">
                     <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA
                 </h3>
-                <p class="text-slate-600">
+                <p class="text-neutral-600">
                     Aula expositiva dialogada com exemplos práticos, seguida de atividade colaborativa em duplas para a criação de um recibo formatado.
                 </p>
             </div>
         </div>
     </section>
 
-    <div class="bg-white p-8 rounded-lg shadow-md mb-12">
-        <h3 class="font-bold text-2xl text-slate-800 mb-4">Plano de Voo da Aula de Hoje</h3>
-        <ul class="list-disc list-inside space-y-2 text-slate-700">
+    <div class="card p-8 shadow-elevation-2 mb-12">
+        <h3 class="section__subtitle mb-4">Plano de Voo da Aula de Hoje</h3>
+        <ul class="list-disc list-inside space-y-2 text-neutral-700">
             <li>Aquecimento: Resolvendo um problema de descontos sucessivos.</li>
             <li>Dominando o <code-text>scanf</code-text> para múltiplas entradas de dados.</li>
             <li>A importância de variáveis intermediárias para cálculos claros.</li>
@@ -50,10 +50,10 @@
     </div>
 
     <div class="mb-16">
-        <h3 class="text-3xl font-bold text-slate-800 mb-6">Fluxo Sequencial e Múltiplas Leituras com <code-text>scanf</code-text></h3>
-        <div class="bg-white p-8 rounded-lg shadow-md">
+        <h3 class="section__subtitle mb-6">Fluxo Sequencial e Múltiplas Leituras com <code-text>scanf</code-text></h3>
+        <div class="card p-8 shadow-elevation-2">
             <p class="text-lg mb-4">Até agora, focámos em ler um ou dois valores. No mundo real, os programas precisam de lidar com múltiplas entradas de dados. A função <code-text>scanf</code-text> é poderosa e permite-nos ler vários valores de uma só vez, consolidando a etapa de **Entrada** do nosso fluxo.</p>
-            <div class="bg-slate-800 text-white p-4 rounded-md mono text-sm mt-3">
+            <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-3">
 <pre><code>// Read two prices in a single line
 float p1, p2;
 printf("Digite o preço de dois produtos (ex: 10.50 8.75): ");
@@ -72,12 +72,12 @@ scanf("%f %f", &p1, &p2); // Make sure to pass addresses (&)
     </div>
 
     <div class="mb-16">
-        <h3 class="text-3xl font-bold text-slate-800 mb-6">Cálculos Encadeados e Variáveis Intermediárias</h3>
-        <div class="bg-white p-8 rounded-lg shadow-md">
+        <h3 class="section__subtitle mb-6">Cálculos Encadeados e Variáveis Intermediárias</h3>
+        <div class="card p-8 shadow-elevation-2">
             <p class="text-lg mb-4">Para problemas mais complexos, raramente chegamos ao resultado final num único passo. A etapa de **Processamento** muitas vezes envolve cálculos sequenciais, onde o resultado de uma operação serve de entrada para a próxima. Usar **variáveis intermediárias** para guardar estes resultados torna o código mais legível e fácil de depurar.</p>
-            <h4 class="font-semibold text-xl text-indigo-700 mt-6 mb-3">Exemplo: Descontos Sucessivos</h4>
+            <h4 class="font-semibold text-xl text-primary-700 mt-6 mb-3">Exemplo: Descontos Sucessivos</h4>
             <p>Um desconto de 10% seguido por um de 5% não é o mesmo que um desconto de 15%. A ordem importa, e o segundo desconto aplica-se sobre o novo valor.</p>
-            <div class="bg-slate-800 text-white p-4 rounded-md mono text-sm mt-3">
+            <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-3">
 <pre><code>// Apply 10% then 5% sequential discounts
 float price = 100.0f;
 float afterFirst, finalPrice;
@@ -92,8 +92,8 @@ printf("Final price: R$ %.2f\n", finalPrice); // Prints R$ 85.50
     </div>
 
     <div class="mb-16">
-        <h3 class="text-3xl font-bold text-slate-800 mb-6">Saída Formatada com <code-text>printf</code-text></h3>
-        <div class="bg-white p-8 rounded-lg shadow-md">
+        <h3 class="section__subtitle mb-6">Saída Formatada com <code-text>printf</code-text></h3>
+        <div class="card p-8 shadow-elevation-2">
             <p class="text-lg mb-4">A etapa de **Saída** é a forma como o nosso programa comunica os resultados ao utilizador. Uma saída bem formatada é crucial para que a informação seja clara e profissional.</p>
             <div class="callout callout-good-practice">
                 <h5 class="font-bold mb-2">Boas Práticas de <code-text>printf</code-text></h5>
@@ -107,10 +107,10 @@ printf("Final price: R$ %.2f\n", finalPrice); // Prints R$ 85.50
     </div>
 
     <div class="mb-16">
-        <h3 class="text-3xl font-bold text-slate-800 mb-6">Atividade Prática em Duplas: Recibo de Compras</h3>
-        <div class="bg-white p-8 rounded-lg shadow-md">
+        <h3 class="section__subtitle mb-6">Atividade Prática em Duplas: Recibo de Compras</h3>
+        <div class="card p-8 shadow-elevation-2">
             <p class="mb-4">Em duplas, vamos criar um programa que simula um recibo de compras. O programa deve ler o preço e a quantidade de 3 produtos, calcular o subtotal de cada um, o total geral, aplicar um desconto de 10% e exibir um recibo bem formatado.</p>
-            <div class="bg-slate-800 text-white p-4 rounded-md mono text-sm mt-4">
+            <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-4">
 <pre><code>#include <stdio.h>
 
 int main() {
@@ -154,15 +154,15 @@ int main() {
     return 0;
 }
 </code></pre>
-        <button class="copy-code-btn mt-4 bg-slate-600 text-white font-bold py-1 px-3 rounded hover:bg-slate-500 transition-colors">Copiar Código</button>
+        <button class="copy-code-btn mt-4 btn btn-tonal">Copiar Código</button>
             </div>
         </div>
     </div>
 
     <!-- Tarefa da Aula 8 -->
     <section id="proximos-passos-aula8" class="mb-16" aria-labelledby="ted8-heading">
-        <h3 id="ted8-heading" class="text-3xl font-bold text-slate-800 mb-6">Próximos Passos e Tarefa (TED)</h3>
-        <div class="bg-indigo-100 border-l-4 border-indigo-500 text-indigo-800 p-6 rounded-r-lg shadow-md">
+        <h3 id="ted8-heading" class="section__subtitle mb-6">Próximos Passos e Tarefa (TED)</h3>
+        <div class="callout callout-info">
             <h4 class="font-bold text-xl mb-4">Tarefa para a próxima aula</h4>
             <p class="mb-4">O objetivo é praticar o conceito de cálculos sequenciais e a formatação de saída.</p>
             <ol class="list-decimal list-inside space-y-3 font-semibold">
@@ -179,31 +179,24 @@ int main() {
     </section>
 
     <section id="teste-codigo-aula8" class="mb-16" aria-labelledby="teste-codigo-heading8">
-        <h2 id="teste-codigo-heading8" class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-8">
+        <h2 id="teste-codigo-heading8" class="section__title mb-8">
             💻 Área de Testes Interativa
         </h2>
-        <div class="bg-white p-4 rounded-lg shadow mb-8">
-            <h3 class="font-bold text-lg text-indigo-800 mb-2">
-                Teste seu Código Aqui
-            </h3>
-            <div class="w-full aspect-video">
-                <iframe src="https://www.onlinegdb.com/online_c_compiler" class="w-full h-full rounded" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
+        <md3-code-test title="Teste seu Código Aqui" src="https://www.onlinegdb.com/online_c_compiler"></md3-code-test>
     </section>
 
    <section id="recursos-apoio-aula8" class="mb-16" aria-labelledby="recursos-heading8">
   <h2 id="recursos-heading8"
-      class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-8">
+      class="section__title mb-8">
     🎥 Vídeos de Apoio
   </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    <div class="bg-white p-4 rounded-lg shadow">
-      <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+    <div class="card p-4">
+      <h3 class="font-semibold text-lg text-primary-800 mb-2">
         Entrada e Saída em C (scanf e printf)
       </h3>
       <div class="aspect-video w-full">
-        <iframe class="w-full h-full rounded-md"
+        <iframe class="w-full h-full rounded-xl"
                 src="https://www.youtube.com/embed/uX0r1JlyDFg"
                 title="AEDS 2: SCANF e PRINTF - Entrada e Saída em Linguagem C"
                 frameborder="0"
@@ -212,12 +205,12 @@ int main() {
       </div>
     </div>
 
-    <div class="bg-white p-4 rounded-lg shadow">
-      <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+    <div class="card p-4">
+      <h3 class="font-semibold text-lg text-primary-800 mb-2">
         Quase tudo que você precisa saber sobre printf
       </h3>
       <div class="aspect-video w-full">
-        <iframe class="w-full h-full rounded-md"
+        <iframe class="w-full h-full rounded-xl"
                 src="https://www.youtube.com/embed/0EEXxcTa7Ok"
                 title="Quase tudo que VC precisa saber sobre printf"
                 frameborder="0"
@@ -229,7 +222,7 @@ int main() {
 </section>
 
     <section id="checklist-aula8" class="mt-16">
-        <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+        <div class="callout callout-success">
             <h3 class="font-bold text-lg mb-3">✅ Ao final desta aula você deve ser capaz de:</h3>
             <ul class="list-none space-y-2">
                 <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Ler múltiplos valores numa única chamada <code-text>scanf</code-text>.</li>
@@ -242,10 +235,10 @@ int main() {
     </section>
 
     <section id="bibliografia-aula8" class="mt-16" aria-labelledby="bibliografia-heading8">
-        <h2 id="bibliografia-heading8" class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-6">
+        <h2 id="bibliografia-heading8" class="section__title mb-6">
             📚 Bibliografia de Apoio
         </h2>
-        <div class="bg-white p-8 rounded-lg shadow space-y-4">
+        <div class="card p-8 space-y-4">
             <p>
                 <strong>BACKES, André.</strong> <em>Linguagem C: completa e descomplicada.</em> Rio de Janeiro: Elsevier, 2019.
             </p>

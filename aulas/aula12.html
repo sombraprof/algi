@@ -1,9 +1,9 @@
 <section id="aula12" class="mb-16 pt-16">
   <header class="mb-12">
-    <h2 class="text-4xl font-bold text-slate-900">
+    <h2 class="section__title">
       Aula 12: Condições Encadeadas com <code-text>else if</code-text>
     </h2>
-    <p class="text-lg text-slate-600 mt-2">
+    <p class="text-body-large text-neutral-700 dark:text-neutral-300 mt-2">
       Criando múltiplos caminhos para decisões mais complexas e organizadas.
     </p>
   </header>
@@ -11,21 +11,21 @@
   <!-- Seção: Plano da Aula -->
   <section
     id="plano-aula"
-    class="mb-16 bg-indigo-50 border border-indigo-200 p-8 rounded-2xl shadow-lg"
+    class="mb-16 bg-primary-50 border border-primary-200 p-8 rounded-2xl shadow-elevation-3"
     aria-labelledby="plano-aula12-heading"
   >
     <h2
       id="plano-aula12-heading"
-      class="text-3xl font-bold text-indigo-700 mb-6 text-center"
+      class="text-3xl font-bold text-primary-700 mb-6 text-center"
     >
       Plano da Aula
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
           <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
         </h3>
-        <p class="text-slate-600">
+        <p class="text-neutral-600">
           Estruturas condicionais encadeadas (<code-text>else if</code-text>),
           combinação com operadores lógicos (<code-text>&&</code-text>,
           <code-text>||</code-text>) e a diferença entre
@@ -33,21 +33,21 @@
           independentes.
         </p>
       </div>
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
           <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO
         </h3>
-        <p class="text-slate-600">
+        <p class="text-neutral-600">
           Escrever programas que tomem decisões mais elaboradas, envolvendo
           múltiplas condições, utilizando a estrutura
           <code-text>if-else if-else</code-text> de forma eficiente.
         </p>
       </div>
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
           <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA
         </h3>
-        <p class="text-slate-600">
+        <p class="text-neutral-600">
           Aula expositiva com exemplos clássicos (classificação de notas, faixas
           de idade), seguida de uma atividade prática em duplas para desenvolver
           pequenos programas com <code-text>else if</code-text>.
@@ -57,10 +57,10 @@
   </section>
 
   <div class="mb-16">
-    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+    <h3 class="section__subtitle mb-6">
       Para Além da Bifurcação: Múltiplos Caminhos
     </h3>
-    <div class="bg-white p-8 rounded-lg shadow-md">
+    <div class="card p-8 shadow-elevation-2">
       <p class="text-lg mb-4">
         Na Aula 10, aprendemos a usar o <code-text>if-else</code-text> para
         criar uma bifurcação, onde o programa escolhe entre dois caminhos. Mas e
@@ -78,24 +78,24 @@
   </div>
 
   <div class="mb-16">
-    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+    <h3 class="section__subtitle mb-6">
       A Estrutura <code-text>if-else if-else</code-text>
     </h3>
-    <div class="bg-white p-8 rounded-lg shadow-md">
+    <div class="card p-8 shadow-elevation-2">
       <p class="mb-4">
         Funciona como uma cadeia de verificações. O programa testa a primeira
         condição. Se for falsa, testa a segunda (<code-text>else if</code-text
         >), e assim por diante. Se nenhuma for verdadeira, o bloco
         <code-text>else</code-text> final é executado.
       </p>
-      <h4 class="font-semibold text-xl text-indigo-700 mt-6 mb-3">
+      <h4 class="font-semibold text-xl text-primary-700 mt-6 mb-3">
         Exemplo: Classificação de Média
       </h4>
       <p>
         Vamos classificar a situação de um aluno: Aprovado (>= 7.0), Recuperação
         (>= 5.0) ou Reprovado.
       </p>
-      <div class="bg-slate-800 text-white p-4 rounded-md mono text-sm mt-6">
+      <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-6">
         <pre id="code-else-if-media"><code>#include &lt;stdio.h&gt;
 
 int main() {
@@ -116,7 +116,7 @@ int main() {
 }
 </code></pre>
         <button
-          class="copy-code-btn mt-4 bg-slate-600 text-white font-bold py-1 px-3 rounded hover:bg-slate-500 transition-colors"
+          class="copy-code-btn mt-4 btn btn-tonal"
         >
           Copiar Código
         </button>
@@ -125,15 +125,15 @@ int main() {
   </div>
 
   <div class="mb-16">
-    <h3 class="text-3xl font-bold text-slate-800 mb-6">
+    <h3 class="section__subtitle mb-6">
       Atividade Prática em Duplas
     </h3>
-    <div class="bg-white p-8 rounded-lg shadow-md">
+    <div class="card p-8 shadow-elevation-2">
       <p class="mb-4">
         Em duplas, implementem a solução em C para o seguinte problema:
       </p>
-      <div class="bg-indigo-50 p-6 rounded-lg">
-        <h5 class="font-bold text-indigo-800 mb-2">
+      <div class="bg-primary-50 p-6 rounded-2xl">
+        <h5 class="font-bold text-primary-800 mb-2">
           Problema: Classificação de Faixa Etária
         </h5>
         <p>
@@ -156,11 +156,11 @@ int main() {
     class="mb-16"
     aria-labelledby="ted12-heading"
   >
-    <h3 id="ted12-heading" class="text-3xl font-bold text-slate-800 mb-6">
+    <h3 id="ted12-heading" class="section__subtitle mb-6">
       Próximos Passos e Tarefa (TED)
     </h3>
     <div
-      class="bg-indigo-100 border-l-4 border-indigo-500 text-indigo-800 p-6 rounded-r-lg shadow-md"
+      class="callout callout-info"
     >
       <h4 class="font-bold text-xl mb-4">Tarefa para a próxima aula</h4>
       <p class="mb-4">
@@ -193,18 +193,13 @@ int main() {
   >
     <h2
       id="teste-codigo-heading12"
-      class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-8"
+      class="section__title mb-8"
     >
       💻 Área de Testes Interativa
     </h2>
-    <div class="bg-white p-4 rounded-lg shadow mb-8">
+    <div class="card p-4 mb-8">
       <div class="w-full aspect-video">
-        <iframe
-          src="https://www.onlinegdb.com/online_c_compiler"
-          class="w-full h-full rounded"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
+        <md3-code-test title="Teste seu Código Aqui" src="https://www.onlinegdb.com/online_c_compiler"></md3-code-test>
       </div>
     </div>
   </section>
@@ -217,22 +212,22 @@ int main() {
   >
     <h2
       id="recursos-heading12"
-      class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-8"
+      class="section__title mb-8"
     >
       🎥 Vídeos de Apoio
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <!-- Video 1: else if aninhado em C -->
-      <div class="bg-white p-4 rounded-lg shadow">
-        <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+      <div class="card p-4">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
           Estruturas Condicionais Aninhadas (<code-text>else if</code-text>) em
           C
         </h3>
         <!-- NOTE (EN): Responsive container; keeps 16:9 ratio -->
         <div class="aspect-video w-full">
           <iframe
-            class="w-full h-full rounded-md"
+            class="w-full h-full rounded-xl"
             src="https://www.youtube-nocookie.com/embed/JBFgiNJevqc"
             title="Linguagem C | Aula 15 - Aninhamento if-else"
             loading="lazy"
@@ -257,15 +252,15 @@ int main() {
       </div>
 
       <!-- Video 2: if / else if / else em C -->
-      <div class="bg-white p-4 rounded-lg shadow">
-        <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+      <div class="card p-4">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
           Lógica de Programação – <code-text>if</code-text>,
           <code-text>else if</code-text>, <code-text>else</code-text> em C
         </h3>
         <!-- NOTE (EN): Responsive container; keeps 16:9 ratio -->
         <div class="aspect-video w-full">
           <iframe
-            class="w-full h-full rounded-md"
+            class="w-full h-full rounded-xl"
             src="https://www.youtube-nocookie.com/embed/LpVDGm-FT78"
             title="Estrutura de decisão if-else em C"
             loading="lazy"
@@ -292,7 +287,7 @@ int main() {
   </section>
 
   <section id="checklist-aula12" class="mt-16">
-    <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+    <div class="callout callout-success">
       <h3 class="font-bold text-lg mb-3">
         ✅ Ao final desta aula você deve ser capaz de:
       </h3>
@@ -324,11 +319,11 @@ int main() {
   >
     <h2
       id="bibliografia-heading12"
-      class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-6"
+      class="section__title mb-6"
     >
       📚 Bibliografia de Apoio
     </h2>
-    <div class="bg-white p-8 rounded-lg shadow space-y-4">
+    <div class="card p-8 space-y-4">
       <p>
         <strong>BACKES, André.</strong>
         <em>Linguagem C: completa e descomplicada.</em> Rio de Janeiro:

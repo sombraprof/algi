@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Material Design 3 – Light Scheme */
+  --bg: #fafafa;                 /* neutral.100 */
+  --text: #212121;               /* neutral.900 */
+  --panel-bg: #ffffff;           /* surface.light.50 */
+  --panel-border: #eeeeee;       /* neutral.200 */
+  --accent: #2196f3;             /* primary.500 */
+  --muted: #757575;              /* neutral.600 */
+  --code-bg: #212121;            /* neutral.900 */
+  --code-fg: #e3f2fd;            /* primary.50 */
+  --accent-soft-bg: #e3f2fd;     /* primary.50 */
+  --accent-soft-border: #90caf9; /* primary.200 */
+  --control-hover-bg: #e3f2fd;   /* primary.50 */
+  --success-soft-bg: #e8f5e8;    /* success.50 */
+  --success-soft-border: #a5d6a7;/* success.200 */
+  --danger-soft-bg: #ffebee;     /* error.50 */
+  --danger-soft-border: #ef9a9a; /* error.200 */
+  --warn-soft-bg: #fff8e1;       /* warning.50 */
+  --warn-soft-border: #ffe082;   /* warning.200 */
+  --info-soft-bg: #e3f2fd;       /* info.50 */
+  --info-soft-border: #90caf9;   /* info.200 */
+  --inline-code-bg: #f5f5f5;     /* neutral.100 */
+  --inline-code-fg: #212121;     /* neutral.900 */
+  /* Sidebar (light) */
+  --sidebar-bg: #ffffff;
+  --sidebar-fg: #212121;
+  --sidebar-muted: #757575;
+  --sidebar-border: #e0e0e0;     /* neutral.300 */
+  --sidebar-toggle-bg: #f5f5f5;  /* neutral.100 */
+  --sidebar-toggle-hover: #e3f2fd; /* primary.50 */
+}
+
+/* Material 3 button components */
+@layer components {
+  .btn {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors;
+  }
+  .btn-filled {
+    @apply bg-primary-600 text-white hover:bg-primary-700;
+  }
+  .btn-outlined {
+    @apply border border-neutral-300 text-neutral-800 hover:bg-neutral-100 dark:border-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-700;
+  }
+  .btn-tonal {
+    @apply bg-primary-50 text-primary-700 hover:bg-primary-100 dark:bg-primary-900/30 dark:text-primary-300 dark:hover:bg-primary-900/40;
+  }
+  .btn-icon {
+    @apply w-10 h-10 justify-center p-0 rounded-full;
+  }
+  .btn-text {
+    @apply bg-transparent text-primary-700 hover:bg-primary-50 dark:text-primary-300 dark:hover:bg-primary-900/30 border-0;
+  }
+  .btn-outlined-primary {
+    @apply border border-primary-300 text-primary-700 hover:bg-primary-50 dark:border-primary-600 dark:text-primary-300 dark:hover:bg-primary-900/30;
+  }
+
+  /* Dropdown item removed in favor of segmented controls */
+
+  /* Card patterns */
+  .card {
+    @apply bg-surface-light-50 dark:bg-surface-dark-50 p-6 rounded-2xl shadow-elevation-1 border border-neutral-200 dark:border-neutral-700;
+  }
+  .card--interactive {
+    @apply transition-transform hover:shadow-elevation-2 hover:-translate-y-1 will-change-transform;
+  }
+  .card--disabled {
+    @apply bg-neutral-100 dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700;
+    /* Keep elevation but remove hover motion via not using card--interactive */
+  }
+
+  /* Muted text helper for disabled content */
+  .text-disabled { @apply text-neutral-600 dark:text-neutral-400; }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium leading-none;
+  }
+  .badge--success {
+    @apply bg-success-50 dark:bg-success-900/20 text-success-800 dark:text-success-200;
+  }
+  .badge--warning {
+    @apply bg-warning-50 dark:bg-warning-900/20 text-warning-800 dark:text-warning-200;
+  }
+  .badge--secondary {
+    @apply bg-secondary-100 dark:bg-secondary-900/20 text-secondary-800 dark:text-secondary-200;
+  }
+
+  /* Progress */
+  .progress {
+    @apply w-full h-3 rounded-full bg-neutral-200 dark:bg-neutral-700 overflow-hidden;
+  }
+  .progress__bar {
+    @apply h-full transition-all duration-300 ease-out;
+  }
+  .progress__bar--primary { @apply bg-primary-500; }
+  .progress__bar--secondary { @apply bg-secondary-500; }
+
+  /* Sections */
+  .section { @apply p-6; }
+  .section--tight { @apply p-4; }
+  .section, .section--tight { @apply transition-all duration-200; }
+  .section__title { @apply text-headline-small font-bold text-neutral-900 dark:text-neutral-100 mb-6; }
+  .section__subtitle { @apply text-title-large font-semibold text-neutral-800 dark:text-neutral-200; }
+  .grid-cards { @apply grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6; }
+
+  /* Callouts (used in aulas) */
+  .callout { @apply p-6 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-surface-light-50 dark:bg-surface-dark-50 shadow-elevation-1; }
+  .callout-info { @apply bg-info-50 dark:bg-primary-900/20 border-info-200 dark:border-primary-700/40; }
+  .callout-academic { @apply bg-secondary-50 dark:bg-secondary-900/20 border-secondary-200 dark:border-secondary-700/40; }
+  .callout-success { @apply bg-success-50 dark:bg-success-900/20 border-success-200 dark:border-success-700/40; }
+  .callout-danger { @apply bg-error-50 dark:bg-error-900/20 border-error-200 dark:border-error-700/40; }
+  .callout-good-practice { @apply bg-success-50 dark:bg-success-900/20 border-success-200 dark:border-success-700/40; }
+
+  /* Segmented control (MD3-like) */
+  .segmented { @apply inline-flex items-center gap-1 p-1 rounded-full border border-neutral-200 dark:border-neutral-700 bg-surface-light-50 dark:bg-surface-dark-50; }
+  .segmented__item { @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400; }
+  .segmented__item--active { @apply bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 font-semibold ring-1 ring-primary-200 dark:ring-primary-700/40; }
+}
+
+/* Smooth layout change for grid/list */
+.layout-fade { animation: layout-fade 180ms ease; }
+@keyframes layout-fade {
+  from { opacity: .0; transform: translateY(4px); }
+  to   { opacity: 1;  transform: translateY(0); }
+}
+
+/* Subtle animation for cards on layout switch */
+.anim-cards > * { animation: card-fade 180ms ease both; animation-delay: var(--d, 0ms); }
+@keyframes card-fade {
+  from { opacity: 0; transform: scale(0.98); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* MD3 Snackbar */
+#snackbar { position: fixed; left: 50%; transform: translateX(-50%); bottom: 1.25rem; z-index: 60; display: none; }
+#snackbar.show { display: block; }
+.snackbar {
+  @apply bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 rounded-lg shadow-elevation-2 px-4 py-2 text-body-medium;
+}
+
+html.theme-dark {
+  /* Material Design 3 – Dark Scheme */
+  --bg: #121212;                 /* neutral.900-ish */
+  --text: #e0e0e0;               /* neutral.300 */
+  --panel-bg: #1e1e1e;           /* surface.dark.100 */
+  --panel-border: #2a2a2a;       /* surface.dark.50-ish */
+  --accent: #42a5f5;             /* primary.400 for better contrast */
+  --accent-dark: #1976d2;        /* primary.700 */
+  --muted: #bdbdbd;              /* neutral.400 */
+  --code-bg: #0a0a0a;            /* surface.dark.300 */
+  --code-fg: #e3f2fd;            /* primary.50 */
+  --accent-soft-bg: rgba(33, 150, 243, 0.12);
+  --accent-soft-border: rgba(144, 202, 249, 0.35);
+  --control-hover-bg: rgba(144, 202, 249, 0.18);
+  --success-soft-bg: rgba(76, 175, 80, 0.12);
+  --success-soft-border: rgba(165, 214, 167, 0.4);
+  --danger-soft-bg: rgba(244, 67, 54, 0.12);
+  --danger-soft-border: rgba(239, 154, 154, 0.4);
+  --warn-soft-bg: rgba(255, 193, 7, 0.12);
+  --warn-soft-border: rgba(255, 224, 130, 0.4);
+  --info-soft-bg: rgba(33, 150, 243, 0.12);
+  --info-soft-border: rgba(144, 202, 249, 0.35);
+  --inline-code-bg: #2a2a2a;
+  --inline-code-fg: #e0e0e0;
+  /* Sidebar (dark) */
+  --sidebar-bg: #1e1e1e;
+  --sidebar-fg: #e0e0e0;
+  --sidebar-muted: #bdbdbd;
+  --sidebar-border: #2a2a2a;
+  --sidebar-toggle-bg: rgba(144, 202, 249, 0.12);
+  --sidebar-toggle-hover: rgba(144, 202, 249, 0.2);
+}
+
+html, body, #app {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Dark-mode overrides for common Tailwind utility classes embedded in content */
+html.theme-dark .bg-white { background-color: var(--panel-bg) !important; }
+/* LEGACY overrides removed — MD3-only */
+
+/* Focus visible outline for accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  transition: outline-offset 0.1s ease, outline 0.1s ease;
+}
+
+/* Safe-area support for FAB/back-to-top on devices with notches */
+#back-to-top {
+  margin-bottom: env(safe-area-inset-bottom, 0);
+  margin-right: env(safe-area-inset-right, 0);
+}
+
+/* Screen-reader only utility */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
+
+#main-root.toc-open {}
+@media (prefers-reduced-motion: reduce) {
+  #sidebar { transition: none !important; }
+  #sidebar ul[data-section-list] { transition: none !important; }
+  .accordion-content { transition: none !important; }
+  .view-toggle, .filter-chip, #toast { transition: none !important; }
+}
+
+/* Removed FAB overrides to let component styles control appearance */
+
+/* Aula navigation buttons */
+#aula-nav a { background-color: var(--panel-bg); color: var(--text); border: 1px solid var(--panel-border); }
+#aula-prev:hover { background-color: var(--sidebar-toggle-hover); }
+#aula-next { background-color: var(--accent); color: #fff; border-color: var(--accent); }
+#aula-next:hover { filter: brightness(0.95); }
+
+/* Expand aula content width imported with Tailwind .container */
+#conteudo .container,
+#conteudo .max-w-3xl,
+#conteudo .max-w-4xl,
+#conteudo .max-w-5xl,
+#conteudo .max-w-6xl,
+#conteudo .max-w-7xl {
+  max-width: 100% !important;
+}
+
+/* Toast removed */

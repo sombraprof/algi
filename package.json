@@ -1,0 +1,46 @@
+{
+  "name": "algi",
+  "version": "1.0.0",
+  "description": "![Linguagem](https://img.shields.io/badge/Linguagem-C-blue?logo=c) ![Curso](https://img.shields.io/badge/Curso-Sistemas%20de%20Informa%C3%A7%C3%A3o-success) ![Carga Horária](https://img.shields.io/badge/Carga%20Hor%C3%A1ria-80h-lightblue) ![Semestre](https://img.shields.io/badge/Semestre-2025.2-orange) ![License](https://img.shields.io/badge/License-MIT-lightgrey)",
+  "main": "sw.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sombraprof/algi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sombraprof/algi/issues"
+  },
+  "homepage": "https://github.com/sombraprof/algi#readme",
+  "devDependencies": {
+    "@vue/test-utils": "^2.4.6",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.35.0",
+    "jsdom": "^26.1.0",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "tailwindcss": "^3.4.17",
+    "vite": "^7.1.5",
+    "vite-plugin-pwa": "^1.0.3",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "@types/dompurify": "^3.0.5",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "dompurify": "^3.2.6",
+    "pinia": "^3.0.3",
+    "pinia-plugin-persistedstate": "^4.5.0",
+    "vue": "^3.5.21",
+    "vue-router": "^4.5.1"
+  }
+}

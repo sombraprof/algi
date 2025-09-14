@@ -1,41 +1,41 @@
 <!-- Seção da Aula 9 -->
 <section id="aula9" class="mb-16 pt-16">
     <header class="mb-12">
-        <h2 class="text-4xl font-bold text-slate-900">Aula 9: Problemas Sequenciais Aplicados em C</h2>
-        <p class="text-lg text-slate-600 mt-2">Resolvendo problemas do cotidiano com leitura, processamento e saída de
+        <h2 class="section__title">Aula 9: Problemas Sequenciais Aplicados em C</h2>
+        <p class="text-body-large text-neutral-700 dark:text-neutral-300 mt-2">Resolvendo problemas do cotidiano com leitura, processamento e saída de
             dados.</p>
     </header>
 
     <!-- Seção: Plano da Aula -->
-    <section id="plano-aula" class="mb-16 bg-indigo-50 border border-indigo-200 p-8 rounded-2xl shadow-lg"
+    <section id="plano-aula" class="mb-16 bg-primary-50 border border-primary-200 p-8 rounded-2xl shadow-elevation-3"
         aria-labelledby="plano-aula9-heading">
-        <h2 id="plano-aula9-heading" class="text-3xl font-bold text-indigo-700 mb-6 text-center">
+        <h2 id="plano-aula9-heading" class="text-3xl font-bold text-primary-700 mb-6 text-center">
             Plano da Aula
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+            <div class="card">
+                <h3 class="font-semibold text-lg text-primary-800 mb-2">
                     <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
                 </h3>
-                <p class="text-slate-600">
+                <p class="text-neutral-600">
                     Resolução de problemas sequenciais clássicos: cálculo de salário líquido, IMC e descontos
                     cumulativos, integrando <code-text>scanf</code-text> e <code-text>printf</code-text>.
                 </p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+            <div class="card">
+                <h3 class="font-semibold text-lg text-primary-800 mb-2">
                     <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO
                 </h3>
-                <p class="text-slate-600">
+                <p class="text-neutral-600">
                     Construir programas em C que resolvam problemas do cotidiano, integrando leitura de dados,
                     processamento e saída detalhada.
                 </p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-sm">
-                <h3 class="font-semibold text-lg text-indigo-800 mb-2">
+            <div class="card">
+                <h3 class="font-semibold text-lg text-primary-800 mb-2">
                     <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA
                 </h3>
-                <p class="text-slate-600">
+                <p class="text-neutral-600">
                     Aula expositiva com resolução de problemas clássicos, seguida de atividade colaborativa em duplas
                     para codificar e testar soluções, desenvolvendo autonomia.
                 </p>
@@ -43,9 +43,9 @@
         </div>
     </section>
 
-    <div class="bg-white p-8 rounded-lg shadow-md mb-12">
-        <h3 class="font-bold text-2xl text-slate-800 mb-4">Plano de Voo da Aula de Hoje</h3>
-        <ul class="list-disc list-inside space-y-2 text-slate-700">
+    <div class="card p-8 shadow-elevation-2 mb-12">
+        <h3 class="section__subtitle mb-4">Plano de Voo da Aula de Hoje</h3>
+        <ul class="list-disc list-inside space-y-2 text-neutral-700">
             <li>Revisão do fluxo Entrada → Processamento → Saída.</li>
             <li>Estudo de Caso 1: Desvendando o cálculo do Salário Líquido.</li>
             <li>Estudo de Caso 2: Construindo uma Calculadora de IMC.</li>
@@ -55,8 +55,8 @@
     </div>
 
     <div class="mb-16">
-        <h3 class="text-3xl font-bold text-slate-800 mb-6">Estudo de Caso 1: Cálculo do Salário Líquido</h3>
-        <div class="bg-white p-8 rounded-lg shadow-md">
+        <h3 class="section__subtitle mb-6">Estudo de Caso 1: Cálculo do Salário Líquido</h3>
+        <div class="card p-8 shadow-elevation-2">
             <p class="text-lg mb-4">Um dos problemas mais comuns em sistemas de negócios é o cálculo de um salário
                 líquido a partir de um salário base, aplicando gratificações e descontos. Vamos decompor este problema.
             </p>
@@ -73,7 +73,7 @@
                 <p><strong>3. Saída:</strong> Exibir o salário a receber.</p>
             </div>
 
-            <div class="bg-slate-800 text-white p-4 rounded-md mono text-sm mt-6">
+            <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-6">
                 <pre id="code-salario"><code>#include &lt;stdio.h&gt;
 
 int main() {
@@ -103,14 +103,14 @@ int main() {
     return 0;
 }
 </code></pre>
-                <button class="copy-code-btn mt-4 bg-slate-600 text-white font-bold py-1 px-3 rounded hover:bg-slate-500 transition-colors">Copiar Código</button>
+                <button class="copy-code-btn mt-4 btn btn-tonal">Copiar Código</button>
             </div>
         </div>
     </div>
 
     <div class="mb-16">
-        <h3 class="text-3xl font-bold text-slate-800 mb-6">Estudo de Caso 2: Calculadora de IMC</h3>
-        <div class="bg-white p-8 rounded-lg shadow-md">
+        <h3 class="section__subtitle mb-6">Estudo de Caso 2: Calculadora de IMC</h3>
+        <div class="card p-8 shadow-elevation-2">
             <p class="text-lg mb-4">O Índice de Massa Corporal (IMC) é uma medida internacional usada para saber se uma
                 pessoa está no peso ideal. A sua fórmula é <code-text>IMC = Peso / (Altura * Altura)</code-text>.</p>
 
@@ -120,7 +120,7 @@ int main() {
                 <p><strong>3. Saída:</strong> Exibir o valor do IMC calculado.</p>
             </div>
 
-            <div class="bg-slate-800 text-white p-4 rounded-md mono text-sm mt-6">
+            <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-6">
                 <pre id="code-imc"><code>#include &lt;stdio.h&gt;
 
 int main() {
@@ -148,24 +148,24 @@ int main() {
     return 0;
 }
 </code></pre>
-                <button class="copy-code-btn mt-4 bg-slate-600 text-white font-bold py-1 px-3 rounded hover:bg-slate-500 transition-colors">Copiar Código</button>
+                <button class="copy-code-btn mt-4 btn btn-tonal">Copiar Código</button>
             </div>
         </div>
     </div>
 
     <div class="mb-16">
-        <h3 class="text-3xl font-bold text-slate-800 mb-6">Atividade Prática em Duplas</h3>
-        <div class="bg-white p-8 rounded-lg shadow-md">
+        <h3 class="section__subtitle mb-6">Atividade Prática em Duplas</h3>
+        <div class="card p-8 shadow-elevation-2">
             <p class="mb-4">Agora é a vossa vez! Em duplas, escolham um dos problemas abaixo, discutam a lógica
                 (Entrada, Processamento, Saída) e implementem a solução em C.</p>
             <div class="grid md:grid-cols-2 gap-6 mt-4">
-                <div class="bg-indigo-50 p-6 rounded-lg">
-                    <h5 class="font-bold text-indigo-800 mb-2">Problema A: Desconto Cumulativo</h5>
+                <div class="bg-primary-50 p-6 rounded-2xl">
+                    <h5 class="font-bold text-primary-800 mb-2">Problema A: Desconto Cumulativo</h5>
                     <p>Uma loja oferece 12% de desconto sobre o valor de um produto. Crie um programa que leia o preço
                         original e exiba o preço final com o desconto e o valor do desconto economizado.</p>
                 </div>
-                <div class="bg-indigo-50 p-6 rounded-lg">
-                    <h5 class="font-bold text-indigo-800 mb-2">Problema B: Conversor de Moedas</h5>
+                <div class="bg-primary-50 p-6 rounded-2xl">
+                    <h5 class="font-bold text-primary-800 mb-2">Problema B: Conversor de Moedas</h5>
                     <p>Crie um programa que leia um valor em Reais (R$) e a cotação do Dólar Americano (US$). O programa
                         deve calcular e exibir o valor correspondente em dólares.</p>
                 </div>
@@ -175,8 +175,8 @@ int main() {
 
     <!-- Tarefa da Aula 9 -->
     <section id="proximos-passos-aula9" class="mb-16" aria-labelledby="ted9-heading">
-        <h3 id="ted9-heading" class="text-3xl font-bold text-slate-800 mb-6">Próximos Passos e Tarefa (TED)</h3>
-        <div class="bg-indigo-100 border-l-4 border-indigo-500 text-indigo-800 p-6 rounded-r-lg shadow-md">
+        <h3 id="ted9-heading" class="section__subtitle mb-6">Próximos Passos e Tarefa (TED)</h3>
+        <div class="callout callout-info">
             <h4 class="font-bold text-xl mb-4">Tarefa para a próxima aula</h4>
             <p class="mb-4">O objetivo é desenvolver autonomia na resolução de problemas sequenciais.</p>
             <ol class="list-decimal list-inside space-y-3 font-semibold">
@@ -190,60 +190,29 @@ int main() {
     </section>
 
     <section id="teste-codigo-aula9" class="mb-16" aria-labelledby="teste-codigo-heading9">
-        <h2 id="teste-codigo-heading9" class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-8">
+        <h2 id="teste-codigo-heading9" class="section__title mb-8">
             💻 Área de Testes Interativa
         </h2>
-        <div class="bg-white p-4 rounded-lg shadow mb-8">
-            <div class="w-full aspect-video">
-                <iframe src="https://www.onlinegdb.com/online_c_compiler" class="w-full h-full rounded" frameborder="0"
-                    allowfullscreen></iframe>
-            </div>
+        <div class="card p-4 mb-8">
+          <md3-code-test title="Teste seu Código Aqui" src="https://www.onlinegdb.com/online_c_compiler"></md3-code-test>
         </div>
     </section>
 
 <!-- Vídeos de Apoio - Aula 9 -->
 <section id="recursos-apoio-aula9" class="mb-16" aria-labelledby="recursos-heading9">
-  <h2 id="recursos-heading9" class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-8">
+  <h2 id="recursos-heading9" class="section__title mb-8">
     🎥 Vídeos de Apoio
   </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    <div class="bg-white p-4 rounded-lg shadow">
-      <h3 class="font-semibold text-lg text-indigo-800 mb-2">
-        Função printf e scanf – Português (BR)
-      </h3>
-      <p class="text-sm text-slate-600 mb-3">
-        Vídeo claro e direto sobre como usar os comandos <code>printf</code> e <code>scanf</code> em C.
-      </p>
-      <!-- Vídeo 1 -->
-      <iframe class="w-full aspect-video rounded-md"
-              src="https://www.youtube.com/embed/if6pvcwrW10"
-              title="Função printf e scanf"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-    </div>
-    <div class="bg-white p-4 rounded-lg shadow">
-      <h3 class="font-semibold text-lg text-indigo-800 mb-2">
-        Introdução à programação C – parte 2: scanf e printf
-      </h3>
-      <p class="text-sm text-slate-600 mb-3">
-        Continuação da introdução à linguagem C com foco em entrada e saída de dados com <code>scanf</code> e <code>printf</code>.
-      </p>
-      <!-- Vídeo 2 -->
-      <iframe class="w-full aspect-video rounded-md"
-              src="https://www.youtube.com/embed/PtlSgJLq2XA"
-              title="Introdução à programação C - parte 2 (scanf e printf)"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-    </div>
+    <md3-video title="Função printf e scanf – Português (BR)" src="https://www.youtube.com/embed/if6pvcwrW10"></md3-video>
+    <md3-video title="Introdução à programação C – parte 2: scanf e printf" src="https://www.youtube.com/embed/PtlSgJLq2XA"></md3-video>
   </div>
 </section>
 
 
 
     <section id="checklist-aula9" class="mt-16">
-        <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+        <div class="callout callout-success">
             <h3 class="font-bold text-lg mb-3">✅ Ao final desta aula você deve ser capaz de:</h3>
             <ul class="list-none space-y-2">
                 <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Analisar um problema e identificar as etapas de
@@ -259,10 +228,10 @@ int main() {
     </section>
 
     <section id="bibliografia-aula9" class="mt-16" aria-labelledby="bibliografia-heading9">
-        <h2 id="bibliografia-heading9" class="text-3xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-6">
+        <h2 id="bibliografia-heading9" class="section__title mb-6">
             📚 Bibliografia de Apoio
         </h2>
-        <div class="bg-white p-8 rounded-lg shadow space-y-4">
+        <div class="card p-8 space-y-4">
             <p>
                 <strong>SANTOS, Marcelo Gonçalves dos.</strong> <em>Linguagem de programação.</em> São Paulo: Pearson,
                 2018.
