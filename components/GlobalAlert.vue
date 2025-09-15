@@ -25,14 +25,13 @@ export default {
       return map[this.variant] || map.info;
     },
     containerClass() {
-      const base = 'p-4 rounded-lg border text-body-medium';
-      const variants = {
-        info: 'bg-info-50 border-info-200 text-neutral-800 dark:bg-primary-900/20 dark:border-primary-700/40 dark:text-neutral-100',
-        warning: 'bg-warning-50 border-warning-200 text-neutral-800 dark:bg-warning-900/20 dark:border-warning-700/40 dark:text-neutral-100',
-        success: 'bg-success-50 border-success-200 text-neutral-800 dark:bg-success-900/20 dark:border-success-700/40 dark:text-neutral-100',
-        error: 'bg-error-50 border-error-200 text-neutral-800 dark:bg-error-900/20 dark:border-error-700/40 dark:text-neutral-100'
-      };
-      return `${base} ${variants[this.variant] || variants.info}`;
+      const variantClass = {
+        info: 'alert alert--info',
+        warning: 'alert alert--warning',
+        success: 'alert alert--success',
+        error: 'alert alert--error'
+      }[this.variant] || 'alert alert--info';
+      return variantClass;
     }
   }
 }

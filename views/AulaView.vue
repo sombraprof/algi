@@ -9,7 +9,10 @@
     </div>
     <GlobalAlert v-else-if="error" :text="error" variant="error" icon="fa-solid fa-triangle-exclamation" />
     <div v-else>
-      <div v-html="aulaContent" class="prose max-w-none pt-6"></div>
+      <div
+        v-html="aulaContent"
+        class="md3-content pt-6"
+      ></div>
     </div>
   </div>
 </template>
@@ -19,6 +22,9 @@ import { ref, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import DOMPurify from 'dompurify';
 import GlobalAlert from '../components/GlobalAlert.vue';
+import aulasMeta from '../aulas/aulas.json';
+import { rehighlightSafe } from '../js/web/hljs-utils.js';
+import { enhanceAulaContent } from '../js/web/aula-enhance.js';
 // import PageHeader from '../components/PageHeader.vue'; // Will be removed
 
 export default {
@@ -41,7 +47,8 @@ export default {
         loading.value = true;
         error.value = null;
 
-        const aula = window.__AULAS_META.find(a => a.id === aulaId);
+        const metaList = Array.isArray(window.__AULAS_META) ? window.__AULAS_META : aulasMeta;
+        const aula = metaList.find(a => a.id === aulaId);
 
         if (!aula) {
           throw new Error('Aula não encontrada');
@@ -50,12 +57,16 @@ export default {
         aulaTitle.value = aula.titulo;
 
         // Fetch the HTML content of the aula file
-        const response = await fetch(`aulas/${aula.arquivo}`);
+        const fileName = aula.arquivo || `${aulaId}.html`;
+        const response = await fetch(`aulas/${fileName}`);
         if (!response.ok) {
           throw new Error(`Falha ao carregar o arquivo da aula: ${aula.arquivo}`);
         }
         const rawHtml = await response.text();
-        aulaContent.value = DOMPurify.sanitize(rawHtml);
+        aulaContent.value = DOMPurify.sanitize(rawHtml, {
+          ADD_TAGS: ['md3-video', 'md3-callout', 'md3-checkbox', 'md3-external', 'iframe'],
+          ADD_ATTR: ['title', 'src', 'allow', 'variant', 'label', 'checked', 'href', 'icon', 'target', 'rel', 'allowfullscreen', 'frameborder', 'loading', 'referrerpolicy'],
+        });
 
         // Mark as visited
         if (window.localStorage) {
@@ -67,11 +78,19 @@ export default {
         }
 
         // Trigger syntax highlighting if available
-        if (window.hljs) {
-          setTimeout(() => {
-            window.hljs.highlightAll();
-          }, 100);
-        }
+        // Enhance accordions and rehighlight after content is in DOM
+        setTimeout(() => {
+          try {
+            const root = document.querySelector('#main-root .md3-content') || document.getElementById('main-root');
+            enhanceAulaContent(root);
+            // Normalize external links: open in new tab with noopener
+            root.querySelectorAll('a[href^="http"]').forEach((a) => {
+              try { a.setAttribute('target', '_blank'); } catch (_) {}
+              try { a.setAttribute('rel', 'noopener noreferrer'); } catch (_) {}
+            });
+          } catch (_) {}
+          rehighlightSafe();
+        }, 80);
 
       } catch (err) {
         error.value = err.message;

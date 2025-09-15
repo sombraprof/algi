@@ -157,9 +157,9 @@
                                     </tr>
                                     <tr class="border-b">
                                         <td class="p-3 mono">
-                                            <</ /td>
+                                            &lt;</td>
                                         <td class="p-3">Menor que</td>
-                                        <td class="p-3 mono"><code>5 < 3 // resulta em 0 (falso)</code></td>
+                                        <td class="p-3 mono"><code>5 &lt; 3 // resulta em 0 (falso)</code></td>
                                     </tr>
                                     <tr class="border-b">
                                         <td class="p-3 mono">>=</td>
@@ -168,9 +168,9 @@
                                     </tr>
                                     <tr class="border-b">
                                         <td class="p-3 mono">
-                                            <=</ /td>
+                                            &lt;=</td>
                                         <td class="p-3">Menor ou igual a</td>
-                                        <td class="p-3 mono"><code>5 <= 3 // resulta em 0 (falso)</code></td>
+                                        <td class="p-3 mono"><code>5 &lt;= 3 // resulta em 0 (falso)</code></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -227,7 +227,7 @@
                             <li>Parênteses <code>()</code> (maior prioridade)</li>
                             <li>Operadores Aritméticos de Multiplicação e Divisão (<code>* / %</code>)</li>
                             <li>Operadores Aritméticos de Adição e Subtração (<code>+ -</code>)</li>
-                            <li>Operadores Relacionais (<code>> < == !=</code> etc.)</li>
+                            <li>Operadores Relacionais (<code>> &lt; == !=</code> etc.)</li>
                             <li>Operadores Lógicos (<code>&&</code> e depois <code>||</code>) (menor prioridade)</li>
                         </ol>
                         <div class="callout callout-good-practice">
@@ -298,10 +298,7 @@
                         </ol>
 
                         <div class="mt-6">
-                            <a href="https://eadsp.unichristus.edu.br" target="_blank"
-                                class="inline-block bg-neutral-800 text-white font-bold py-2 px-4 rounded hover:bg-neutral-700 transition-colors mr-2">
-                                <i class="fa-solid fa-graduation-cap mr-2"></i>Acessar Moodle
-                            </a>
+                          <md3-external href="https://eadsp.unichristus.edu.br" label="Acessar Moodle" icon="fa-solid fa-graduation-cap" variant="tonal"></md3-external>
                         </div>
 
                         <div class="mt-8 bg-primary-200 text-primary-900 p-4 rounded-2xl">
@@ -324,7 +321,11 @@
         💻 Área de Testes Interativa
     </h2>
 
-    <md3-code-test title="Teste seu Código Aqui" src="https://www.onlinegdb.com/online_c_compiler"></md3-code-test>
+    <div class="card p-6">
+      <h4 class="font-bold text-xl mb-3">💻 Teste seu Código</h4>
+      <p class="mb-4">Abra o editor OnlineGDB em uma nova aba para compilar e executar seus programas em C.</p>
+      <md3-external href="https://www.onlinegdb.com/online_c_compiler" label="Abrir OnlineGDB" icon="fa-solid fa-up-right-from-square" variant="tonal"></md3-external>
+    </div>
 
     <p class="text-neutral-600 text-sm mt-4">
         💡 <strong>Dica:</strong> Escreva, compile e execute seu programa em C diretamente nesta página. 

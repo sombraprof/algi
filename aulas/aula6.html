@@ -124,10 +124,8 @@ char nome[50] = "Tiago Sombra";</code></pre>
                         </div>
                         
                       <div class="mt-8">
-                            <a href="https://www.youtube.com/watch?v=8ISwAYeZZ_E&list=PLa75BYTPDNKZWYypgOFEsX3H2Mg-SzuLW&index=4" target="_blank" class="inline-block bg-primary-500 text-white font-bold py-2 px-4 rounded hover:bg-primary-600 transition-colors w-full text-center">
-                                Para Saber Mais sobre Tipos de Dados (Vídeo)
-                            </a>
-                        </div>
+                        <md3-external href="https://www.youtube.com/watch?v=8ISwAYeZZ_E&list=PLa75BYTPDNKZWYypgOFEsX3H2Mg-SzuLW&index=4" label="Para Saber Mais sobre Tipos de Dados (Vídeo)" icon="fa-brands fa-youtube" variant="tonal"></md3-external>
+                      </div>
                     </div>
                 </div>
 
@@ -157,7 +155,7 @@ int main() {
   printf("Tamanho de double: %zu byte(s)\n", sizeof(double));
   return 0;
 }</code></pre>
-                            <button class="copy-code-btn mt-4 btn btn-tonal">Copiar Código</button>
+                            
                         </div>
                     </div>
                 </div>
@@ -169,13 +167,13 @@ int main() {
                         <p class="mb-4">Uma <strong>constante</strong> é um valor que, uma vez definido, não pode ser alterado durante a execução do programa. É útil para valores fixos como o PI, uma taxa de juro ou o número máximo de tentativas.</p>
                         <h4 class="font-semibold text-xl text-primary-700 mt-6 mb-3">Forma 1: A palavra-chave `const`</h4>
                         <p>Cria uma constante com um tipo de dado definido. É a forma mais moderna e segura, pois o compilador verifica o tipo.</p>
-                         <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-3">
+                         <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-3 mb-4">
                             <pre><code>const float PI = 3.14159;
 const int MAX_TENTATIVAS = 3;</code></pre>
                         </div>
                         <h4 class="font-semibold text-xl text-primary-700 mt-6 mb-3">Forma 2: A diretiva `#define`</h4>
                         <p>É uma diretiva do pré-processador. Simplesmente substitui todas as ocorrências de um nome por um valor antes da compilação. Não tem tipo de dado e é menos seguro.</p>
-                         <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-3">
+                         <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-3 mb-4">
                             <pre><code>#define PI 3.14159
 #define MAX_TENTATIVAS 3</code></pre>
                         </div>
@@ -216,7 +214,7 @@ const int MAX_TENTATIVAS = 3;</code></pre>
                             <li>Poste o código `.c` na Atividade "Aula 6 - Variáveis, Constantes e Tipos Primitivos em C" no Moodle.</li>
                         </ol>
                         <div class="mt-6">
-                            <a href="https://eadsp.unichristus.edu.br" target="_blank" class="inline-block bg-neutral-800 text-white font-bold py-2 px-4 rounded hover:bg-neutral-700 transition-colors mr-2">Acessar Moodle</a>
+                            <md3-external href="https://eadsp.unichristus.edu.br" label="Acessar Moodle" icon="fa-solid fa-graduation-cap" variant="tonal"></md3-external>
                         </div>
                     </div>
                 </div>
@@ -224,7 +222,11 @@ const int MAX_TENTATIVAS = 3;</code></pre>
                 <!-- Prática Digital -->
 <section id="pratica-digital-aula6" class="mt-16 mb-16">
   <h2 class="section__title mb-6">💻 Teste seu Código Online</h2>
-  <md3-code-test title="Experimente o seu programa em C diretamente no navegador:" src="https://www.onlinegdb.com/online_c_compiler"></md3-code-test>
+  <div class="card p-6">
+    <h4 class="font-bold text-xl mb-3">💻 Teste seu Código</h4>
+    <p class="mb-4">Abra o editor OnlineGDB em uma nova aba para compilar e executar seus programas em C.</p>
+    <a href="https://www.onlinegdb.com/online_c_compiler" target="_blank" rel="noopener noreferrer" class="btn btn-tonal">Abrir OnlineGDB</a>
+  </div>
 </section>
 
 <!-- Checklist -->
@@ -260,8 +262,8 @@ const int MAX_TENTATIVAS = 3;</code></pre>
                 <!-- Bibliografia -->
 <section id="bibliografia-aula6" class="mt-16 mb-16">
   <h2 class="section__title mb-6">📚 Bibliografia Recomendada</h2>
-  <div class="bg-neutral-100 p-8 rounded-2xl">
-    <ul class="list-disc list-inside space-y-3 text-neutral-700">
+  <div class="card p-8">
+    <ul class="list-disc list-inside space-y-3">
       <li>
         FORBELLONE, A. L. V; EBERSPÄCHER, H. F. <strong>Lógica de Programação: a construção de algoritmos e estruturas de dados.</strong> 4ª ed. São Paulo: Pearson, 2015.
       </li>

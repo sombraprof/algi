@@ -18,25 +18,17 @@
             <div class="mt-2 text-body-medium text-neutral-800 dark:text-neutral-200" v-html="exercise.content"></div>
           </div>
           <div class="border-t border-neutral-200 dark:border-neutral-700">
-            <button
-              @click="toggleAccordion(index)"
-              class="accordion-toggle btn btn-tonal w-full justify-between text-left"
-              :aria-expanded="exercise.showSolution ? 'true' : 'false'"
-              :aria-controls="`solution-panel-${index}`"
-            >
-              <span>Mostrar Solução</span>
-              <span class="transform transition-transform duration-300" :class="exercise.showSolution ? 'rotate-180' : ''">▼</span>
-            </button>
-            <div
-              class="accordion-content overflow-hidden bg-neutral-900 dark:bg-neutral-800 text-neutral-100 mono text-body-small"
-              :style="{ maxHeight: exercise.showSolution ? '500px' : '0px' }"
-              :id="`solution-panel-${index}`"
-              role="region"
-            >
-              <div class="p-4">
-                <pre><code class="language-c">{{ exercise.solution }}</code></pre>
+            <details class="accordion">
+              <summary>
+                <span>Mostrar Solução</span>
+                <span class="text-neutral-600 dark:text-neutral-300">▼</span>
+              </summary>
+              <div class="border-t border-neutral-200 dark:border-neutral-700 bg-neutral-900 dark:bg-neutral-800 text-neutral-100 mono text-body-small">
+                <div class="p-4">
+                  <pre><code class="language-c">{{ exercise.solution }}</code></pre>
+                </div>
               </div>
-            </div>
+            </details>
           </div>
           <!-- Exercise completion status -->
           <div class="p-4 border-t border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800">
@@ -70,6 +62,7 @@ import { ref, computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import DOMPurify from 'dompurify';
 import GlobalAlert from '../components/GlobalAlert.vue';
+import { rehighlightSafe } from '../js/web/hljs-utils.js';
 // import PageHeader from '../components/PageHeader.vue'; // Removed
 
 export default {
@@ -132,11 +125,7 @@ export default {
         }
 
         // Trigger syntax highlighting if available
-        if (window.hljs) {
-          setTimeout(() => {
-            window.hljs.highlightAll();
-          }, 100);
-        }
+        setTimeout(() => rehighlightSafe(), 80);
 
       } catch (err) {
         error.value = err.message;
@@ -183,11 +172,7 @@ export default {
       }
     };
 
-    const toggleAccordion = (index) => {
-      if (lista.value.exercises[index]) {
-        lista.value.exercises[index].showSolution = !lista.value.exercises[index].showSolution;
-      }
-    };
+    // details/summary handles its own toggle natively
 
     const completedCount = computed(() => {
       return lista.value.exercises.filter(ex => ex.completed).length;

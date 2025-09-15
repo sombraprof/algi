@@ -3,10 +3,10 @@
     id="back-to-top"
     @click="toTop"
     :class="[
-      'fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[120] transition-opacity duration-200 flex items-center justify-center rounded-full shadow-elevation-3 w-10 h-10 md:w-12 md:h-12',
-      isAula ? 'bg-primary-100 text-primary-700 hover:bg-primary-200' : 'bg-primary-600 text-white hover:bg-primary-700',
+      'btn btn-icon btn-tonal fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[120] shadow-elevation-3 transition-opacity duration-200 w-10 h-10 md:w-12 md:h-12',
       visible ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
     ]"
+    :style="{ bottom: bottomOffset }"
     aria-label="Voltar ao topo"
     title="Voltar ao topo"
   >
@@ -22,9 +22,10 @@ export default {
   name: 'FabBackTop',
   setup() {
     const visible = ref(false);
-    const threshold = 200; // reasonable scroll distance to show
+    const threshold = 240; // show only after meaningful scroll
     const route = useRoute();
     const isAula = computed(() => route.path.startsWith('/aula/'));
+    const bottomOffset = ref('1.0rem');
 
     const getScrollTop = () => {
       const mainRoot = document.getElementById('main-root');
@@ -35,7 +36,13 @@ export default {
     };
 
     const onScroll = () => {
-      visible.value = getScrollTop() > threshold;
+      const mainRoot = document.getElementById('main-root');
+      const useMain = mainRoot && mainRoot.scrollHeight > mainRoot.clientHeight;
+      const scrollable = useMain
+        ? (mainRoot.scrollHeight - mainRoot.clientHeight)
+        : (document.documentElement.scrollHeight - window.innerHeight);
+      const scrolled = getScrollTop();
+      visible.value = scrollable > threshold * 1.5 && scrolled > threshold;
     };
 
     const toTop = () => {
@@ -55,6 +62,23 @@ export default {
       window.addEventListener('scroll', onScroll, { passive: true });
       const mainRoot = document.getElementById('main-root');
       if (mainRoot) mainRoot.addEventListener('scroll', onScroll, { passive: true });
+
+      // Avoid overlapping footer: adjust bottom offset when footer is visible
+      try {
+        const footer = document.querySelector('footer');
+        if (footer && 'IntersectionObserver' in window) {
+          const io = new IntersectionObserver((entries) => {
+            const e = entries[0];
+            if (e && e.isIntersecting) {
+              const h = footer.getBoundingClientRect().height || 56;
+              bottomOffset.value = `${h + 16}px`;
+            } else {
+              bottomOffset.value = '1.0rem';
+            }
+          }, { root: null, threshold: 0 });
+          io.observe(footer);
+        }
+      } catch (_) {}
     });
 
     watch(() => route.path, () => {
@@ -68,7 +92,7 @@ export default {
       if (mainRoot) mainRoot.removeEventListener('scroll', onScroll);
     });
 
-    return { visible, isAula, toTop };
+    return { visible, isAula, toTop, bottomOffset };
   }
 }
 </script>

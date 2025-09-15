@@ -12,7 +12,7 @@
   <!-- NOVA SEÇÃO: Plano da Aula -->
   <section
     id="plano-aula3"
-    class="mb-16 bg-primary-50 border border-primary-200 p-8 rounded-2xl shadow-elevation-3"
+    class="mb-16 callout callout-info p-8"
     aria-labelledby="plano-aula3-heading"
   >
     <h2
@@ -88,8 +88,8 @@
       </h4>
       <div class="grid md:grid-cols-2 gap-8 mt-4">
         <div class="callout callout-danger">
-          <h5 class="font-bold text-red-800 mb-2">Ordem Incorreta</h5>
-          <ol class="list-decimal list-inside text-red-700">
+          <h5 class="font-bold callout__title mb-2">Ordem Incorreta</h5>
+          <ol class="list-decimal list-inside">
             <li>Pegar o sapato.</li>
             <li>Calçar o sapato.</li>
             <li>Pegar a meia.</li>
@@ -97,8 +97,8 @@
           </ol>
         </div>
         <div class="callout callout-success">
-          <h5 class="font-bold text-green-800 mb-2">Ordem Correta</h5>
-          <ol class="list-decimal list-inside text-green-700">
+          <h5 class="font-bold callout__title mb-2">Ordem Correta</h5>
+          <ol class="list-decimal list-inside">
             <li>Pegar a meia.</li>
             <li>Calçar a meia.</li>
             <li>Pegar o sapato.</li>
@@ -124,7 +124,8 @@
         Agora, vamos praticar a criação de algoritmos em grupo. A metodologia
         "Fishbowl" (aquário) funciona da seguinte forma:
       </p>
-      <ul class="list-disc list-inside space-y-2 bg-neutral-50 p-4 rounded-xl">
+      <div class="card p-4">
+      <ul class="list-disc list-inside space-y-2">
         <li>
           Um pequeno grupo de alunos senta-se no centro da sala (o "aquário").
         </li>
@@ -139,12 +140,13 @@
           (ou um novo).
         </li>
       </ul>
+      </div>
       <h4 class="font-semibold text-xl text-primary-700 mt-8 mb-3">
         Problemas para a Atividade:
       </h4>
       <div class="grid md:grid-cols-2 gap-6 mt-4">
-        <div class="bg-primary-50 p-6 rounded-2xl">
-          <h5 class="font-bold text-primary-800 mb-2">
+        <div class="callout callout-academic p-6">
+          <h5 class="font-bold mb-2">
             Problema A: Trocar uma Lâmpada
           </h5>
           <p>
@@ -153,8 +155,8 @@
             possíveis problemas.
           </p>
         </div>
-        <div class="bg-primary-50 p-6 rounded-2xl">
-          <h5 class="font-bold text-primary-800 mb-2">
+        <div class="callout callout-academic p-6">
+          <h5 class="font-bold mb-2">
             Problema B: Fazer Matrícula
           </h5>
           <p>
@@ -210,13 +212,7 @@
         <li>Poste no Moodle no espaço da "Aula 3".</li>
       </ol>
       <div class="mt-6">
-        <a
-          href="https://eadsp.unichristus.edu.br"
-          target="_blank"
-          class="inline-block bg-neutral-800 text-white font-bold py-2 px-4 rounded hover:bg-neutral-700 transition-colors"
-        >
-          <i class="fa-solid fa-graduation-cap mr-2"></i>Acessar Moodle
-        </a>
+        <md3-external href="https://eadsp.unichristus.edu.br" label="Acessar Moodle" icon="fa-solid fa-graduation-cap" variant="tonal"></md3-external>
       </div>
     </div>
   </section>
@@ -235,31 +231,11 @@
     </h2>
     <div class="card p-8 space-y-4">
       <p class="text-neutral-700 mb-4">Verifique se você:</p>
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <input type="checkbox" class="mt-1 accent-primary-600" />
-          <span
-            >Entendeu a importância da ordem de execução em algoritmos.</span
-          >
-        </li>
-        <li class="flex items-start gap-3">
-          <input type="checkbox" class="mt-1 accent-primary-600" />
-          <span>Praticou a decomposição de problemas em passos lógicos.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <input type="checkbox" class="mt-1 accent-primary-600" />
-          <span
-            >Participou da atividade Fishbowl criando ou analisando
-            algoritmos.</span
-          >
-        </li>
-        <li class="flex items-start gap-3">
-          <input type="checkbox" class="mt-1 accent-primary-600" />
-          <span
-            >Postou a TED no Moodle com pelo menos 5 passos lógicos para um
-            problema real.</span
-          >
-        </li>
+      <ul class="space-y-3 md3-checklist">
+        <li><md3-checkbox label="Entendeu a importância da ordem de execução em algoritmos."></md3-checkbox></li>
+        <li><md3-checkbox label="Praticou a decomposição de problemas em passos lógicos."></md3-checkbox></li>
+        <li><md3-checkbox label="Participou da atividade Fishbowl criando ou analisando algoritmos."></md3-checkbox></li>
+        <li><md3-checkbox label="Postou a TED no Moodle com pelo menos 5 passos lógicos para um problema real."></md3-checkbox></li>
       </ul>
     </div>
   </section>

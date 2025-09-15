@@ -1,6 +1,6 @@
 <template>
   <div v-if="enabled" class="fixed right-4 bottom-20 z-50">
-    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-warning-50 border border-warning-200 text-warning-800 dark:bg-warning-900/20 dark:border-warning-700/40 dark:text-warning-200 shadow-elevation-1 text-label-medium">
+    <div class="chip chip--warning">
       <i class="fa-solid fa-magnifying-glass"></i>
       <span>Revisão: {{ total }} achados</span>
       <button class="ml-2 text-label-small underline" @click="copy" aria-label="Copiar relatório">Copiar</button>
@@ -18,8 +18,14 @@ export default {
     try { this.enabled = localStorage.getItem('review_mode') === '1'; } catch (_) {}
     if (!this.enabled) return;
     const selectors = [
+      // Legacy palettes/utilities a serem removidas
       '[class*="text-slate-"]',
+      '[class*="bg-slate-"]',
+      '[class*="border-slate-"]',
+      '[class*="text-indigo-"]',
       '[class*="bg-indigo-"]',
+      '[class*="border-indigo-"]',
+      // Utilitárias genéricas que costumam conflitar com o tema
       '[class~="bg-white"]',
       '[class*="border-b-2"]'
     ];
@@ -41,4 +47,3 @@ export default {
 
 <style scoped>
 </style>
-

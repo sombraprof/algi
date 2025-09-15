@@ -12,7 +12,7 @@
   <!-- NOVA SEÇÃO: Plano da Aula -->
   <section
     id="plano-aula2"
-    class="mb-16 bg-primary-50 border border-primary-200 p-8 rounded-2xl shadow-elevation-3"
+    class="mb-16 callout callout-info p-8"
   >
     <h2 class="text-3xl font-bold text-primary-700 mb-6 text-center">
       Plano da Aula
@@ -44,15 +44,6 @@
         <p class="text-neutral-600">
           Aula expositiva dialogada, exercícios de decomposição de problemas,
           mapeamento coletivo de tarefas, exemplos práticos e TED no Moodle.
-        </p>
-      </div>
-      <div class="card">
-        <h3 class="font-semibold text-lg text-primary-800 mb-2">
-          <i class="fa-solid fa-desktop mr-2"></i>RECURSOS
-        </h3>
-        <p class="text-neutral-600">
-          Quadro branco, projetor multimídia, Moodle, materiais de apoio visuais
-          e página <code>aula2.html</code>.
         </p>
       </div>
     </div>
@@ -93,9 +84,8 @@
         A tarefa "Ir à praia no fim de semana" parece simples, mas envolve uma
         série de verificações e ações lógicas:
       </p>
-      <ul
-        class="list-disc list-inside space-y-2 mt-4 bg-neutral-50 p-4 rounded-xl"
-      >
+      <div class="card p-4 mt-4">
+      <ul class="list-disc list-inside space-y-2">
         <li>Verificar a previsão do tempo.</li>
         <li>Verificar o saldo bancário.</li>
         <li>Verificar se o carro tem combustível.</li>
@@ -103,6 +93,7 @@
         <li>Arrumar a mala (roupas, protetor solar, etc.).</li>
         <li>Definir o trajeto no GPS.</li>
       </ul>
+      </div>
       <p class="mt-4">
         Um computador não consegue "planear uma viagem". Mas consegue executar
         cada um destes pequenos passos, um de cada vez, se lhe dissermos
@@ -117,9 +108,8 @@
         Organizar um churrasco também requer uma sequência lógica, onde alguns
         passos dependem de outros:
       </p>
-      <ul
-        class="list-disc list-inside space-y-2 mt-4 bg-neutral-50 p-4 rounded-xl"
-      >
+      <div class="card p-4 mt-4">
+      <ul class="list-disc list-inside space-y-2">
         <li>
           <strong>Passo 1:</strong> Convidar os amigos. (Dependência: o número
           de pessoas define a quantidade de comida).
@@ -134,6 +124,7 @@
         <li><strong>Passo 4:</strong> Grelhar a carne.</li>
         <li><strong>Passo 5:</strong> Servir os convidados.</li>
       </ul>
+      </div>
     </div>
   </div>
 
@@ -174,7 +165,8 @@
           <h5 class="font-semibold text-lg mb-2 text-center">
             Tabela-Verdade do E (AND)
           </h5>
-          <table class="w-full truth-table">
+          <div class="overflow-x-auto -mx-2 sm:mx-0">
+          <table class="w-full truth-table min-w-[480px]">
             <thead class="bg-neutral-200 text-neutral-700">
               <tr>
                 <th>Condição A</th>
@@ -257,6 +249,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
       </div>
     </div>
@@ -286,7 +279,8 @@
           <h5 class="font-semibold text-lg mb-2 text-center">
             Tabela-Verdade do OU (OR)
           </h5>
-          <table class="w-full truth-table">
+          <div class="overflow-x-auto -mx-2 sm:mx-0">
+          <table class="w-full truth-table min-w-[480px]">
             <thead class="bg-neutral-200 text-neutral-700">
               <tr>
                 <th>Condição A</th>
@@ -369,6 +363,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
       </div>
     </div>
@@ -397,7 +392,8 @@
           <h5 class="font-semibold text-lg mb-2 text-center">
             Tabela-Verdade do NÃO (NOT)
           </h5>
-          <table class="w-full truth-table">
+          <div class="overflow-x-auto -mx-2 sm:mx-0">
+          <table class="w-full truth-table min-w-[480px]">
             <thead class="bg-neutral-200 text-neutral-700">
               <tr>
                 <th>Condição A</th>
@@ -441,6 +437,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
       </div>
     </div>
@@ -464,17 +461,21 @@
         <ul class="space-y-3">
           <li><strong>Passo 1:</strong> Pegar a cafeteira.</li>
           <li><strong>Passo 2:</strong> Verificar se há pó de café.</li>
-          <li class="ml-6 bg-yellow-100 p-2 rounded">
-            <strong>Decisão: SE</strong> houver pó, colocar no filtro.
-            <strong>SENÃO</strong>, adicionar "comprar pó de café" à lista de
-            compras e parar o processo.
+          <li class="ml-6">
+            <md3-callout variant="info">
+              <strong>Decisão: SE</strong> houver pó, colocar no filtro.
+              <strong>SENÃO</strong>, adicionar "comprar pó de café" à lista de
+              compras e parar o processo.
+            </md3-callout>
           </li>
           <li>
             <strong>Passo 3:</strong> Verificar se o reservatório tem água.
           </li>
-          <li class="ml-6 bg-yellow-100 p-2 rounded">
-            <strong>Decisão: SE</strong> o reservatório tiver água, continuar.
-            <strong>SENÃO</strong>, encher o reservatório com água.
+          <li class="ml-6">
+            <md3-callout variant="info">
+              <strong>Decisão: SE</strong> o reservatório tiver água, continuar.
+              <strong>SENÃO</strong>, encher o reservatório com água.
+            </md3-callout>
           </li>
           <li><strong>Passo 4:</strong> Ligar a cafeteira na tomada.</li>
           <li><strong>Passo 5:</strong> Apertar o botão de ligar.</li>
@@ -507,13 +508,11 @@
         <strong>E</strong> (o cliente for VIP <strong>OU</strong> tiver um cupom
         de desconto)."
       </p>
-      <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-4">
-        <pre><code>SE (valorCompra > 100) E (clienteEhVip OU possuiCupom) ENTAO
+      <pre class="mt-4"><code class="language-plaintext">SE (valorCompra > 100) E (clienteEhVip OU possuiCupom) ENTAO
   aplicarDesconto()
 SENAO
   naoAplicarDesconto()
 FIM_SE</code></pre>
-      </div>
 
       <h4 class="font-semibold text-xl text-primary-700 mt-8 mb-3">
         Exemplo 2: Aprovação de Aluno
@@ -523,13 +522,11 @@ FIM_SE</code></pre>
         <strong>OU</strong> se tiver uma média entre 5.0 e 6.9
         <strong>E</strong> uma frequência maior que 75%."
       </p>
-      <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-4">
-        <pre><code>SE (media >= 7.0) OU (media >= 5.0 E frequencia > 75) ENTAO
+      <pre class="mt-4"><code class="language-plaintext">SE (media >= 7.0) OU (media >= 5.0 E frequencia > 75) ENTAO
   status = "Aprovado"
 SENAO
   status = "Reprovado"
 FIM_SE</code></pre>
-      </div>
     </div>
   </div>
 
@@ -576,12 +573,7 @@ FIM_SE</code></pre>
         </li>
       </ol>
       <div class="mt-6">
-        <a
-          href="https://eadsp.unichristus.edu.br"
-          target="_blank"
-          class="inline-block bg-neutral-800 text-white font-bold py-2 px-4 rounded hover:bg-neutral-700 transition-colors mr-2"
-          >Acessar Moodle</a
-        >
+        <md3-external href="https://eadsp.unichristus.edu.br" label="Acessar Moodle" icon="fa-solid fa-graduation-cap" variant="tonal"></md3-external>
       </div>
     </div>
   </div>
@@ -602,35 +594,11 @@ FIM_SE</code></pre>
       <p class="text-neutral-700 mb-4">
         Antes de encerrar a Aula 2, confirme se você:
       </p>
-      <ul class="space-y-3">
-        <li class="flex items-start gap-3">
-          <input type="checkbox" class="mt-1 accent-primary-600" />
-          <span
-            >Entendeu o conceito de decomposição de problemas em passos
-            lógicos.</span
-          >
-        </li>
-        <li class="flex items-start gap-3">
-          <input type="checkbox" class="mt-1 accent-primary-600" />
-          <span
-            >Sabe identificar operadores lógicos (E, OU, NÃO) em exemplos
-            reais.</span
-          >
-        </li>
-        <li class="flex items-start gap-3">
-          <input type="checkbox" class="mt-1 accent-primary-600" />
-          <span
-            >Conseguiu mapear uma tarefa cotidiana como um algoritmo com
-            decisões.</span
-          >
-        </li>
-        <li class="flex items-start gap-3">
-          <input type="checkbox" class="mt-1 accent-primary-600" />
-          <span
-            >Postou sua TED no Moodle descrevendo um problema do seu dia a dia
-            com decisões lógicas.</span
-          >
-        </li>
+      <ul class="space-y-3 md3-checklist">
+        <li><md3-checkbox label="Entendeu o conceito de decomposição de problemas em passos lógicos."></md3-checkbox></li>
+        <li><md3-checkbox label="Sabe identificar operadores lógicos (E, OU, NÃO) em exemplos reais."></md3-checkbox></li>
+        <li><md3-checkbox label="Conseguiu mapear uma tarefa cotidiana como um algoritmo com decisões."></md3-checkbox></li>
+        <li><md3-checkbox label="Postou sua TED no Moodle descrevendo um problema do seu dia a dia com decisões lógicas."></md3-checkbox></li>
       </ul>
     </div>
   </section>

@@ -13,36 +13,38 @@ export const useThemeStore = defineStore('theme', () => {
     const root = document.documentElement;
     root.classList.toggle('theme-dark', dark);
 
-    const btn = document.getElementById('theme-toggle');
-    if (btn) {
-      btn.setAttribute('aria-pressed', String(dark));
-      btn.innerHTML = dark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-    }
-
     const hlLight = document.getElementById('hljs-theme-light');
     const hlDark = document.getElementById('hljs-theme-dark');
     if (hlLight && hlDark) {
       hlLight.disabled = dark;
       hlDark.disabled = !dark;
     }
+
+    // Update browser UI theme color for mobile
+    try {
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', dark ? '#121212' : '#1976d2');
+    } catch (_) {}
   };
 
   const toggleTheme = () => {
     const newTheme = theme.value === 'dark' ? 'light' : 'dark';
     applyTheme(newTheme);
-
-    // Re-highlight code if hljs is available
-    if (window.hljs) {
-      try {
-        window.hljs.highlightAll();
-      } catch (_) {}
-    }
   };
 
   // Watch for theme changes and apply them
   watch(theme, (newTheme) => {
     applyTheme(newTheme);
   }, { immediate: true });
+
+  // Initialize theme based on saved value or system preference
+  try {
+    const saved = localStorage.getItem('theme');
+    if (!saved) {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(prefersDark ? 'dark' : 'light');
+    }
+  } catch (_) {}
 
   return {
     theme,
