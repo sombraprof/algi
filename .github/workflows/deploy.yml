@@ -1,9 +1,14 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (peaceiris)
 
 on:
   push:
     branches:
-      - main # Set this to your default branch
+      - main  # your default branch
+
+# IMPORTANT: allow git push to gh-pages
+permissions:
+  contents: write   # <-- required for peaceiris (it pushes via git)
+  # pages/id-token are NOT needed here
 
 jobs:
   build-and-deploy:
@@ -11,27 +16,30 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4   # upgrade to v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18' # Or your preferred Node.js version
+          node-version: 20          # LTS/current
+          cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci                 # faster & reproducible
 
       - name: Build
         run: npm run build
 
+      - name: SPA fallback (optional but recommended)
+        run: cp dist/index.html dist/404.html
+        # English comment: GitHub Pages serves 404.html on unknown routes, useful for SPA routing
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}   # uses repo GITHUB_TOKEN
           publish_dir: ./dist
-          # The following line is important for single-page applications
-          # It ensures that all requests are routed to index.html
-          # This is crucial for client-side routing to work correctly
-          # cname: # Optional: if you have a custom domain, specify it here (e.g., 'your-domain.com')
-          # If your project is deployed to a subdirectory (like /algi/), you might need to set a base URL in your Vite config.
-          # We already did this in vite.config.js with base: '/algi/'
+          publish_branch: gh-pages
+          force_orphan: true
+          enable_jekyll: false                        # creates .nojekyll
+          # English comment: peaceiris will commit and push to gh-pages
