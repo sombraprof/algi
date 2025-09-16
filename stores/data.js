@@ -1,10 +1,7 @@
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
-import aulasData from '../aulas/aulas.json';
-import listasData from '../listas/listas.json';
 
-// Process data immediately
-const processAulas = () => {
+const processAulas = (aulasData) => {
   window.__AULAS_META = aulasData;
 
   const groups = {};
@@ -31,7 +28,7 @@ const processAulas = () => {
   return flatAulas;
 };
 
-const processListas = () => {
+const processListas = (listasData) => {
   window.__LISTAS_META = listasData;
   return listasData.map((lista) => {
     const id = (lista.arquivo || "").replace(/\.json$/i, "");
@@ -46,12 +43,13 @@ const processListas = () => {
 };
 
 export const useDataStore = defineStore('data', () => {
-  const loading = ref(false);
-  const aulas = ref(processAulas());
-  const listas = ref(processListas());
+  const loading = ref(true);
+  const error = ref(null);
+  const aulas = ref([]);
+  const listas = ref([]);
 
-  const filteredAulas = ref([...aulas.value]);
-  const filteredListas = ref([...listas.value]);
+  const filteredAulas = ref([]);
+  const filteredListas = ref([]);
 
   const groupedFilteredAulas = computed(() => {
     const groups = {};
@@ -76,13 +74,44 @@ export const useDataStore = defineStore('data', () => {
     }
   };
 
-  const loadData = () => {
-    // Data is already loaded
-    loading.value = false;
+  const loadData = async () => {
+    if (aulas.value.length > 0 && listas.value.length > 0) {
+      loading.value = false;
+      return;
+    }
+
+    try {
+      loading.value = true;
+      error.value = null;
+
+      const [aulasResponse, listasResponse] = await Promise.all([
+        fetch('aulas/aulas.json'),
+        fetch('listas/listas.json')
+      ]);
+
+      if (!aulasResponse.ok) throw new Error('Falha ao carregar aulas.');
+      if (!listasResponse.ok) throw new Error('Falha ao carregar listas.');
+
+      const aulasData = await aulasResponse.json();
+      const listasData = await listasResponse.json();
+
+      aulas.value = processAulas(aulasData);
+      listas.value = processListas(listasData);
+
+      filteredAulas.value = [...aulas.value];
+      filteredListas.value = [...listas.value];
+
+    } catch (err) {
+      console.error("Failed to load data store:", err);
+      error.value = err.message;
+    } finally {
+      loading.value = false;
+    }
   };
 
   return {
     loading,
+    error,
     aulas,
     listas,
     filteredAulas,

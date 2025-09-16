@@ -4,11 +4,12 @@ import vue from '@vitejs/plugin-vue';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  base: '/algi/',
   plugins: [
     vue(),
     VitePWA({
       registerType: 'prompt',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg', 'imagens/icon.svg', 'imagens/icon-192.png', 'imagens/icon-512.png'],
       devOptions: { enabled: false },
       selfDestroying: true,
       manifest: {
@@ -18,20 +19,13 @@ export default defineConfig({
         theme_color: '#1976d2',
         background_color: '#fafafa',
         icons: [
-          { src: './imagens/icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any maskable' },
-          { src: './imagens/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
-          { src: './imagens/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' }
+          { src: 'imagens/icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any maskable' },
+          { src: 'imagens/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: 'imagens/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' }
         ]
       }
     })
   ],
-  build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-      },
-    },
-  },
   server: {
     host: '0.0.0.0',
     hmr: {

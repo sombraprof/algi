@@ -3,10 +3,11 @@
     <!-- Page Header (will be global from App.vue) -->
     <!-- <PageHeader :pageTitle="aulaTitle" /> -->
 
-    <div v-if="loading" class="text-center py-8">
-      <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
-      <GlobalAlert class="mt-2 inline-block text-left" text="Carregando aula..." variant="info" />
-    </div>
+    <GlobalLoader
+      v-if="loading"
+      title="Carregando aula"
+      subtitle="Preparando o conteúdo..."
+    />
     <GlobalAlert v-else-if="error" :text="error" variant="error" icon="fa-solid fa-triangle-exclamation" />
     <div v-else>
       <div
@@ -19,17 +20,16 @@
 
 <script>
 import { ref, onMounted, watch } from 'vue';
-import { useRoute } from 'vue-router';
 import DOMPurify from 'dompurify';
 import GlobalAlert from '../components/GlobalAlert.vue';
-import aulasMeta from '../aulas/aulas.json';
+import GlobalLoader from '../components/GlobalLoader.vue';
 import { rehighlightSafe } from '../js/web/hljs-utils.js';
 import { enhanceAulaContent } from '../js/web/aula-enhance.js';
 // import PageHeader from '../components/PageHeader.vue'; // Will be removed
 
 export default {
   name: 'AulaView',
-  components: { GlobalAlert },
+  components: { GlobalAlert, GlobalLoader },
   props: {
     id: {
       type: String,
@@ -47,6 +47,11 @@ export default {
         loading.value = true;
         error.value = null;
 
+        // First, fetch the metadata file
+        const metaResponse = await fetch(`${import.meta.env.BASE_URL}aulas/aulas.json`);
+        if (!metaResponse.ok) throw new Error('Não foi possível carregar o índice de aulas.');
+        const aulasMeta = await metaResponse.json();
+
         const metaList = Array.isArray(window.__AULAS_META) ? window.__AULAS_META : aulasMeta;
         const aula = metaList.find(a => a.id === aulaId);
 
@@ -58,7 +63,7 @@ export default {
 
         // Fetch the HTML content of the aula file
         const fileName = aula.arquivo || `${aulaId}.html`;
-        const response = await fetch(`aulas/${fileName}`);
+        const response = await fetch(`${import.meta.env.BASE_URL}aulas/${fileName}`); // FIXED PATH
         if (!response.ok) {
           throw new Error(`Falha ao carregar o arquivo da aula: ${aula.arquivo}`);
         }

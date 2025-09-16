@@ -6,7 +6,9 @@ import router from './core/router.js';
 import '/style.css';
 import { registerSW } from 'virtual:pwa-register';
 import './web/md3-elements.js';
+import { ensureHighlightThemes } from './web/hljs-theme-loader.js';
 
+ensureHighlightThemes();
 const app = createApp(App);
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedState);

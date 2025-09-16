@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import { ref, watch } from 'vue';
+import { toggleHighlightTheme } from '../js/web/hljs-theme-loader.js';
 
 export const useThemeStore = defineStore('theme', () => {
   const theme = ref('light');
@@ -12,15 +13,8 @@ export const useThemeStore = defineStore('theme', () => {
 
     const root = document.documentElement;
     root.classList.toggle('theme-dark', dark);
+    toggleHighlightTheme(dark);
 
-    const hlLight = document.getElementById('hljs-theme-light');
-    const hlDark = document.getElementById('hljs-theme-dark');
-    if (hlLight && hlDark) {
-      hlLight.disabled = dark;
-      hlDark.disabled = !dark;
-    }
-
-    // Update browser UI theme color for mobile
     try {
       const meta = document.querySelector('meta[name="theme-color"]');
       if (meta) meta.setAttribute('content', dark ? '#121212' : '#1976d2');
@@ -32,12 +26,10 @@ export const useThemeStore = defineStore('theme', () => {
     applyTheme(newTheme);
   };
 
-  // Watch for theme changes and apply them
   watch(theme, (newTheme) => {
     applyTheme(newTheme);
   }, { immediate: true });
 
-  // Initialize theme based on saved value or system preference
   try {
     const saved = localStorage.getItem('theme');
     if (!saved) {

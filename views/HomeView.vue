@@ -3,10 +3,7 @@
     <!-- Lessons Section -->
     <SectionBlock v-if="currentFilter !== 'listas'" id="home" title="Aulas" :animate="true" :divider="true">
       <div id="cards-container" class="space-y-8">
-        <div v-if="loading" class="text-center py-8">
-          <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
-          <GlobalAlert class="mt-2 inline-block text-left" text="Carregando aulas..." variant="info" />
-        </div>
+        <GlobalLoader v-if="loading" title="Carregando aulas..." subtitle="Preparando o material de estudo."/>
         <GlobalAlert
           v-else-if="Object.keys(groupedAulasView).length === 0 && (currentFilter === 'all' || currentFilter === 'aulas')"
           text="Nenhuma aula encontrada."
@@ -25,10 +22,7 @@
     <!-- Exercise Lists Section -->
     <SectionBlock v-if="currentFilter !== 'aulas'" id="listas" title="Lista de Exercícios" :tight="true" :animate="true" :divider="true">
       <div id="listas-container" class="grid-cards anim-cards">
-        <div v-if="loading" class="text-center py-8 col-span-full">
-          <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
-          <GlobalAlert class="mt-2 inline-block text-left" text="Carregando listas..." variant="info" />
-        </div>
+        <GlobalLoader v-if="loading" title="Carregando listas..." subtitle="Buscando os desafios."/>
         <GlobalAlert
           v-else-if="listasView.length === 0 && (currentFilter === 'all' || currentFilter === 'listas')"
           text="Nenhuma lista encontrada."
@@ -51,6 +45,7 @@ import AulaCard from '../components/AulaCard.vue';
 import ListaCard from '../components/ListaCard.vue';
 import GlobalAlert from '../components/GlobalAlert.vue';
 import SectionBlock from '../components/SectionBlock.vue';
+import GlobalLoader from '../components/GlobalLoader.vue';
 
 export default {
   name: 'HomeView',
@@ -58,13 +53,15 @@ export default {
     AulaCard,
     ListaCard,
     SectionBlock,
-    GlobalAlert
+    GlobalAlert,
+    GlobalLoader
   },
   setup() {
     const { branding } = useBranding();
     const filtersStore = useFiltersStore();
     const { currentFilter, currentViewMode } = storeToRefs(filtersStore);
     const dataStore = useDataStore();
+    const { loading } = storeToRefs(dataStore);
 
     const applyStagger = () => {
       // Stagger por grupo (aulas) e por item
@@ -140,7 +137,7 @@ export default {
 
     return {
       branding,
-      loading: dataStore.loading,
+      loading,
       groupedAulasView,
       listasView,
       currentFilter
