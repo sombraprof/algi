@@ -41,6 +41,7 @@ export default {
     const error = ref(null);
     const aulaContent = ref('');
     const aulaTitle = ref('Aula');
+    const aulaModules = import.meta.glob('/public/aulas/*.html', { as: 'raw' });
 
     const loadAula = async (aulaId) => {
       try {
@@ -63,11 +64,13 @@ export default {
 
         // Fetch the HTML content of the aula file
         const fileName = aula.arquivo || `${aulaId}.html`;
-        const response = await fetch(`${import.meta.env.BASE_URL}aulas/${fileName}`); // FIXED PATH
-        if (!response.ok) {
-          throw new Error(`Falha ao carregar o arquivo da aula: ${aula.arquivo}`);
+        const modulePath = `/public/aulas/${fileName}`;
+
+        if (!aulaModules[modulePath]) {
+          throw new Error(`Arquivo da aula não encontrado no build: ${fileName}`);
         }
-        const rawHtml = await response.text();
+        
+        const rawHtml = await aulaModules[modulePath]();
         aulaContent.value = DOMPurify.sanitize(rawHtml, {
           ADD_TAGS: ['md3-video', 'md3-callout', 'md3-checkbox', 'md3-external', 'iframe'],
           ADD_ATTR: ['title', 'src', 'allow', 'variant', 'label', 'checked', 'href', 'icon', 'target', 'rel', 'allowfullscreen', 'frameborder', 'loading', 'referrerpolicy'],
