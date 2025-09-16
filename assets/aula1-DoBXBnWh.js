@@ -1,0 +1,579 @@
+const a=`<!-- Seção da Aula 1 -->
+<section id="aula1" class="mb-16 pt-16">
+  <header class="mb-12">
+    <h2 class="section__title">
+      Aula 1: Introdução à Lógica e Algoritmos
+    </h2>
+    <p class="text-body-large mt-2">
+      O objetivo desta aula é conhecer o plano de ensino e entender a lógica
+      como a base para criar soluções computacionais.
+    </p>
+  </header>
+
+  <!-- Seção: Plano da Aula (Corrigida) -->
+  <section
+    id="plano-aula"
+    aria-labelledby="plano-aula-heading"
+    class="mb-12 callout callout-info p-8"
+  >
+    <h2
+      id="plano-aula-heading"
+      class="text-3xl font-bold text-primary-700 mb-6 text-center"
+    >
+      Plano da Aula
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div
+        class="card col-span-1 md:col-span-2 lg:col-span-3"
+      >
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          <i class="fa-solid fa-book-open mr-2"></i>UNIDADE E CONTEÚDO
+        </h3>
+        <p class="font-bold">
+          Unidade I – Noções básicas de lógica e de algoritmos
+        </p>
+        <p class="mt-1">
+          Apresentação do plano de ensino, ambientação no Moodle, panorama da
+          lógica de programação, conceito de algoritmo e sua importância para a
+          resolução de problemas computacionais.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 dark:text-primary-200 mb-2">
+          <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO
+        </h3>
+        <p>
+          Conhecer o funcionamento da disciplina, seus critérios de avaliação e
+          iniciar o entendimento da lógica como ferramenta para soluções
+          computacionais. Identificar o algoritmo como uma sequência estruturada
+          de passos.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 dark:text-primary-200 mb-2">
+          <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA
+        </h3>
+        <p>
+          Aula expositiva dialogada, apresentação do cronograma e das regras da
+          disciplina, check-in inicial com perguntas sobre expectativas.
+          Dinâmica inicial <strong>“O Algoritmo do Cotidiano”</strong> com
+          mapeamento mental coletivo e discussão orientada.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 dark:text-primary-200 mb-2">
+          <i class="fa-solid fa-desktop mr-2"></i>RECURSOS
+        </h3>
+        <p>
+          Projetor multimídia, computador, Moodle, quadro branco, pincéis e
+          página web da disciplina (<code>aula1.html</code>) como apoio visual.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plano de Voo da Aula -->
+  <div class="card shadow-elevation-2 mb-12">
+    <h3 class="section__subtitle mb-4">
+      Plano de Voo da Aula de Hoje
+    </h3>
+    <ul class="list-disc list-inside space-y-2">
+      <li>Apresentação da disciplina, metodologia e critérios de avaliação.</li>
+      <li>Discussão: Por que a lógica é a base de tudo em computação?</li>
+      <li>
+        Definição, exemplos práticos e características de um bom algoritmo.
+      </li>
+      <li>Um método prático para construir algoritmos.</li>
+      <li>As diferentes formas de representar um algoritmo.</li>
+      <li>Indicação de leituras e recursos para aprofundamento.</li>
+      <li>Apresentação da primeira tarefa (TED).</li>
+    </ul>
+  </div>
+
+  <!-- Apresentação da Disciplina (Acordeão) -->
+  <div id="objetivos" class="space-y-4 mb-12">
+    <div class="card">
+      <button
+        class="accordion-toggle btn btn-tonal w-full justify-between text-left"
+        aria-expanded="false"
+      >
+        <span>Objetivos da Disciplina</span>
+        <span class="transform transition-transform duration-300 rotate-180"
+          >▼</span
+        >
+      </button>
+      <div
+        class="accordion-content overflow-hidden transition-all duration-500 ease-in-out"
+        style="max-height: 0px"
+      >
+        <div class="p-5 border-t border-neutral-200">
+          <h4 class="font-bold mb-2 text-primary-700 dark:text-primary-300">Objetivo Geral:</h4>
+          <p class="mb-4">
+            Fornecer os fundamentos teóricos e práticos para construir
+            algoritmos e programas eficientes em linguagem C, aplicando
+            raciocínio lógico, estruturas de controle, tipos de dados e
+            modularização.
+          </p>
+          <h4 class="font-bold mb-2 text-primary-700 dark:text-primary-300">Objetivos Específicos:</h4>
+          <ul class="list-disc list-inside space-y-2">
+            <li>
+              Identificar e aplicar conceitos de algoritmos, tipos de dados e
+              estruturas de controle.
+            </li>
+            <li>
+              Utilizar variáveis simples e compostas (vetores, matrizes,
+              registros).
+            </li>
+            <li>
+              Estruturar programas com funções e procedimentos (modularidade).
+            </li>
+            <li>Implementar algoritmos em linguagem C com boas práticas.</li>
+            <li>
+              Analisar e testar programas para garantir seu correto
+              funcionamento.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <button
+        class="accordion-toggle btn btn-tonal w-full justify-between text-left"
+        aria-expanded="false"
+      >
+        <span>Critérios de Avaliação</span>
+        <span class="transform transition-transform duration-300 rotate-180"
+          >▼</span
+        >
+      </button>
+      <div
+        class="accordion-content overflow-hidden transition-all duration-500 ease-in-out"
+        style="max-height: 0px"
+      >
+        <div class="p-5 border-t border-neutral-200">
+          <p class="mb-4">
+            A Nota Final (NF) será a média aritmética simples de três avaliações
+            parciais:
+          </p>
+          <div class="callout callout-academic text-center mono text-lg">
+            NF = (NP1 + NP2 + NP3) / 3
+          </div>
+          <h4 class="font-bold mt-4 mb-2 text-primary-700 dark:text-primary-300">
+            Condições para Aprovação:
+          </h4>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Frequência mínima de <strong>75%</strong>.</li>
+            <li>Nota Final (NF) <strong>maior ou igual a 5,0</strong>.</li>
+            <li>Nota da NP3 <strong>maior ou igual a 4,0</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- A Importância da Lógica -->
+  <div class="mb-16">
+    <h3 class="section__subtitle mb-6">
+      A Ferramenta Essencial: Lógica
+    </h3>
+    <div class="card p-8 shadow-elevation-2">
+      <p class="text-lg mb-4">
+        A <strong>lógica de programação</strong> é a capacidade de organizar o
+        pensamento de forma estruturada para resolver um problema. É a fundação
+        sobre a qual todo o software é construído.
+      </p>
+      <p class="mb-4">
+        Um computador é uma máquina que segue instruções cegamente. Ele não tem
+        intuição ou bom senso. A lógica permite-nos criar instruções perfeitas:
+        exatas, na ordem correta e sem ambiguidades.
+      </p>
+      <div class="mt-6 border-t pt-6">
+        <h4 class="font-semibold text-xl text-primary-700 dark:text-primary-300 mb-3">
+          Argumentação Lógica: Premissas e Conclusão
+        </h4>
+        <p>
+          Para um computador, precisamos usar a <strong>lógica formal</strong>.
+          Ela funciona com base em argumentos, onde partimos de fatos
+          (premissas) para chegar a um resultado inevitável (conclusão).
+        </p>
+        <ul class="list-none callout callout-academic mt-2 space-y-2">
+          <li><strong>Premissa 1:</strong> Todos os homens são mortais.</li>
+          <li><strong>Premissa 2:</strong> Sócrates é um homem.</li>
+          <li class="font-bold border-t border-neutral-300 pt-2 mt-2">
+            <strong>Conclusão:</strong> Portanto, Sócrates é mortal.
+          </li>
+        </ul>
+        <p class="mt-4">
+          É esse tipo de raciocínio dedutivo, claro e sem margem para erros, que
+          usamos para construir programas confiáveis.
+        </p>
+      </div>
+      <div class="callout callout-good-practice">
+        <h5 class="font-bold mb-2">Boa Prática: Pense Antes de Codificar</h5>
+        <p>
+          O erro mais comum de um iniciante é sair a escrever código sem um
+          plano. Gaste tempo a pensar na lógica e a desenhar o seu algoritmo no
+          papel. Um bom planeamento economiza horas de depuração e frustração.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- O que é um Algoritmo? -->
+  <div id="o-que-e-algoritmo" class="mb-16">
+    <h3 class="section__subtitle mb-8">
+      Anatomia de um Algoritmo
+    </h3>
+    <div class="card p-8 shadow-elevation-2">
+      <h4 class="font-bold text-xl mb-4">
+        Definição e Características
+      </h4>
+      <p class="mb-4">
+        Um algoritmo é uma
+        <strong>sequência finita e ordenada de passos claros e eficazes</strong>
+        que resolvem um determinado problema.
+      </p>
+      <ul class="space-y-4 mt-6">
+        <li>
+          <strong>Finitude:</strong> Um algoritmo deve sempre terminar. Um
+          programa que entra em "loop infinito" tem um algoritmo falho.
+        </li>
+        <li>
+          <strong>Clareza (Sem Ambiguidade):</strong> Cada passo deve ter uma
+          única interpretação. "Aqueça um pouco" é ambíguo; "Aqueça a 200°C" não
+          é.
+        </li>
+        <li>
+          <strong>Entradas e Saídas:</strong> Um algoritmo recebe dados
+          (entradas) e, após processá-los, produz resultados (saídas).
+        </li>
+        <li>
+          <strong>Efetividade:</strong> Cada passo deve ser simples e possível
+          de ser executado. "Adivinhe o número da sorte" não é um passo efetivo.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Como Construir um Algoritmo -->
+  <div class="mb-16">
+    <h3 class="section__subtitle mb-6">
+      Como Construir um Algoritmo: Um Método de 5 Passos
+    </h3>
+    <div class="card p-8 shadow-elevation-2 space-y-6">
+      <p>
+        Criar um algoritmo é um processo metódico. Seguir estes passos garante
+        que você entenda o problema completamente antes de tentar resolvê-lo.
+      </p>
+      <div class="relative pl-8 border-l-2 border-primary-200">
+        <div class="mb-6 relative pl-4">
+          <div
+            class="absolute -left-12 top-0 bg-primary-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg"
+          >
+            1
+          </div>
+          <h4 class="font-bold text-lg">Compreender o Problema</h4>
+          <p>
+            Leia o enunciado quantas vezes for necessário. Qual é o objetivo
+            principal? Quais são as regras e restrições?
+          </p>
+        </div>
+        <div class="mb-6 relative pl-4">
+          <div
+            class="absolute -left-12 top-0 bg-primary-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg"
+          >
+            2
+          </div>
+          <h4 class="font-bold text-lg">Definir os Dados de Entrada</h4>
+          <p>
+            O que eu preciso saber para começar? Liste todas as informações que
+            o algoritmo precisará receber (ex: dois números para somar, uma
+            temperatura para converter).
+          </p>
+        </div>
+        <div class="mb-6 relative pl-4">
+          <div
+            class="absolute -left-12 top-0 bg-primary-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg"
+          >
+            3
+          </div>
+          <h4 class="font-bold text-lg">Definir o Processamento</h4>
+          <p>
+            Esta é a "lógica" do algoritmo. Quais cálculos ou transformações eu
+            preciso fazer com os dados de entrada para chegar ao resultado? (ex:
+            somar os números, aplicar a fórmula de conversão).
+          </p>
+        </div>
+        <div class="mb-6 relative pl-4">
+          <div
+            class="absolute -left-12 top-0 bg-primary-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg"
+          >
+            4
+          </div>
+          <h4 class="font-bold text-lg">Definir os Dados de Saída</h4>
+          <p>
+            O que eu quero mostrar no final? Qual é a resposta que o problema
+            pede? (ex: o resultado da soma, a temperatura convertida).
+          </p>
+        </div>
+        <div class="relative pl-4">
+          <div
+            class="absolute -left-12 top-0 bg-primary-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg"
+          >
+            5
+          </div>
+          <h4 class="font-bold text-lg">Construir e Testar</h4>
+          <p>
+            Escreva os passos do algoritmo e faça um "teste de mesa": simule a
+            execução com exemplos para ver se funciona como esperado, inclusive
+            em casos extremos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formas de Representação -->
+  <div class="mb-16">
+    <h3 class="section__subtitle mb-6">
+      Formas de Representar um Algoritmo
+    </h3>
+    <p class="mb-6">
+      Vamos usar o mesmo problema simples para ver como ele é representado em
+      cada formato:
+      <strong>"Calcular a média de duas notas"</strong>.
+    </p>
+    <div class="space-y-8">
+      <!-- Descrição Narrativa -->
+      <div class="card shadow-elevation-2">
+        <h4 class="font-bold text-xl mb-4">
+          1. Descrição Narrativa
+        </h4>
+        <p class="mb-4">
+          Usa a linguagem natural para descrever os passos. É fácil de criar,
+          mas pode ser ambígua.
+        </p>
+        <div class="card p-4">
+          <ol class="list-decimal list-inside">
+            <li>Receber a primeira nota.</li>
+            <li>Receber a segunda nota.</li>
+            <li>Somar as duas notas.</li>
+            <li>Dividir o resultado da soma por 2.</li>
+            <li>Mostrar o resultado final.</li>
+          </ol>
+        </div>
+      </div>
+      <!-- Fluxograma -->
+      <div class="card shadow-elevation-2">
+        <h4 class="font-bold text-xl mb-4">2. Fluxograma</h4>
+        <p class="mb-4">
+          Usa símbolos gráficos padronizados para representar cada tipo de ação.
+          É muito visual e ajuda a entender o fluxo do programa.
+        </p>
+        <div class="card p-6">
+          <div class="flowchart-container">
+            <div class="flowchart-shape flowchart-terminal">Início</div>
+            <div class="flowchart-arrow"></div>
+            <div class="flowchart-shape flowchart-io">
+              <span>Leia Nota1, Nota2</span>
+            </div>
+            <div class="flowchart-arrow"></div>
+            <div class="flowchart-shape flowchart-process">
+              Média = (Nota1 + Nota2) / 2
+            </div>
+            <div class="flowchart-arrow"></div>
+            <div class="flowchart-shape flowchart-io">
+              <span>Escreva Média</span>
+            </div>
+            <div class="flowchart-arrow"></div>
+            <div class="flowchart-shape flowchart-terminal">Fim</div>
+          </div>
+        </div>
+      </div>
+      <!-- Pseudocódigo -->
+      <div class="card shadow-elevation-2">
+        <h4 class="font-bold text-xl mb-4">
+          3. Pseudocódigo (Portugol)
+        </h4>
+        <p class="mb-4">
+          Uma linguagem intermediária, com regras e palavras-chave, que se
+          aproxima de uma linguagem de programação real. É o método ideal para a
+          transição para o código.
+        </p>
+        <div>
+          <pre><code class="language-plaintext">ALGORITMO "CalcularMedia"
+VAR
+  Nota1, Nota2, Media: REAL
+INICIO
+  ESCREVA("Digite a primeira nota: ")
+  LEIA(Nota1)
+  ESCREVA("Digite a segunda nota: ")
+  LEIA(Nota2)
+  Media &lt;- (Nota1 + Nota2) / 2
+  ESCREVA("A média é: ", Media)
+FIM_ALGORITMO</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vídeos de Apoio -->
+  <section id="videos-apoio" class="mt-16 mb-16" aria-labelledby="videos-heading">
+    <h2 id="videos-heading" class="section__title mb-8">
+      🎥 Vídeos de Apoio
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Vídeo 1 -->
+      <md3-video
+        title="O que é Algoritmo? Conceitos de Lógica de Programação"
+        src="https://www.youtube.com/embed/HKImlW-gP7k"
+      ></md3-video>
+      <!-- Vídeo 2 -->
+      <md3-video
+        title="Introdução à Lógica de Programação e Algoritmos"
+        src="https://www.youtube.com/embed/27mSuoW2COw"
+      ></md3-video>
+    </div>
+  </section>
+
+  <!-- Leituras e Recursos -->
+  <div class="mb-16">
+    <h3 class="section__subtitle mb-6">
+      Para Ir Além: Leituras e Recursos
+    </h3>
+    <div class="callout callout-academic p-8">
+      <p class="mb-6">
+        A curiosidade é o motor do aprendizado. Aqui ficam algumas sugestões
+        para aprofundar os conceitos desta aula:
+      </p>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="font-bold text-lg mb-2 text-primary-800 dark:text-primary-200">
+            Leitura Essencial (Livros)
+          </h4>
+          <ul class="list-disc list-inside space-y-3">
+            <li>
+              <strong
+                >FORBELLONE, A. L. V; EBERSPÄCHER, H. F. Lógica de
+                Programação.</strong
+              >
+              Referência clássica da área.
+            </li>
+            <li>
+              <strong
+                >MANZANO, J. A. N. G; OLIVEIRA, J. F. Algoritmos: lógica para
+                desenvolvimento de programação de computadores.</strong
+              >
+              Outra obra fundamental.
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-2 text-primary-800 dark:text-primary-200">
+            Ferramentas e Prática
+          </h4>
+          <ul class="list-disc list-inside space-y-2">
+            <li>
+              <a
+                href="https://www.onlinegdb.com/"
+                target="_blank"
+                class="text-primary-600 hover:underline"
+                >OnlineGDB</a
+              >: Ambiente de programação online que usaremos.
+            </li>
+            <li>
+              <a
+                href="https://www.urionlinejudge.com.br/"
+                target="_blank"
+                class="text-primary-600 hover:underline"
+                >URI Online Judge</a
+              >: Plataforma para resolver problemas e treinar sua lógica.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Próximos Passos e TED -->
+  <div id="proximos-passos">
+    <h3 class="section__subtitle mb-6">
+      Próximos Passos e Tarefa (TED)
+    </h3>
+    <div
+      class="callout callout-info"
+    >
+      <h4 class="font-bold text-xl mb-4">Tarefa para a próxima aula</h4>
+      <p class="mb-4">
+        Para exercitar o pensamento lógico, sua primeira tarefa é refletir sobre
+        como a programação pode impactar sua carreira.
+      </p>
+      <ol class="list-decimal list-inside space-y-2 font-semibold">
+        <li>Acesse o Moodle da disciplina.</li>
+        <li>Encontre o fórum da "Aula 1".</li>
+        <li>
+          Poste um parágrafo respondendo à pergunta: <br /><i
+            >“Como espero usar programação no meu futuro profissional?”</i
+          >
+        </li>
+      </ol>
+      <div class="mt-6">
+        <md3-external href="https://eadsp.unichristus.edu.br" label="Acessar Moodle" icon="fa-solid fa-graduation-cap" variant="tonal"></md3-external>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checklist da Aula -->
+<section id="checklist-aula1" class="mt-16" aria-labelledby="checklist-heading">
+  <h2 id="checklist-heading" class="section__title mb-6">
+    ✅ Checklist da Aula
+  </h2>
+  <div class="card p-8 space-y-4">
+    <p class="mb-4">
+      Antes de encerrar a Aula 1, verifique se você:
+    </p>
+    <ul class="space-y-3 md3-checklist">
+      <li><md3-checkbox label="Entendeu o que é lógica de programação e por que ela é essencial."></md3-checkbox></li>
+      <li><md3-checkbox label="Compreendeu o conceito de algoritmo como uma sequência estruturada de passos."></md3-checkbox></li>
+      <li><md3-checkbox label="Conhece as diferentes formas de representar um algoritmo (narrativa, fluxograma, pseudocódigo)."></md3-checkbox></li>
+      <li><md3-checkbox label="Sabe a importância de planejar antes de começar a programar."></md3-checkbox></li>
+      <li><md3-checkbox label="Acessou o Moodle e postou a resposta da TED."></md3-checkbox></li>
+    </ul>
+  </div>
+</section>
+
+  <!-- Bibliografia de Apoio -->
+  <section
+    id="bibliografia"
+    class="mt-16"
+    aria-labelledby="bibliografia-heading"
+  >
+    <h2 id="bibliografia-heading" class="section__title mb-6">
+      📚 Bibliografia de Apoio
+    </h2>
+    <div class="card p-8 space-y-4">
+      <p>
+        <strong
+          >FORBELLONE, André Luiz Villar; EBERSPÄCHER, Henri Frederico.</strong
+        >
+        <em>Lógica de Programação.</em> 4. ed. São Paulo: Pearson, 2020.
+      </p>
+      <p>
+        <strong
+          >MANZANO, José Augusto N. G.; OLIVEIRA, Jayr Figueiredo de.</strong
+        >
+        <em
+          >Algoritmos: lógica para desenvolvimento de programação de
+          computadores.</em
+        >
+        São Paulo: Pearson, 2021.
+      </p>
+      <p>
+        <strong>BACKES, André.</strong>
+        <em>Linguagem C: completa e descomplicada.</em> 2. ed. São Paulo:
+        Novatec, 2020.
+      </p>
+    </div>
+  </section>
+</section>
+`;export{a as default};

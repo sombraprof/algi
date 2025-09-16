@@ -1,0 +1,635 @@
+<!-- Seção da Aula 2 -->
+<section id="aula2" class="mb-16 pt-16">
+  <header class="mb-12">
+    <h2 class="section__title">
+      Aula 2: Raciocínio Lógico no Cotidiano
+    </h2>
+    <p class="text-body-large text-neutral-700 dark:text-neutral-300 mt-2">
+      Como as decisões que tomamos todos os dias são a base para a programação.
+    </p>
+  </header>
+
+  <!-- NOVA SEÇÃO: Plano da Aula -->
+  <section
+    id="plano-aula2"
+    class="mb-16 callout callout-info p-8"
+  >
+    <h2 class="text-3xl font-bold text-primary-700 mb-6 text-center">
+      Plano da Aula
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="card col-span-1 lg:col-span-2">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+        </h3>
+        <p class="text-neutral-600">
+          Pensamento lógico, decomposição de problemas, operadores lógicos (E,
+          OU, NÃO) e tradução da lógica do dia a dia para lógica computacional.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO
+        </h3>
+        <p class="text-neutral-600">
+          Desenvolver o raciocínio lógico através de exemplos do cotidiano e
+          introduzir operadores lógicos como base para estruturas de decisão em
+          programação.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA
+        </h3>
+        <p class="text-neutral-600">
+          Aula expositiva dialogada, exercícios de decomposição de problemas,
+          mapeamento coletivo de tarefas, exemplos práticos e TED no Moodle.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plano de Voo -->
+  <div class="card p-8 shadow-elevation-2 mb-12">
+    <h3 class="section__subtitle mb-4">
+      Plano de Voo da Aula de Hoje
+    </h3>
+    <ul class="list-disc list-inside space-y-2 text-neutral-700">
+      <li>Recapitulação: Lógica formal e algoritmos.</li>
+      <li>Como "desmontar" problemas do dia a dia em passos lógicos.</li>
+      <li>
+        Os blocos de construção da decisão: Operadores Lógicos (E, OU, NÃO).
+      </li>
+      <li>Atividade prática: Mapeamento mental de tarefas quotidianas.</li>
+      <li>Tradução da lógica do dia a dia para a lógica computacional.</li>
+      <li>Apresentação da tarefa (TED) da Aula 2.</li>
+    </ul>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="section__subtitle mb-6">
+      Da Tarefa ao Passo a Passo: Decomposição
+    </h3>
+    <div class="card p-8 shadow-elevation-2">
+      <p class="text-lg mb-4">
+        O primeiro passo para resolver qualquer problema com lógica é
+        <strong>decompô-lo</strong>, ou seja, quebrar uma tarefa grande e
+        complexa em uma série de passos menores e mais simples. Fazemos isto
+        instintivamente todos os dias.
+      </p>
+      <h4 class="font-semibold text-xl text-primary-700 mt-6 mb-3">
+        Exemplo 1: Planear uma Viagem de Fim de Semana
+      </h4>
+      <p>
+        A tarefa "Ir à praia no fim de semana" parece simples, mas envolve uma
+        série de verificações e ações lógicas:
+      </p>
+      <div class="card p-4 mt-4">
+      <ul class="list-disc list-inside space-y-2">
+        <li>Verificar a previsão do tempo.</li>
+        <li>Verificar o saldo bancário.</li>
+        <li>Verificar se o carro tem combustível.</li>
+        <li>Escolher para qual praia ir.</li>
+        <li>Arrumar a mala (roupas, protetor solar, etc.).</li>
+        <li>Definir o trajeto no GPS.</li>
+      </ul>
+      </div>
+      <p class="mt-4">
+        Um computador não consegue "planear uma viagem". Mas consegue executar
+        cada um destes pequenos passos, um de cada vez, se lhe dissermos
+        exatamente como o fazer. A isto chamamos
+        <strong>pensamento computacional</strong>.
+      </p>
+
+      <h4 class="font-semibold text-xl text-primary-700 mt-8 mb-3">
+        Exemplo 2: Organizar um Churrasco
+      </h4>
+      <p>
+        Organizar um churrasco também requer uma sequência lógica, onde alguns
+        passos dependem de outros:
+      </p>
+      <div class="card p-4 mt-4">
+      <ul class="list-disc list-inside space-y-2">
+        <li>
+          <strong>Passo 1:</strong> Convidar os amigos. (Dependência: o número
+          de pessoas define a quantidade de comida).
+        </li>
+        <li>
+          <strong>Passo 2:</strong> Comprar a carne, o carvão e as bebidas.
+        </li>
+        <li>
+          <strong>Passo 3:</strong> Acender a churrasqueira. (Dependência: só
+          pode ser feito após comprar o carvão).
+        </li>
+        <li><strong>Passo 4:</strong> Grelhar a carne.</li>
+        <li><strong>Passo 5:</strong> Servir os convidados.</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="space-y-12 mb-16">
+    <h3 class="section__subtitle mb-6">
+      Os Blocos de Construção da Decisão: Operadores Lógicos
+    </h3>
+    <p class="text-lg">
+      Para que um computador possa tomar decisões, ele precisa de avaliar
+      condições. Para isso, usamos os operadores lógicos, que são exatamente os
+      mesmos que usamos no nosso raciocínio diário.
+    </p>
+
+    <!-- Operador E (AND) -->
+    <div>
+      <h4 class="text-2xl font-bold text-neutral-700 mb-4">Operador E (AND)</h4>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card shadow-elevation-2">
+          <p class="mb-4">
+            O operador <strong>E</strong> (ou `AND`) é exigente. Ele só resulta
+            em <strong>verdadeiro</strong> se <strong>TODAS</strong> as
+            condições envolvidas forem verdadeiras.
+          </p>
+          <h5 class="font-semibold text-lg mt-6 mb-2">Exemplo do Dia a Dia:</h5>
+          <p class="italic">
+            "Para a viagem acontecer, preciso que a
+            <strong>previsão do tempo seja boa E eu tenha dinheiro</strong>."
+          </p>
+          <h5 class="font-semibold text-lg mt-6 mb-2">Uso em Programação:</h5>
+          <p class="italic">
+            "Um utilizador só pode fazer login se o
+            <strong
+              >username estiver correto E a password estiver correta</strong
+            >."
+          </p>
+        </div>
+        <div class="card shadow-elevation-2">
+          <h5 class="font-semibold text-lg mb-2 text-center">
+            Tabela-Verdade do E (AND)
+          </h5>
+          <div class="overflow-x-auto -mx-2 sm:mx-0">
+          <table class="w-full truth-table min-w-[480px]">
+            <thead class="bg-neutral-200 text-neutral-700">
+              <tr>
+                <th>Condição A</th>
+                <th>Condição B</th>
+                <th>Resultado (A e B)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Verdadeiro</td>
+                <td>Verdadeiro</td>
+                <td class="result true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"
+                    />
+                  </svg>
+                  Verdadeiro
+                </td>
+              </tr>
+              <tr>
+                <td>Verdadeiro</td>
+                <td>Falso</td>
+                <td class="result false">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                    />
+                  </svg>
+                  Falso
+                </td>
+              </tr>
+              <tr>
+                <td>Falso</td>
+                <td>Verdadeiro</td>
+                <td class="result false">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                    />
+                  </svg>
+                  Falso
+                </td>
+              </tr>
+              <tr>
+                <td>Falso</td>
+                <td>Falso</td>
+                <td class="result false">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                    />
+                  </svg>
+                  Falso
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Operador OU (OR) -->
+    <div>
+      <h4 class="text-2xl font-bold text-neutral-700 mb-4">Operador OU (OR)</h4>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card shadow-elevation-2">
+          <p class="mb-4">
+            O operador <strong>OU</strong> (ou `OR`) é flexível. Ele resulta em
+            <strong>verdadeiro</strong> se <strong>PELO MENOS UMA</strong> das
+            condições for verdadeira.
+          </p>
+          <h5 class="font-semibold text-lg mt-6 mb-2">Exemplo do Dia a Dia:</h5>
+          <p class="italic">
+            "Para o almoço, posso comer no restaurante <strong>OU</strong> levar
+            comida de casa."
+          </p>
+          <h5 class="font-semibold text-lg mt-6 mb-2">Uso em Programação:</h5>
+          <p class="italic">
+            "O acesso é permitido se o utilizador for um
+            <strong>administrador OU o dono do documento</strong>."
+          </p>
+        </div>
+        <div class="card shadow-elevation-2">
+          <h5 class="font-semibold text-lg mb-2 text-center">
+            Tabela-Verdade do OU (OR)
+          </h5>
+          <div class="overflow-x-auto -mx-2 sm:mx-0">
+          <table class="w-full truth-table min-w-[480px]">
+            <thead class="bg-neutral-200 text-neutral-700">
+              <tr>
+                <th>Condição A</th>
+                <th>Condição B</th>
+                <th>Resultado (A ou B)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Verdadeiro</td>
+                <td>Verdadeiro</td>
+                <td class="result true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"
+                    />
+                  </svg>
+                  Verdadeiro
+                </td>
+              </tr>
+              <tr>
+                <td>Verdadeiro</td>
+                <td>Falso</td>
+                <td class="result true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"
+                    />
+                  </svg>
+                  Verdadeiro
+                </td>
+              </tr>
+              <tr>
+                <td>Falso</td>
+                <td>Verdadeiro</td>
+                <td class="result true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"
+                    />
+                  </svg>
+                  Verdadeiro
+                </td>
+              </tr>
+              <tr>
+                <td>Falso</td>
+                <td>Falso</td>
+                <td class="result false">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                    />
+                  </svg>
+                  Falso
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Operador NÃO (NOT) -->
+    <div>
+      <h4 class="text-2xl font-bold text-neutral-700 mb-4">Operador NÃO (NOT)</h4>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card shadow-elevation-2">
+          <p class="mb-4">
+            O operador <strong>NÃO</strong> (ou `NOT`) simplesmente
+            <strong>inverte</strong> o valor de uma condição. O que é verdadeiro
+            torna-se falso, e vice-versa.
+          </p>
+          <h5 class="font-semibold text-lg mt-6 mb-2">Exemplo do Dia a Dia:</h5>
+          <p class="italic">
+            "Eu vou sair se <strong>NÃO</strong> estiver a chover."
+          </p>
+          <h5 class="font-semibold text-lg mt-6 mb-2">Uso em Programação:</h5>
+          <p class="italic">
+            "Executar a ação enquanto o ficheiro <strong>NÃO</strong> chegar ao
+            fim." (`while NOT end_of_file`)
+          </p>
+        </div>
+        <div class="card shadow-elevation-2">
+          <h5 class="font-semibold text-lg mb-2 text-center">
+            Tabela-Verdade do NÃO (NOT)
+          </h5>
+          <div class="overflow-x-auto -mx-2 sm:mx-0">
+          <table class="w-full truth-table min-w-[480px]">
+            <thead class="bg-neutral-200 text-neutral-700">
+              <tr>
+                <th>Condição A</th>
+                <th>Resultado (não A)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Verdadeiro</td>
+                <td class="result false">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                    />
+                  </svg>
+                  Falso
+                </td>
+              </tr>
+              <tr>
+                <td>Falso</td>
+                <td class="result true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"
+                    />
+                  </svg>
+                  Verdadeiro
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Atividade Prática -->
+  <div class="mt-16">
+    <h3 class="section__subtitle mb-6">
+      Atividade Prática: Mapeando a Lógica do Cotidiano
+    </h3>
+    <div class="card p-8 shadow-elevation-2">
+      <p class="mb-4">
+        Vamos agora aplicar estes conceitos. A ideia é pegar uma tarefa comum e
+        "mapeá-la" como um algoritmo, identificando os passos e, principalmente,
+        as decisões.
+      </p>
+      <h4 class="font-semibold text-xl text-primary-700 mb-3">
+        Modelo: Fazer Café
+      </h4>
+      <div class="bg-neutral-50 p-6 rounded-2xl border mt-4">
+        <ul class="space-y-3">
+          <li><strong>Passo 1:</strong> Pegar a cafeteira.</li>
+          <li><strong>Passo 2:</strong> Verificar se há pó de café.</li>
+          <li class="ml-6">
+            <md3-callout variant="info">
+              <strong>Decisão: SE</strong> houver pó, colocar no filtro.
+              <strong>SENÃO</strong>, adicionar "comprar pó de café" à lista de
+              compras e parar o processo.
+            </md3-callout>
+          </li>
+          <li>
+            <strong>Passo 3:</strong> Verificar se o reservatório tem água.
+          </li>
+          <li class="ml-6">
+            <md3-callout variant="info">
+              <strong>Decisão: SE</strong> o reservatório tiver água, continuar.
+              <strong>SENÃO</strong>, encher o reservatório com água.
+            </md3-callout>
+          </li>
+          <li><strong>Passo 4:</strong> Ligar a cafeteira na tomada.</li>
+          <li><strong>Passo 5:</strong> Apertar o botão de ligar.</li>
+          <li><strong>Passo 6:</strong> Esperar o café ficar pronto.</li>
+        </ul>
+      </div>
+      <p class="mt-6 font-semibold">
+        Agora é a vossa vez! Pensem noutras tarefas: escolher uma roupa para
+        vestir, decidir o que almoçar, sacar dinheiro no multibanco. Vamos
+        mapear juntos no quadro.
+      </p>
+    </div>
+  </div>
+
+  <!-- Combinando Operadores -->
+  <div class="mt-16">
+    <h3 class="section__subtitle mb-6">
+      Combinando Operadores para Decisões Complexas
+    </h3>
+    <div class="card p-8 shadow-elevation-2">
+      <p class="mb-4">
+        O verdadeiro poder da lógica aparece quando combinamos esses operadores
+        para criar regras de negócio.
+      </p>
+      <h4 class="font-semibold text-xl text-primary-700 mb-3">
+        Exemplo 1: Regra para Desconto em Loja
+      </h4>
+      <p class="italic mb-4">
+        "Um cliente tem direito a um desconto se a compra for acima de R$100
+        <strong>E</strong> (o cliente for VIP <strong>OU</strong> tiver um cupom
+        de desconto)."
+      </p>
+      <pre class="mt-4"><code class="language-plaintext">SE (valorCompra > 100) E (clienteEhVip OU possuiCupom) ENTAO
+  aplicarDesconto()
+SENAO
+  naoAplicarDesconto()
+FIM_SE</code></pre>
+
+      <h4 class="font-semibold text-xl text-primary-700 mt-8 mb-3">
+        Exemplo 2: Aprovação de Aluno
+      </h4>
+      <p class="italic mb-4">
+        "Um aluno é aprovado se tiver uma média final maior ou igual a 7.0,
+        <strong>OU</strong> se tiver uma média entre 5.0 e 6.9
+        <strong>E</strong> uma frequência maior que 75%."
+      </p>
+      <pre class="mt-4"><code class="language-plaintext">SE (media >= 7.0) OU (media >= 5.0 E frequencia > 75) ENTAO
+  status = "Aprovado"
+SENAO
+  status = "Reprovado"
+FIM_SE</code></pre>
+    </div>
+  </div>
+
+  <!-- Vídeos de Apoio -->
+  <section
+    id="videos-aula2"
+    class="mt-16 mb-16"
+    aria-labelledby="videos-heading"
+  >
+    <h2
+      id="videos-heading"
+      class="section__title mb-8"
+    >
+      🎥 Vídeos de Apoio
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Vídeo 1 -->
+      <md3-video title="Operadores Lógicos – Lógica de Programação (Paula)" src="https://www.youtube.com/embed/bA-dXIB1tXI"></md3-video>
+      <!-- Vídeo 2 -->
+      <md3-video title="Curso de Lógica de Programação – Operadores e Expressões Lógicas (AND, OR, NOT)" src="https://www.youtube.com/embed/G8haXi-EgSc"></md3-video>
+    </div>
+  </section>
+
+  <!-- Tarefa da Aula 2 -->
+  <div id="proximos-passos-aula2" class="mt-16">
+    <h3 class="section__subtitle mb-6">
+      Próximos Passos e Tarefa (TED)
+    </h3>
+    <div
+      class="callout callout-info"
+    >
+      <h4 class="font-bold text-xl mb-4">Tarefa para a próxima aula</h4>
+      <p class="mb-4">
+        Agora que praticámos em conjunto, o desafio é formalizar este raciocínio
+        individualmente.
+      </p>
+      <ol class="list-decimal list-inside space-y-2 font-semibold">
+        <li>Acesse o Moodle da disciplina.</li>
+        <li>Encontre o fórum da "Aula 2".</li>
+        <li>
+          Escreva um pequeno texto (até 10 linhas) descrevendo um problema
+          simples do seu cotidiano que poderia ser resolvido com um algoritmo.
+          Identifique pelo menos uma decisão (um "SE") no seu processo.
+        </li>
+      </ol>
+      <div class="mt-6">
+        <md3-external href="https://eadsp.unichristus.edu.br" label="Acessar Moodle" icon="fa-solid fa-graduation-cap" variant="tonal"></md3-external>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOVA SEÇÃO: Checklist -->
+  <section
+    id="checklist-aula2"
+    class="mt-16"
+    aria-labelledby="checklist-heading"
+  >
+    <h2
+      id="checklist-heading"
+      class="section__title mb-6"
+    >
+      ✅ Checklist da Aula
+    </h2>
+    <div class="card p-8 space-y-4">
+      <p class="text-neutral-700 mb-4">
+        Antes de encerrar a Aula 2, confirme se você:
+      </p>
+      <ul class="space-y-3 md3-checklist">
+        <li><md3-checkbox label="Entendeu o conceito de decomposição de problemas em passos lógicos."></md3-checkbox></li>
+        <li><md3-checkbox label="Sabe identificar operadores lógicos (E, OU, NÃO) em exemplos reais."></md3-checkbox></li>
+        <li><md3-checkbox label="Conseguiu mapear uma tarefa cotidiana como um algoritmo com decisões."></md3-checkbox></li>
+        <li><md3-checkbox label="Postou sua TED no Moodle descrevendo um problema do seu dia a dia com decisões lógicas."></md3-checkbox></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- NOVA SEÇÃO: Bibliografia -->
+  <section
+    id="bibliografia-aula2"
+    class="mt-16"
+    aria-labelledby="bibliografia-heading"
+  >
+    <h2
+      id="bibliografia-heading"
+      class="section__title mb-6"
+    >
+      📚 Bibliografia de Apoio
+    </h2>
+    <div class="card p-8 space-y-4">
+      <p>
+        <strong>FORBELLONE, A. L. V; EBERSPÄCHER, H. F.</strong>
+        <em>Lógica de Programação</em>. 3. ed. São Paulo: Pearson, 2021.
+      </p>
+      <p>
+        <strong>MANZANO, J. A. N. G; OLIVEIRA, J. F.</strong>
+        <em>Algoritmos: Lógica para Desenvolvimento</em>. 28. ed. São Paulo:
+        Saraiva, 2020.
+      </p>
+      <p>
+        <strong>BACKES, André.</strong>
+        <em>Linguagem C: Completa e Descomplicada</em>. São Paulo: Novatec,
+        2020. (capítulos iniciais de lógica e operadores)
+      </p>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,281 @@
+const a=`<!-- Seção da Aula 6 -->
+            <section id="aula6" class="mb-16 pt-16">
+                <header class="mb-12">
+                    <h2 class="section__title">Aula 6: Variáveis, Constantes e Tipos de Dados em C</h2>
+                    <p class="text-body-large text-neutral-700 dark:text-neutral-300 mt-2">Aprendendo a armazenar e manipular informações nos nossos programas.</p>
+                </header>
+
+                <div class="card p-8 shadow-elevation-2 mb-12">
+                    <h3 class="section__subtitle mb-4">Plano de Voo da Aula de Hoje</h3>
+                    <ul class="list-disc list-inside space-y-2 text-neutral-700">
+                        <li>O que é uma variável e como o computador guarda dados.</li>
+                        <li>Declarando variáveis em C: sintaxe e boas práticas.</li>
+                        <li>Os tipos de dados primitivos: \`int\`, \`float\`, \`double\` e \`char\`.</li>
+                        <li>O que são constantes e como declará-las (\`const\` vs \`#define\`).</li>
+                        <li>Atividade prática em duplas para declarar e exibir variáveis.</li>
+                        <li>Apresentação da tarefa (TED) da Aula 6.</li>
+                    </ul>
+                </div>
+                
+                <div class="mb-16">
+                    <h3 class="section__subtitle mb-6">O que são Variáveis?</h3>
+                    <div class="card p-8 shadow-elevation-2">
+                        <p class="text-lg mb-4">Imagine que a memória do computador é um armário gigante cheio de caixas. Uma <strong>variável</strong> é simplesmente uma dessas caixas, com três características importantes:</p>
+                        <div class="grid md:grid-cols-2 gap-8 items-center mt-6">
+                            <div>
+                                <ul class="list-disc list-inside space-y-3">
+                                    <li><strong>Um nome (identificador):</strong> A etiqueta que colocamos na caixa para saber o que está lá dentro (ex: \`idade\`, \`preco\`).</li>
+                                    <li><strong>Um tipo:</strong> O que a caixa pode guardar. Uma caixa para "números inteiros" não pode guardar "letras".</li>
+                                    <li><strong>Um valor:</strong> O conteúdo que está, de facto, dentro da caixa (ex: \`25\`, \`9.99\`).</li>
+                                </ul>
+                                <p class="mt-4">Quando declaramos uma variável em C, estamos a pedir ao sistema operativo para reservar uma dessas "caixas" na memória para o nosso programa usar.</p>
+                            </div>
+                            <div class="bg-neutral-100 p-4 rounded-2xl border-2 border-neutral-200 text-center">
+                                <div class="font-mono text-sm text-neutral-500 mb-2">int idade;</div>
+                                <div class="bg-primary-200 p-6 rounded-xl shadow-inner inline-block">
+                                    <div class="text-primary-800 font-bold text-lg">idade (int)</div>
+                                    <div class="bg-surface-light-100 dark:bg-surface-dark-100 border border-neutral-200 dark:border-neutral-700 p-4 mt-2 rounded text-2xl font-bold text-neutral-700 dark:text-neutral-300 min-w-[100px]">?</div>
+                                </div>
+                                <div class="font-mono text-sm text-neutral-500 mt-2">idade = 25;</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="section__subtitle mb-6">Tipos de Dados Primitivos em C</h3>
+                    <div class="card p-8 shadow-elevation-2">
+                        <p class="mb-6">A linguagem C oferece vários tipos de dados básicos, chamados de "primitivos". Vamos focar nos mais importantes:</p>
+                        
+                        <!-- int -->
+                        <div class="mb-6 border-b pb-6">
+                            <h4 class="font-bold text-2xl text-primary-700 mono">int</h4>
+                            <p class="mt-2">Usado para armazenar números <strong>inteiros</strong>, sem casas decimais (ex: -10, 0, 5, 1200).</p>
+                            <h5 class="font-semibold text-lg mt-4 mb-2">Quando usar?</h5>
+                            <p>Para contagens, idades, quantidades, anos, ou qualquer valor que não precise de frações.</p>
+                            <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-3">
+                                <pre><code>// Declara uma variável inteira chamada 'idade'
+int idade;
+
+// Atribui o valor 25 à variável 'idade'
+idade = 25;
+
+// Declara e inicializa na mesma linha
+int ano = 2025;</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- float -->
+                        <div class="mb-6 border-b pb-6">
+                            <h4 class="font-bold text-2xl text-primary-700 mono">float</h4>
+                            <p class="mt-2">Usado para armazenar números de <strong>ponto flutuante</strong>, ou seja, números com casas decimais (ex: 1.85, 99.90, -5.5).</p>
+                             <h5 class="font-semibold text-lg mt-4 mb-2">Quando usar?</h5>
+                            <p>Para alturas, preços, médias, temperaturas, ou qualquer valor que precise de precisão decimal, mas onde a performance seja mais crítica que a exatidão absoluta (ex: gráficos de jogos).</p>
+                            <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-3">
+                                <pre><code>// Declara uma variável float chamada 'altura'
+float altura;
+
+// Atribui o valor 1.75
+altura = 1.75;
+
+// Declara e inicializa na mesma linha
+float preco = 49.99f; // O 'f' no final é uma boa prática para literais float</code></pre>
+                            </div>
+                        </div>
+                        
+                        <!-- double -->
+                        <div class="mb-6 border-b pb-6">
+                            <h4 class="font-bold text-2xl text-primary-700 mono">double</h4>
+                            <p class="mt-2">Usado para números de ponto flutuante de <strong>precisão dupla</strong>. Ocupa o dobro do espaço do \`float\` e, por isso, consegue armazenar números muito maiores e com muito mais casas decimais.</p>
+                             <h5 class="font-semibold text-lg mt-4 mb-2">Quando usar?</h5>
+                            <p>Para cálculos científicos, financeiros, ou qualquer situação onde a <strong>máxima precisão é crucial</strong> e pequenos erros de arredondamento não são aceitáveis.</p>
+                            <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-3">
+                                <pre><code>// 'double' para cálculos de alta precisão
+double pi_preciso = 3.141592653589793;
+double constante_cientifica = 6.02214076e23;</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- char -->
+                        <div>
+                            <h4 class="font-bold text-2xl text-primary-700 mono">char</h4>
+                            <p class="mt-2">Usado para armazenar um <strong>único caractere</strong> (uma letra, um número ou um símbolo). O valor é sempre colocado entre aspas simples (').</p>
+                             <h5 class="font-semibold text-lg mt-4 mb-2">Como guardar texto (Strings)?</h5>
+                            <p>Para guardar um texto, usamos um <strong>array de char</strong>. Em C, uma string não é apenas um conjunto de caracteres; é uma sequência que termina com um caractere especial, o <strong>terminador nulo (\`\\0\`)</strong>. É este \`\\0\` que indica às funções (como \`printf\`) onde o texto acaba.</p>
+                            <div class="bg-neutral-100 p-4 rounded-2xl mt-3">
+                                <p class="text-center font-semibold mb-2">String "Tiago" na memória:</p>
+                                <div class="flex justify-center gap-1">
+                                    <div class="border-2 p-2 w-8 h-8 flex items-center justify-center mono bg-white">T</div>
+                                    <div class="border-2 p-2 w-8 h-8 flex items-center justify-center mono bg-white">i</div>
+                                    <div class="border-2 p-2 w-8 h-8 flex items-center justify-center mono bg-white">a</div>
+                                    <div class="border-2 p-2 w-8 h-8 flex items-center justify-center mono bg-white">g</div>
+                                    <div class="border-2 p-2 w-8 h-8 flex items-center justify-center mono bg-white">o</div>
+                                    <div class="border-2 p-2 w-8 h-8 flex items-center justify-center mono bg-red-100 text-red-600">\\0</div>
+                                </div>
+                            </div>
+                            <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-3">
+                                <pre><code>// Declara uma variável para um único caractere
+char inicial = 'T';
+
+// Para guardar um nome, usamos um array de char
+// O tamanho [50] reserva espaço para 49 caracteres + o terminador nulo '\\0'
+char nome[50] = "Tiago Sombra";</code></pre>
+                            </div>
+                        </div>
+                        
+                      <div class="mt-8">
+                        <md3-external href="https://www.youtube.com/watch?v=8ISwAYeZZ_E&list=PLa75BYTPDNKZWYypgOFEsX3H2Mg-SzuLW&index=4" label="Para Saber Mais sobre Tipos de Dados (Vídeo)" icon="fa-brands fa-youtube" variant="tonal"></md3-external>
+                      </div>
+                    </div>
+                </div>
+
+                 <div class="mb-16">
+                    <h3 class="section__subtitle mb-6">Memória, Bytes e "Tamanhos" das Variáveis</h3>
+                    <div class="card p-8 shadow-elevation-2">
+                        <p class="mb-4">Cada tipo de variável ocupa um espaço diferente na memória do computador, medido em <strong>bytes</strong>. Saber o tamanho é importante para otimizar programas no futuro.</p>
+                        <table class="w-full my-4 text-left">
+                            <thead class="bg-neutral-100">
+                                <tr><th class="p-3">Tipo</th><th class="p-3">Tamanho Típico</th><th class="p-3">O que armazena</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b"><td class="p-3 mono">char</td><td class="p-3">1 byte</td><td class="p-3">Um único caractere</td></tr>
+                                <tr class="border-b"><td class="p-3 mono">int</td><td class="p-3">4 bytes</td><td class="p-3">Números inteiros</td></tr>
+                                <tr class="border-b"><td class="p-3 mono">float</td><td class="p-3">4 bytes</td><td class="p-3">Números com decimais</td></tr>
+                                <tr class="border-b"><td class="p-3 mono">double</td><td class="p-3">8 bytes</td><td class="p-3">Decimais com alta precisão</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="mb-4">Podemos verificar o tamanho de qualquer tipo de dado em C com o operador <code>sizeof()</code>.</p>
+                        <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-3">
+                            <pre id="code-sizeof"><code>#include <stdio.h>
+
+int main() {
+  printf("Tamanho de char: %zu byte(s)\\n", sizeof(char));
+  printf("Tamanho de int: %zu byte(s)\\n", sizeof(int));
+  printf("Tamanho de float: %zu byte(s)\\n", sizeof(float));
+  printf("Tamanho de double: %zu byte(s)\\n", sizeof(double));
+  return 0;
+}</code></pre>
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="mb-16">
+                    <h3 class="section__subtitle mb-6">E se o Valor Não Mudar? Constantes</h3>
+                    <div class="card p-8 shadow-elevation-2">
+                        <p class="mb-4">Uma <strong>constante</strong> é um valor que, uma vez definido, não pode ser alterado durante a execução do programa. É útil para valores fixos como o PI, uma taxa de juro ou o número máximo de tentativas.</p>
+                        <h4 class="font-semibold text-xl text-primary-700 mt-6 mb-3">Forma 1: A palavra-chave \`const\`</h4>
+                        <p>Cria uma constante com um tipo de dado definido. É a forma mais moderna e segura, pois o compilador verifica o tipo.</p>
+                         <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-3 mb-4">
+                            <pre><code>const float PI = 3.14159;
+const int MAX_TENTATIVAS = 3;</code></pre>
+                        </div>
+                        <h4 class="font-semibold text-xl text-primary-700 mt-6 mb-3">Forma 2: A diretiva \`#define\`</h4>
+                        <p>É uma diretiva do pré-processador. Simplesmente substitui todas as ocorrências de um nome por um valor antes da compilação. Não tem tipo de dado e é menos seguro.</p>
+                         <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-3 mb-4">
+                            <pre><code>#define PI 3.14159
+#define MAX_TENTATIVAS 3</code></pre>
+                        </div>
+                        <div class="callout callout-good-practice">
+                            <h5 class="font-bold mb-2">Boa Prática</h5>
+                            <p>Prefira usar <code>const</code> em vez de <code>#define</code> sempre que possível. A verificação de tipo do <code>const</code> ajuda a evitar erros subtis no seu código.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="section__subtitle mb-6">Atividade Prática em Duplas</h3>
+                    <div class="card p-8 shadow-elevation-2">
+                        <p class="mb-4">Em duplas, abram o editor de código e criem um novo programa em C. O objetivo é declarar, atribuir e exibir variáveis de forma formatada.</p>
+                        <ol class="list-decimal list-inside space-y-4 mt-4">
+                            <li>Declarem variáveis para guardar o nome de um produto (array de char), a sua quantidade em stock (int) e o seu preço (float).</li>
+                            <li>Atribuam valores a estas variáveis.</li>
+                            <li>Usem uma única chamada à função \`printf\` para exibir uma frase completa e formatada, como: "Produto: [NOME] | Stock: [QTD] unidades | Preço: R$ [PRECO]".</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Tarefa da Aula 6 -->
+                <div id="proximos-passos-aula6">
+                    <h3 class="section__subtitle mb-6">Próximos Passos e Tarefa (TED)</h3>
+                     <div class="callout callout-info">
+                        <h4 class="font-bold text-xl mb-4">Tarefa para a próxima aula</h4>
+                        <p class="mb-4">O objetivo é praticar a declaração de variáveis e a exibição de dados formatados.</p>
+                        <ol class="list-decimal list-inside space-y-2 font-semibold">
+                            <li>Crie um programa em C que declare três variáveis:
+                                <ul class="list-disc list-inside ml-5">
+                                    <li>Um array de \`char\` para armazenar um nome.</li>
+                                    <li>Um \`int\` para armazenar uma idade.</li>
+                                    <li>Um \`float\` para armazenar uma altura.</li>
+                                </ul>
+                            </li>
+                            <li>Atribua valores a estas variáveis e, no final, imprima uma frase formatada, como por exemplo: "O(A) aluno(a) [NOME] tem [IDADE] anos e mede [ALTURA] metros."</li>
+                            <li>Poste o código \`.c\` na Atividade "Aula 6 - Variáveis, Constantes e Tipos Primitivos em C" no Moodle.</li>
+                        </ol>
+                        <div class="mt-6">
+                            <md3-external href="https://eadsp.unichristus.edu.br" label="Acessar Moodle" icon="fa-solid fa-graduation-cap" variant="tonal"></md3-external>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prática Digital -->
+<section id="pratica-digital-aula6" class="mt-16 mb-16">
+  <h2 class="section__title mb-6">💻 Teste seu Código Online</h2>
+  <div class="card p-6">
+    <h4 class="font-bold text-xl mb-3">💻 Teste seu Código</h4>
+    <p class="mb-4">Abra o editor OnlineGDB em uma nova aba para compilar e executar seus programas em C.</p>
+    <a href="https://www.onlinegdb.com/online_c_compiler" target="_blank" rel="noopener noreferrer" class="btn btn-tonal">Abrir OnlineGDB</a>
+  </div>
+</section>
+
+<!-- Checklist -->
+<section id="checklist-aula6" class="mb-16">
+  <h2 class="section__title mb-6">✅ Checklist de Aprendizado</h2>
+  <div class="card">
+    <form class="space-y-4 text-neutral-700">
+      <label class="flex items-center gap-3">
+        <input type="checkbox" class="w-5 h-5 text-primary-600 rounded">
+        Entendi o conceito de variáveis e como declarar em C.
+      </label>
+      <label class="flex items-center gap-3">
+        <input type="checkbox" class="w-5 h-5 text-primary-600 rounded">
+        Sei a diferença entre <code>int</code>, <code>float</code>, <code>double</code> e <code>char</code>.
+      </label>
+      <label class="flex items-center gap-3">
+        <input type="checkbox" class="w-5 h-5 text-primary-600 rounded">
+        Pratiquei a criação e exibição de variáveis com <code>printf()</code>.
+      </label>
+      <label class="flex items-center gap-3">
+        <input type="checkbox" class="w-5 h-5 text-primary-600 rounded">
+        Aprendi a usar <code>const</code> e <code>#define</code> para constantes.
+      </label>
+      <label class="flex items-center gap-3">
+        <input type="checkbox" class="w-5 h-5 text-primary-600 rounded">
+        Testei meu código no OnlineGDB ou compilador local.
+      </label>
+    </form>
+  </div>
+</section>
+
+
+                <!-- Bibliografia -->
+<section id="bibliografia-aula6" class="mt-16 mb-16">
+  <h2 class="section__title mb-6">📚 Bibliografia Recomendada</h2>
+  <div class="card p-8">
+    <ul class="list-disc list-inside space-y-3">
+      <li>
+        FORBELLONE, A. L. V; EBERSPÄCHER, H. F. <strong>Lógica de Programação: a construção de algoritmos e estruturas de dados.</strong> 4ª ed. São Paulo: Pearson, 2015.
+      </li>
+      <li>
+        MANZANO, J. A. N. G; OLIVEIRA, J. F. <strong>Algoritmos: lógica para desenvolvimento de programação de computadores.</strong> 30ª ed. São Paulo: Érica, 2022.
+      </li>
+      <li>
+        KERNIGHAN, B. W; RITCHIE, D. M. <strong>Linguagem de Programação C.</strong> 2ª ed. São Paulo: Pearson, 2014.
+      </li>
+    </ul>
+  </div>
+</section>
+
+            </section>
+`;export{a as default};

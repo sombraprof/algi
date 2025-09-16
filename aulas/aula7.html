@@ -1,0 +1,401 @@
+   <!-- Seção da Aula 7 -->
+            <section id="aula7" class="mb-16 pt-16">
+                <header class="mb-12">
+                    <h2 class="section__title">Aula 7: Operadores e Expressões em C</h2>
+                    <p class="text-body-large text-neutral-700 dark:text-neutral-300 mt-2">Aprendendo a realizar cálculos, comparações e a tomar
+                        decisões lógicas.</p>
+                </header>
+
+                <!-- NOVA SEÇÃO: Plano da Aula -->
+                <section id="plano-aula" class="mb-16 bg-primary-50 border border-primary-200 p-8 rounded-2xl shadow-elevation-3"
+                    aria-labelledby="plano-aula-heading">
+                    <h2 id="plano-aula-heading" class="text-3xl font-bold text-primary-700 mb-6 text-center">
+                        Plano da Aula
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="card">
+                            <h3 class="font-semibold text-lg text-primary-800 mb-2">
+                                <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+                            </h3>
+                            <p class="text-neutral-600">
+                                Operadores aritméticos, relacionais, lógicos, de atribuição e unários. Precedência de
+                                operadores e uso de parênteses.
+                            </p>
+                        </div>
+                        <div class="card">
+                            <h3 class="font-semibold text-lg text-primary-800 mb-2">
+                                <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO
+                            </h3>
+                            <p class="text-neutral-600">
+                                Identificar e aplicar corretamente os operadores em C, compreendendo o impacto da
+                                precedência e boas práticas na criação de expressões.
+                            </p>
+                        </div>
+                        <div class="card">
+                            <h3 class="font-semibold text-lg text-primary-800 mb-2">
+                                <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA
+                            </h3>
+                            <p class="text-neutral-600">
+                                Aula expositiva dialogada com exemplos práticos, seguida de atividade colaborativa em
+                                duplas e TED postada no Moodle.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="card p-8 shadow-elevation-2 mb-12">
+                    <h3 class="section__subtitle mb-4">Plano de Voo da Aula de Hoje</h3>
+                    <ul class="list-disc list-inside space-y-2 text-neutral-700">
+                        <li>Introdução aos operadores em C: a base para o processamento de dados.</li>
+                        <li>Operadores Aritméticos: realizando cálculos matemáticos.</li>
+                        <li>Operadores Relacionais: fazendo comparações.</li>
+                        <li>Operadores Lógicos: combinando condições.</li>
+                        <li>Operadores de Atribuição e Unários: simplificando o código.</li>
+                        <li>A regra mais importante: Precedência de Operadores.</li>
+                        <li>Atividade prática em duplas: cálculo de média ponderada.</li>
+                        <li>Apresentação da tarefa (TED) da Aula 7.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="section__subtitle mb-6">O Papel dos Operadores</h3>
+                    <div class="card p-8 shadow-elevation-2">
+                        <p class="text-lg mb-4">Se pensarmos no fluxo de um programa como
+                            <strong>Entrada → Processamento → Saída</strong>, os operadores são o coração do
+                            <strong>Processamento</strong>. São eles que nos permitem pegar os dados de entrada,
+                            transformá-los, combiná-los e tomar decisões para, no fim, gerar uma saída útil.
+                        </p>
+                        <p>Dominar os operadores é o primeiro passo para dar "inteligência" e funcionalidade aos nossos
+                            programas.</p>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="section__subtitle mb-6">Operadores Aritméticos</h3>
+                    <div class="card p-8 shadow-elevation-2">
+                        <p class="text-lg mb-4">São os símbolos que usamos para realizar as operações matemáticas
+                            básicas.</p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full my-4 text-left">
+                                <thead class="bg-neutral-100">
+                                    <tr>
+                                        <th class="p-3">Operador</th>
+                                        <th class="p-3">Descrição</th>
+                                        <th class="p-3">Exemplo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="p-3 mono">+</td>
+                                        <td class="p-3">Adição</td>
+                                        <td class="p-3 mono"><code>5 + 3 // resulta em 8</code></td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 mono">-</td>
+                                        <td class="p-3">Subtração</td>
+                                        <td class="p-3 mono"><code>5 - 3 // resulta em 2</code></td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 mono">*</td>
+                                        <td class="p-3">Multiplicação</td>
+                                        <td class="p-3 mono"><code>5 * 3 // resulta em 15</code></td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 mono">/</td>
+                                        <td class="p-3">Divisão</td>
+                                        <td class="p-3 mono"><code>10 / 2 // resulta em 5</code></td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 mono">%</td>
+                                        <td class="p-3">Módulo (resto da divisão inteira)</td>
+                                        <td class="p-3 mono"><code>10 % 3 // resulta em 1</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="callout callout-good-practice">
+                            <h5 class="font-bold mb-2">Cuidado com a Divisão de Inteiros!</h5>
+                            <p>Em C, a divisão de dois números inteiros resulta sempre num número inteiro (a parte
+                                decimal é truncada). Por exemplo, <code>5 / 2</code> resulta em <code-text>2</code-text>, e não <code-text>2.5</code-text>. Para
+                                obter o resultado decimal, pelo menos um dos números deve ser do tipo <code-text>float</code-text> ou
+                                <code-text>double</code-text>: <code>5.0 / 2</code> resulta em <code-text>2.5</code-text>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="section__subtitle mb-6">Operadores Relacionais</h3>
+                    <div class="card p-8 shadow-elevation-2">
+                        <p class="text-lg mb-4">São usados para comparar dois valores. O resultado de uma comparação é
+                            sempre um valor booleano: <strong>verdadeiro</strong> (representado por <code-text>1</code-text> em C) ou
+                            <strong>falso</strong> (representado por <code-text>0</code-text>).
+                        </p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full my-4 text-left">
+                                <thead class="bg-neutral-100">
+                                    <tr>
+                                        <th class="p-3">Operador</th>
+                                        <th class="p-3">Descrição</th>
+                                        <th class="p-3">Exemplo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="p-3 mono">==</td>
+                                        <td class="p-3">Igual a</td>
+                                        <td class="p-3 mono"><code>5 == 5 // resulta em 1 (verdadeiro)</code></td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 mono">!=</td>
+                                        <td class="p-3">Diferente de</td>
+                                        <td class="p-3 mono"><code>5 != 3 // resulta em 1 (verdadeiro)</code></td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 mono">></td>
+                                        <td class="p-3">Maior que</td>
+                                        <td class="p-3 mono"><code>5 > 3 // resulta em 1 (verdadeiro)</code></td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 mono">
+                                            &lt;</td>
+                                        <td class="p-3">Menor que</td>
+                                        <td class="p-3 mono"><code>5 &lt; 3 // resulta em 0 (falso)</code></td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 mono">>=</td>
+                                        <td class="p-3">Maior ou igual a</td>
+                                        <td class="p-3 mono"><code>5 >= 5 // resulta em 1 (verdadeiro)</code></td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 mono">
+                                            &lt;=</td>
+                                        <td class="p-3">Menor ou igual a</td>
+                                        <td class="p-3 mono"><code>5 &lt;= 3 // resulta em 0 (falso)</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="section__subtitle mb-6">Operadores Lógicos</h3>
+                    <div class="card p-8 shadow-elevation-2">
+                        <p class="text-lg mb-4">Permitem-nos combinar múltiplas condições para criar decisões mais
+                            complexas.</p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full my-4 text-left">
+                                <thead class="bg-neutral-100">
+                                    <tr>
+                                        <th class="p-3">Operador</th>
+                                        <th class="p-3">Nome Lógico</th>
+                                        <th class="p-3">Exemplo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="p-3 mono">&&</td>
+                                        <td class="p-3">E (AND)</td>
+                                        <td class="p-3 mono"><code>(idade >= 18 && temCarta == 1)</code></td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 mono">||</td>
+                                        <td class="p-3">OU (OR)</td>
+                                        <td class="p-3 mono"><code>(dia == 6 || dia == 7) // Sábado ou Domingo</code>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-3 mono">!</td>
+                                        <td class="p-3">NÃO (NOT)</td>
+                                        <td class="p-3 mono">
+                                            <code>!(idade >= 18) // Verdadeiro se a idade NÃO for maior ou igual a 18</code>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="section__subtitle mb-6">Precedência de Operadores</h3>
+                    <div class="card p-8 shadow-elevation-2">
+                        <p class="mb-4">Quando temos uma expressão complexa como <code>5 + 3 * 2</code>, qual operação é
+                            feita primeiro? A linguagem C segue uma ordem de precedência, muito similar à da matemática.
+                        </p>
+                        <ol class="list-decimal list-inside space-y-2 mt-4 font-semibold">
+                            <li>Parênteses <code>()</code> (maior prioridade)</li>
+                            <li>Operadores Aritméticos de Multiplicação e Divisão (<code>* / %</code>)</li>
+                            <li>Operadores Aritméticos de Adição e Subtração (<code>+ -</code>)</li>
+                            <li>Operadores Relacionais (<code>> &lt; == !=</code> etc.)</li>
+                            <li>Operadores Lógicos (<code>&&</code> e depois <code>||</code>) (menor prioridade)</li>
+                        </ol>
+                        <div class="callout callout-good-practice">
+                            <h5 class="font-bold mb-2">Boa Prática: Use Parênteses!</h5>
+                            <p>Mesmo que saiba a ordem de precedência, use parênteses para agrupar as suas expressões.
+                                Isto torna o código muito mais fácil de ler e entender, tanto para si como para outros
+                                programadores, e evita erros lógicos difíceis de encontrar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="section__subtitle mb-6">Atividade Prática em Duplas</h3>
+                    <div class="card p-8 shadow-elevation-2">
+                        <p class="mb-4">Em duplas, vamos criar um programa que calcula a média ponderada de três notas.
+                            A fórmula é: <code-text>Media = (Nota1 * Peso1 + Nota2 * Peso2 + Nota3 * Peso3) / (Peso1 + Peso2 +
+                            Peso3)</code-text>.</p>
+                        <ol class="list-decimal list-inside space-y-4 mt-4">
+                            <li>Declarem variáveis <code-text>float</code-text> para as 3 notas e 3 pesos.</li>
+                            <li>Peçam ao utilizador para inserir as notas e os pesos.</li>
+                            <li>Calculem a média ponderada numa variável <code-text>float</code-text> chamada <code-text>mediaPonderada</code-text>. Usem
+                                parênteses para garantir a ordem correta dos cálculos!</li>
+                            <li>Exibam o resultado de forma clara, mostrando as notas, os pesos e a média final.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Tarefa da Aula 7 -->
+                <section id="proximos-passos-aula7" class="mb-16" aria-labelledby="ted-heading">
+                    <h3 id="ted-heading" class="section__subtitle mb-6">
+                        Próximos Passos e Tarefa (TED)
+                    </h3>
+                    <div class="callout callout-info">
+                        <h4 class="font-bold text-xl mb-4">Objetivo da Tarefa</h4>
+                        <p class="mb-4 leading-relaxed">
+                            Consolidar o entendimento sobre operadores aritméticos, relacionais e lógicos em C,
+                            praticando <strong>precedência de operações</strong> e a
+                            <strong>formatação detalhada da saída</strong>
+                            no console. Esta atividade reforça a importância de escrever código legível e explicativo.
+                        </p>
+
+                        <h4 class="font-bold text-xl mt-6 mb-4">Instruções</h4>
+                        <ol class="list-decimal list-inside space-y-3 font-semibold">
+                            <li>
+                                Elabore um programa em <code-text>C</code-text> que calcule a
+                                <strong>média ponderada</strong>
+                                de três notas com pesos diferentes. Você pode reutilizar os valores usados em aula ou
+                                criar novos.
+                            </li>
+                            <li>
+                                A saída deve ser <strong>autoexplicativa</strong>, mostrando o cálculo completo no
+                                <code-text>printf</code-text>, por exemplo:<br>
+                                <code-text>(Nota1 * Peso1 + Nota2 * Peso2 + Nota3 * Peso3) / (Peso1 + Peso2 + Peso3) =
+                                    Resultado</code-text>
+                            </li>
+                            <li>
+                                Utilize <strong>parênteses</strong> para deixar clara a ordem das operações e evitar
+                                ambiguidades.
+                            </li>
+                            <li>
+                                Comente o código explicando o papel de cada variável e a lógica aplicada.
+                                Isso ajudará a fixar os conceitos de forma mais profunda.
+                            </li>
+                            <li>
+                                Salve o arquivo como <code-text>aula7_media_ponderada.c</code-text> e poste o código
+                                na Atividade "Aula 7" no Moodle.
+                            </li>
+                        </ol>
+
+                        <div class="mt-6">
+                          <md3-external href="https://eadsp.unichristus.edu.br" label="Acessar Moodle" icon="fa-solid fa-graduation-cap" variant="tonal"></md3-external>
+                        </div>
+
+                        <div class="mt-8 bg-primary-200 text-primary-900 p-4 rounded-2xl">
+                            <h5 class="font-bold mb-2"><i class="fa-solid fa-lightbulb mr-2"></i>Dica Extra</h5>
+                            <p class="text-sm leading-relaxed">
+                                Teste seu programa com diferentes combinações de notas e pesos, incluindo valores
+                                fracionários
+                                (ex.: <code-text>8.5</code-text>) e pesos variados. Isso garantirá que seu código
+                                funciona para
+                                diversos cenários e que você entendeu bem o uso de <code-text>float</code-text> e
+                                <code-text>double</code-text>.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="teste-codigo" class="mb-16" aria-labelledby="teste-codigo-heading">
+    <h2 id="teste-codigo-heading"
+        class="section__title mb-8">
+        💻 Área de Testes Interativa
+    </h2>
+
+    <div class="card p-6">
+      <h4 class="font-bold text-xl mb-3">💻 Teste seu Código</h4>
+      <p class="mb-4">Abra o editor OnlineGDB em uma nova aba para compilar e executar seus programas em C.</p>
+      <md3-external href="https://www.onlinegdb.com/online_c_compiler" label="Abrir OnlineGDB" icon="fa-solid fa-up-right-from-square" variant="tonal"></md3-external>
+    </div>
+
+    <p class="text-neutral-600 text-sm mt-4">
+        💡 <strong>Dica:</strong> Escreva, compile e execute seu programa em C diretamente nesta página. 
+        Use este espaço para testar a tarefa da Aula 7 ou criar novos experimentos com operadores.
+    </p>
+</section>
+
+                <section id="recursos-apoio" class="mb-16" aria-labelledby="recursos-heading">
+                    <h2 id="recursos-heading"
+                        class="section__title mb-8">
+                        🎥 Vídeos de Apoio
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="card p-4">
+                            <h3 class="font-semibold text-lg text-primary-800 mb-2">
+                                Operadores em C (Introdução à Linguagem C)
+                            </h3>
+                            <div class="aspect-video w-full">
+                                <iframe class="w-full h-full rounded-xl" src="https://www.youtube.com/embed/nkZxJomZYoo"
+                                    title="Operadores em C" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="card p-4">
+                            <h3 class="font-semibold text-lg text-primary-800 mb-2">
+                                Precedência de Operadores em C (Responde em Códigos)
+                            </h3>
+                            <div class="aspect-video w-full">
+                                <iframe class="w-full h-full rounded-xl" src="https://www.youtube.com/embed/42A4aZvnsX0"
+                                    title="Precedência de Operadores" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="checklist" class="mt-16">
+    <div class="callout callout-success">
+        <h3 class="font-bold text-lg mb-3">✅ Ao final desta aula você deve ser capaz de:</h3>
+        <ul class="list-none space-y-2">
+            <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Explicar o papel dos operadores no processamento.</li>
+            <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Usar operadores aritméticos, relacionais e lógicos.</li>
+            <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Aplicar precedência e parênteses corretamente.</li>
+            <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Criar código com saída explicativa.</li>
+        </ul>
+    </div>
+                </section>
+
+                <!-- NOVA SEÇÃO: Bibliografia -->
+                <section id="bibliografia" class="mt-16" aria-labelledby="bibliografia-heading">
+                    <h2 id="bibliografia-heading"
+                        class="section__title mb-6">
+                        📚 Bibliografia de Apoio
+                    </h2>
+                    <div class="card p-8 space-y-4">
+                        <p>
+                            <strong>BACKES, André.</strong> <em>Linguagem C: completa e descomplicada.</em> 2. ed. São
+                            Paulo: Novatec, 2020.
+                        </p>
+                        <p>
+                            <strong>SANTOS, Marcelo Gonçalves dos.</strong> <em>Linguagem de Programação.</em> São
+                            Paulo: Pearson, 2018.
+                        </p>
+                        <p>
+                            <strong>KERIGHAN, Brian; RITCHIE, Dennis.</strong> <em>A Linguagem de Programação C.</em> 2.
+                            ed. LTC, 2018.
+                        </p>
+                    </div>
+                </section>
+
+            </section>

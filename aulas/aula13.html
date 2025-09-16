@@ -1,0 +1,375 @@
+<section id="aula13" class="mb-16 pt-16">
+  <header class="mb-12">
+    <h2 class="section__title">Aula 13: Condições Compostas e Encadeadas</h2>
+    <p class="text-body-large text-neutral-700 dark:text-neutral-300 mt-2">
+      Combinando operadores lógicos (&&, ||, !) com cadeias if / else if / else
+      para regras mais ricas.
+    </p>
+  </header>
+
+  <!-- Plano da Aula -->
+  <section
+    id="plano-aula13"
+    class="mb-16 bg-primary-50 border border-primary-200 p-8 rounded-2xl shadow-elevation-3"
+    aria-labelledby="plano-aula13-heading"
+  >
+    <h2
+      id="plano-aula13-heading"
+      class="text-3xl font-bold text-primary-700 mb-6 text-center"
+    >
+      Plano da Aula
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+        </h3>
+        <p class="text-neutral-600">
+          Operadores lógicos (<code-text>&&</code-text>,
+          <code-text>||</code-text>, <code-text>!</code-text>) e encadeamento de
+          decisões com <code-text>if</code-text>,
+          <code-text>else if</code-text> e <code-text>else</code-text>.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO
+        </h3>
+        <p class="text-neutral-600">
+          Formular condições compostas e organizar decisões múltiplas,
+          escrevendo programas claros e corretos para cenários práticos.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA
+        </h3>
+        <p class="text-neutral-600">
+          Exposição dialogada com exemplos guiados e prática em pequenos
+          problemas de validação e classificação.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Motivação -->
+  <section class="mb-16" aria-labelledby="motivacao13">
+    <h3 id="motivacao13" class="section__subtitle mb-6">
+      Por que combinar condições?
+    </h3>
+    <div class="card p-8 shadow-elevation-2">
+      <p class="text-lg mb-4">
+        Muitos problemas não cabem numa única comparação. Precisamos verificar
+        intervalos, faixas válidas ou exclusões. É aí que entram os operadores
+        lógicos: <code-text>&&</code-text> (E), <code-text>||</code-text> (OU) e
+        <code-text>!</code-text> (NÃO).
+      </p>
+      <p>
+        Com eles, construímos regras como “entre A e B” (<code-text
+          >a &gt;= A && a &lt;= B</code-text
+        >) ou “fora do intervalo” (<code-text>a &lt; A || a &gt; B</code-text>),
+        e combinamos com uma cadeia <code-text>if</code-text>/<code-text
+          >else if</code-text
+        >.
+      </p>
+    </div>
+  </section>
+
+  <!-- Exemplo 1: Validação de intervalo -->
+  <section class="mb-16" aria-labelledby="intervalo13">
+    <h3 id="intervalo13" class="section__subtitle mb-6">
+      Exemplo: Validação de Intervalo
+    </h3>
+    <div class="card p-8 shadow-elevation-2">
+      <p class="mb-4">
+        Verificando se uma nota está no intervalo válido [0, 10].
+      </p>
+      <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-4">
+        <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    float nota;
+    printf("Digite a nota (0 a 10): ");
+    scanf("%f", &nota);
+
+    if (nota &gt;= 0 && nota &lt;= 10) {
+        printf("Nota valida!\n");
+    } else {
+        printf("Nota invalida.\n");
+    }
+    return 0;
+}
+</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exemplo 2: Faixas encadeadas (else if) -->
+  <section class="mb-16" aria-labelledby="faixas13">
+    <h3 id="faixas13" class="section__subtitle mb-6">
+      Exemplo: Faixas Encadeadas com else if
+    </h3>
+    <div class="card p-8 shadow-elevation-2">
+      <p class="mb-4">
+        Classificando a média em conceitos: A (≥ 9), B (≥ 7), C (≥ 5), D (&lt;
+        5).
+      </p>
+      <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-4">
+        <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    float media;
+    printf("Media do aluno: ");
+    scanf("%f", &media);
+
+    if (media &gt;= 9.0) {
+        printf("Conceito A\n");
+    } else if (media &gt;= 7.0) {
+        printf("Conceito B\n");
+    } else if (media &gt;= 5.0) {
+        printf("Conceito C\n");
+    } else {
+        printf("Conceito D\n");
+    }
+    return 0;
+}
+</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exemplo 3: Combinações com OU e NÃO -->
+  <section class="mb-16" aria-labelledby="ou-nao13">
+    <h3 id="ou-nao13" class="section__subtitle mb-6">
+      Exemplo: Combinações com OU (||) e NÃO (!)
+    </h3>
+    <div class="card p-8 shadow-elevation-2">
+      <p class="mb-4">
+        Verificando elegibilidade para desconto: estudante OU idoso, e com
+        cadastro ativo.
+      </p>
+      <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-4">
+        <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int estudante, idoso, cadastroAtivo;
+    printf("Eh estudante? (1=sim,0=nao): ");
+    scanf("%d", &estudante);
+    printf("Eh idoso? (1=sim,0=nao): ");
+    scanf("%d", &idoso);
+    printf("Cadastro ativo? (1=sim,0=nao): ");
+    scanf("%d", &cadastroAtivo);
+
+    if ((estudante == 1 || idoso == 1) && cadastroAtivo == 1) {
+        printf("Tem direito a desconto.\n");
+    } else {
+        printf("Nao tem direito a desconto.\n");
+    }
+
+    // Exemplo de negacao
+    if (!cadastroAtivo) {
+        printf("Ative seu cadastro para beneficios.\n");
+    }
+    return 0;
+}
+</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mini-atividade -->
+  <section class="mb-16" aria-labelledby="atividade13">
+    <h3 id="atividade13" class="section__subtitle mb-6">Atividade Rápida</h3>
+    <div class="card p-8 shadow-elevation-2">
+      <p class="mb-4">
+        Em duplas, escrevam um programa que leia idade e renda mensal e
+        determine se a pessoa se qualifica para um benefício com as regras:
+      </p>
+      <ul class="list-disc list-inside mb-4">
+        <li>Idade ≥ 60 OU (idade ≥ 18 E renda ≤ 2 salários mínimos).</li>
+        <li>Cadastro deve estar ativo.</li>
+      </ul>
+      <p>Imprima “Elegível” ou “Não elegível”.</p>
+    </div>
+  </section>
+
+  <!-- Tarefa (TED) -->
+  <section
+    id="proximos-passos-aula13"
+    class="mb-16"
+    aria-labelledby="ted13-heading"
+  >
+    <h3 id="ted13-heading" class="section__subtitle mb-6">
+      Próximos Passos e Tarefa (TED)
+    </h3>
+    <div class="callout callout-info">
+      <h4 class="font-bold text-xl mb-4">Tarefa para a próxima aula</h4>
+      <ol class="list-decimal list-inside space-y-3 font-semibold">
+        <li>
+          Crie um programa em C chamado
+          <code-text>aula13_validacao_login.c</code-text>.
+        </li>
+        <li>
+          Leia três valores: <em>usuarioAtivo</em> (0/1),
+          <em>tentativas</em> (int) e <em>bloqueado</em> (0/1).
+        </li>
+        <li>
+          Regras: só permite acesso se <code-text>usuarioAtivo == 1</code-text>,
+          <code-text>tentativas &lt; 3</code-text> e
+          <code-text>!bloqueado</code-text>.
+        </li>
+        <li>Imprima “Acesso permitido” ou “Acesso negado”.</li>
+        <li>
+          Publique o arquivo <code-text>.c</code-text> na atividade “Aula 13” no
+          Moodle.
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Área de testes -->
+  <section
+    id="teste-codigo-aula13"
+    class="mb-16"
+    aria-labelledby="teste-codigo-heading10"
+  >
+    <h2 id="teste-codigo-heading13" class="section__title mb-8">
+      💻 Área de Testes Interativa
+    </h2>
+    <div class="card p-6">
+      <h4 class="font-bold text-xl mb-3">💻 Teste seu Código</h4>
+      <p class="mb-4">
+        Abra o editor OnlineGDB em uma nova aba para compilar e executar seus
+        programas em C.
+      </p>
+      <md3-external
+        href="https://www.onlinegdb.com/online_c_compiler"
+        label="Abrir OnlineGDB"
+        icon="fa-solid fa-up-right-from-square"
+        variant="tonal"
+      ></md3-external>
+    </div>
+  </section>
+
+  <!-- Vídeos de apoio -->
+  <section
+    id="recursos-apoio-aula13"
+    class="mb-16"
+    aria-labelledby="recursos-heading13"
+  >
+    <h2 id="recursos-heading13" class="section__title mb-8">
+      🎥 Vídeos de Apoio
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="card p-4">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          Operadores lógicos (&&, ||, !) em C
+        </h3>
+        <div class="aspect-video w-full">
+          <iframe
+            class="w-full h-full rounded-xl"
+            src="https://www.youtube-nocookie.com/embed/LpVDGm-FT78"
+            title="Operadores lógicos e decisão em C"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <details class="mt-2">
+          <summary class="text-sky-700 hover:underline text-sm">
+            Problemas para carregar? Abrir no YouTube
+          </summary>
+          <a
+            class="text-sky-700 underline text-sm"
+            href="https://www.youtube.com/watch?v=LpVDGm-FT78"
+            target="_blank"
+            rel="noopener"
+            >Assistir no YouTube</a
+          >
+        </details>
+      </div>
+      <div class="card p-4">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          Cadeias if / else if / else
+        </h3>
+        <div class="aspect-video w-full">
+          <iframe
+            class="w-full h-full rounded-xl"
+            src="https://www.youtube-nocookie.com/embed/JBFgiNJevqc"
+            title="Aninhamento e cadeias de decisão em C"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <details class="mt-2">
+          <summary class="text-sky-700 hover:underline text-sm">
+            Problemas para carregar? Abrir no YouTube
+          </summary>
+          <a
+            class="text-sky-700 underline text-sm"
+            href="https://www.youtube.com/watch?v=JBFgiNJevqc"
+            target="_blank"
+            rel="noopener"
+            >Assistir no YouTube</a
+          >
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checklist -->
+  <section id="checklist-aula13" class="mt-16">
+    <div class="callout callout-success">
+      <h3 class="font-bold text-lg mb-3">
+        ✅ Ao final desta aula você deve ser capaz de:
+      </h3>
+      <ul class="list-none space-y-2">
+        <li>
+          <i class="fa-solid fa-check text-green-600 mr-2"></i>Escrever
+          condições com <code-text>&&</code-text>, <code-text>||</code-text> e
+          <code-text>!</code-text>.
+        </li>
+        <li>
+          <i class="fa-solid fa-check text-green-600 mr-2"></i>Construir cadeias
+          <code-text>if</code-text>/<code-text>else if</code-text>/<code-text
+            >else</code-text
+          >
+          sem sobreposição de casos.
+        </li>
+        <li>
+          <i class="fa-solid fa-check text-green-600 mr-2"></i>Validar entradas
+          com intervalos e restrições múltiplas.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Bibliografia -->
+  <section
+    id="bibliografia-aula13"
+    class="mt-16"
+    aria-labelledby="bibliografia-heading13"
+  >
+    <h2 id="bibliografia-heading13" class="section__title mb-6">
+      📚 Bibliografia de Apoio
+    </h2>
+    <div class="card p-8 space-y-4">
+      <p>
+        <strong>BACKES, André.</strong>
+        <em>Linguagem C: completa e descomplicada.</em> Rio de Janeiro:
+        Elsevier, 2019.
+      </p>
+      <p>
+        <strong>MANZANO, José Augusto N.G.; OLIVEIRA, Jayr Figueiredo.</strong>
+        <em
+          >Algoritmos: lógica para desenvolvimento de programação de
+          computadores.</em
+        >
+        São Paulo: Érica, 2019.
+      </p>
+    </div>
+  </section>
+</section>

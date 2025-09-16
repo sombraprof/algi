@@ -1,0 +1,353 @@
+<!-- Seção da Aula 5 -->
+<section id="aula5" class="mb-16 pt-16">
+  <header class="mb-12">
+    <h2 class="section__title">
+      Aula 5: Representação Gráfica com Fluxogramas
+    </h2>
+    <p class="text-body-large text-neutral-700 dark:text-neutral-300 mt-2">
+      Aprendendo a "desenhar" a lógica de um algoritmo.
+    </p>
+  </header>
+
+  <!-- Plano da Aula -->
+  <section
+    id="plano-aula5"
+    class="mb-16 callout callout-info p-8"
+  >
+    <h2 class="text-3xl font-bold text-primary-700 mb-6 text-center">
+      Plano da Aula
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+        </h3>
+        <p class="text-neutral-600">
+          Introdução a fluxogramas, simbologia padrão, conexão entre lógica
+          textual e visual.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO
+        </h3>
+        <p class="text-neutral-600">
+          Aprender a representar algoritmos de forma gráfica e compreender como
+          os fluxogramas ajudam na clareza da lógica.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA
+        </h3>
+        <p class="text-neutral-600">
+          Exposição dialogada, exemplos práticos e atividade colaborativa em
+          duplas. TED no Moodle.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="card p-8 shadow-elevation-2 mb-12">
+    <h3 class="section__subtitle mb-4">
+      Plano de Voo da Aula de Hoje
+    </h3>
+    <ul class="list-disc list-inside space-y-2 text-neutral-700">
+      <li>Por que usar uma representação visual para algoritmos?</li>
+      <li>Apresentação da simbologia padrão dos fluxogramas.</li>
+      <li>
+        Construção de um fluxograma passo a passo, incluindo um ponto de
+        decisão.
+      </li>
+      <li>
+        Atividade prática em duplas: desenhando fluxogramas para problemas
+        simples.
+      </li>
+      <li>Ferramentas úteis para criar fluxogramas digitais.</li>
+      <li>Apresentação da tarefa (TED) da Aula 5.</li>
+    </ul>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="section__subtitle mb-6">
+      Simbologia Essencial dos Fluxogramas
+    </h3>
+    <div class="card p-8 shadow-elevation-2">
+      <p class="text-lg mb-6">
+        Um fluxograma utiliza símbolos padronizados para representar diferentes
+        tipos de ações ou passos num algoritmo. Conhecer estes símbolos é como
+        aprender o vocabulário básico de uma nova língua.
+      </p>
+      <div class="space-y-6">
+        <!-- Terminal -->
+        <div class="flex items-center gap-6">
+          <div class="flowchart-shape flowchart-terminal w-48 flex-shrink-0">
+            Início / Fim
+          </div>
+          <div>
+            <h4 class="font-bold text-lg">Terminal</h4>
+            <p>
+              Representado por uma elipse, marca o ponto de início e de fim do
+              algoritmo. Todo fluxograma deve ter um início e pelo menos um fim.
+            </p>
+          </div>
+        </div>
+        <!-- Processamento -->
+        <div class="flex items-center gap-6">
+          <div class="flowchart-shape flowchart-process w-48 flex-shrink-0">
+            Processamento
+          </div>
+          <div>
+            <h4 class="font-bold text-lg">Processamento</h4>
+            <p>
+              Representado por um retângulo, indica qualquer tipo de operação,
+              cálculo ou atribuição de valor. Ex:
+              <code>soma = num1 + num2</code>.
+            </p>
+          </div>
+        </div>
+        <!-- Entrada/Saída -->
+        <div class="flex items-center gap-6">
+          <div class="flowchart-shape flowchart-io w-48 flex-shrink-0">
+            <span>Entrada / Saída</span>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg">Entrada e Saída</h4>
+            <p>
+              Representado por um paralelogramo, é usado para indicar a entrada
+              de dados (ex: `Leia nota1`) ou a saída de informações (ex:
+              `Escreva media`).
+            </p>
+          </div>
+        </div>
+        <!-- Decisão -->
+        <div class="flex items-center gap-6">
+          <div class="flowchart-shape flowchart-decision w-48 flex-shrink-0">
+            Decisão?
+          </div>
+          <div>
+            <h4 class="font-bold text-lg">Decisão</h4>
+            <p>
+              Representado por um losango, indica um ponto onde o fluxo se
+              divide com base numa condição (ex: `media >= 7?`). Terá sempre
+              duas saídas: "Sim" e "Não".
+            </p>
+          </div>
+        </div>
+        <!-- Seta de Fluxo -->
+        <div class="flex items-center gap-6">
+          <div class="w-48 flex-shrink-0 flex justify-center">
+            <div class="flowchart-arrow"></div>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg">Seta de Fluxo</h4>
+            <p>
+              Indica a direção e a sequência do algoritmo, conectando os
+              símbolos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="section__subtitle mb-6">
+      Construindo um Fluxograma: Passo a Passo
+    </h3>
+    <div class="card p-8 shadow-elevation-2">
+      <h4 class="font-semibold text-xl text-primary-700 mb-3">
+        Problema: Verificar se um aluno foi aprovado.
+      </h4>
+      <p class="mb-6">
+        Regra: Um aluno é aprovado se a sua média for maior ou igual a 7.0. O
+        algoritmo deve ler a média e exibir "Aprovado" ou "Reprovado".
+      </p>
+      <div class="card p-6 overflow-x-auto">
+        <div class="flowchart-container">
+          <div class="flowchart-shape flowchart-terminal">Início</div>
+          <div class="flowchart-arrow"></div>
+          <div class="flowchart-shape flowchart-io">
+            <span>Leia Média</span>
+          </div>
+          <div class="flowchart-arrow"></div>
+          <div class="flowchart-shape flowchart-decision">Média >= 7.0 ?</div>
+
+          <!-- Bifurcação -->
+          <div class="flowchart-bifurcation">
+            <!-- Ramo Sim -->
+            <div class="flowchart-branch">
+              <div class="flowchart-branch-label">Sim</div>
+              <div class="flowchart-shape flowchart-io">
+                <span>Escreva "Aprovado"</span>
+              </div>
+            </div>
+            <!-- Ramo Não -->
+            <div class="flowchart-branch">
+              <div class="flowchart-branch-label">Não</div>
+              <div class="flowchart-shape flowchart-io">
+                <span>Escreva "Reprovado"</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Junção -->
+          <div class="flowchart-junction-point"></div>
+
+          <div class="flowchart-arrow"></div>
+          <div class="flowchart-shape flowchart-terminal">Fim</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="section__subtitle mb-6">
+      Atividade Prática em Duplas
+    </h3>
+    <div class="card p-8 shadow-elevation-2">
+      <p class="mb-4">
+        Agora é a vossa vez! Em duplas, usem uma folha A4 ou um software online
+        para desenhar os fluxogramas para os seguintes problemas:
+      </p>
+      <div class="grid md:grid-cols-2 gap-6 mt-4">
+        <div class="bg-primary-50 p-6 rounded-2xl">
+          <h5 class="font-bold text-primary-800 mb-2">
+            Problema A: Verificação de Idade
+          </h5>
+          <p>
+            Crie um fluxograma que leia a idade de uma pessoa e exiba "Maior de
+            idade" se a idade for 18 ou mais, ou "Menor de idade" caso
+            contrário.
+          </p>
+        </div>
+        <div class="bg-primary-50 p-6 rounded-2xl">
+          <h5 class="font-bold text-primary-800 mb-2">
+            Problema B: Par ou Ímpar
+          </h5>
+          <p>
+            Crie um fluxograma que leia um número inteiro e verifique se ele é
+            par ou ímpar. (Dica: um número é par se o resto da sua divisão por 2
+            for igual a 0).
+          </p>
+        </div>
+      </div>
+      <div class="mt-6 callout callout-good-practice">
+        <h5 class="font-bold mb-2">Ferramenta Recomendada</h5>
+        <p>
+          Para criar fluxogramas digitais de forma fácil e gratuita,
+          recomendamos o
+          <a
+            href="https://app.diagrams.net/"
+            target="_blank"
+            class="font-bold underline"
+            >draw.io</a
+          >
+          (agora diagrams.net).
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vídeos de Apoio -->
+  <section id="videos-aula5" class="mb-16" aria-labelledby="videos-heading">
+    <h2
+      id="videos-heading"
+      class="section__title mb-6"
+    >
+      🎥 Vídeos de Apoio
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <md3-video title="Algoritmo, Fluxograma e Diagrama de Chapin" src="https://www.youtube.com/embed/H08P85hsIxQ"></md3-video>
+      <md3-video title="Como usar o Draw IO para criar fluxogramas incríveis" src="https://www.youtube.com/embed/yPY75T_iEUA"></md3-video>
+    </div>
+  </section>
+
+  <!-- Tarefa da Aula 5 -->
+  <div id="proximos-passos-aula5">
+    <h3 class="section__subtitle mb-6">
+      Próximos Passos e Tarefa (TED)
+    </h3>
+    <div
+      class="callout callout-info"
+    >
+      <h4 class="font-bold text-xl mb-4">Tarefa para a próxima aula</h4>
+      <p class="mb-4">
+        O desafio agora é criar um fluxograma que envolva múltiplas decisões.
+      </p>
+      <ol class="list-decimal list-inside space-y-2 font-semibold">
+        <li>
+          Crie um fluxograma (em papel ou no draw.io) para um algoritmo que leia
+          três números diferentes e exiba qual deles é o maior.
+        </li>
+        <li>
+          Acesse o Moodle da disciplina e submeta uma foto ou o arquivo do seu
+          fluxograma na "Aula 5 - TED: Fluxograma com Múltiplas Decisões".
+        </li>
+      </ol>
+      <div class="mt-6">
+        <md3-external href="https://eadsp.unichristus.edu.br" label="Acessar Moodle" icon="fa-solid fa-graduation-cap" variant="tonal"></md3-external>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prática Digital -->
+  <section id="pratica-digital" class="mt-16 mb-16">
+    <h2
+      class="section__title mb-6"
+    >
+      🛠️ Crie seu Fluxograma Online
+    </h2>
+    <div class="card mb-8 text-center">
+      <h3 class="font-bold text-lg mb-4">
+        Use a ferramenta <span class="text-primary-700 dark:text-primary-300">draw.io</span>
+      </h3>
+      <p class="mb-4">
+        Clique no botão abaixo para abrir o editor e começar a criar seu
+        fluxograma.
+      </p>
+      <md3-external href="https://app.diagrams.net/" label="Abrir draw.io" icon="fa-solid fa-up-right-from-square" variant="tonal"></md3-external>
+    </div>
+  </section>
+
+  <!-- Checklist Aula 5 -->
+  <section id="checklist-aula5" class="mb-16">
+    <h2
+      class="section__title mb-6"
+    >
+      ✅ Checklist da Aula 5
+    </h2>
+    <div class="card shadow-elevation-2 space-y-3">
+      <ul class="space-y-3 md3-checklist">
+        <li><md3-checkbox label="Entendi os principais símbolos do fluxograma."></md3-checkbox></li>
+        <li><md3-checkbox label="Fiz a atividade prática em dupla."></md3-checkbox></li>
+        <li><md3-checkbox label="Assisti aos vídeos de apoio sobre fluxogramas."></md3-checkbox></li>
+        <li><md3-checkbox label="Concluí e enviei a tarefa (TED) no Moodle."></md3-checkbox></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Bibliografia -->
+  <section id="bibliografia-aula5" class="mt-16">
+    <h2
+      class="section__title mb-6"
+    >
+      📚 Bibliografia de Apoio
+    </h2>
+    <div class="card p-8 space-y-4">
+      <p>
+        <strong>FORBELLONE, A. L. V.; EBERSPÄCHER, H. F.</strong> Lógica de
+        Programação. 3. ed. São Paulo: Pearson, 2018.
+      </p>
+      <p>
+        <strong>MANZANO, J. A. N. G.; OLIVEIRA, J. F.</strong> Algoritmos:
+        lógica para desenvolvimento de programação. 28. ed. São Paulo: Érica,
+        2022.
+      </p>
+      <p>
+        <strong>BACKES, A.</strong> Linguagem C: completa e descomplicada. 2.
+        ed. São Paulo: Novatec, 2020.
+      </p>
+    </div>
+  </section>
+</section>

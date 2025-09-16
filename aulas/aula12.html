@@ -1,0 +1,332 @@
+<section id="aula12" class="mb-16 pt-16">
+  <header class="mb-12">
+    <h2 class="section__title">
+      Aula 12: Condições Encadeadas com <code-text>else if</code-text>
+    </h2>
+    <p class="text-body-large text-neutral-700 dark:text-neutral-300 mt-2">
+      Criando múltiplos caminhos para decisões mais complexas e organizadas.
+    </p>
+  </header>
+
+  <!-- Seção: Plano da Aula -->
+  <section
+    id="plano-aula"
+    class="mb-16 bg-primary-50 border border-primary-200 p-8 rounded-2xl shadow-elevation-3"
+    aria-labelledby="plano-aula12-heading"
+  >
+    <h2
+      id="plano-aula12-heading"
+      class="text-3xl font-bold text-primary-700 mb-6 text-center"
+    >
+      Plano da Aula
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+        </h3>
+        <p class="text-neutral-600">
+          Estruturas condicionais encadeadas (<code-text>else if</code-text>),
+          combinação com operadores lógicos (<code-text>&&</code-text>,
+          <code-text>||</code-text>) e a diferença entre
+          <code-text>else if</code-text> e <code-text>if</code-text>s
+          independentes.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO
+        </h3>
+        <p class="text-neutral-600">
+          Escrever programas que tomem decisões mais elaboradas, envolvendo
+          múltiplas condições, utilizando a estrutura
+          <code-text>if-else if-else</code-text> de forma eficiente.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA
+        </h3>
+        <p class="text-neutral-600">
+          Aula expositiva com exemplos clássicos (classificação de notas, faixas
+          de idade), seguida de uma atividade prática em duplas para desenvolver
+          pequenos programas com <code-text>else if</code-text>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="mb-16">
+    <h3 class="section__subtitle mb-6">
+      Para Além da Bifurcação: Múltiplos Caminhos
+    </h3>
+    <div class="card p-8 shadow-elevation-2">
+      <p class="text-lg mb-4">
+        Na Aula 10, aprendemos a usar o <code-text>if-else</code-text> para
+        criar uma bifurcação, onde o programa escolhe entre dois caminhos. Mas e
+        se tivermos três, quatro ou mais possibilidades? Poderíamos usar
+        <code-text>if</code-text>s um dentro do outro (aninhados), mas o código
+        ficaria confuso rapidamente.
+      </p>
+      <p>
+        A estrutura <code-text>else if</code-text> é a solução elegante para
+        este problema. Ela permite-nos criar uma "escada" de decisões, onde o
+        programa testa uma condição de cada vez, e executa o bloco da primeira
+        que for verdadeira.
+      </p>
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="section__subtitle mb-6">
+      A Estrutura <code-text>if-else if-else</code-text>
+    </h3>
+    <div class="card p-8 shadow-elevation-2">
+      <p class="mb-4">
+        Funciona como uma cadeia de verificações. O programa testa a primeira
+        condição. Se for falsa, testa a segunda (<code-text>else if</code-text
+        >), e assim por diante. Se nenhuma for verdadeira, o bloco
+        <code-text>else</code-text> final é executado.
+      </p>
+      <h4 class="font-semibold text-xl text-primary-700 mt-6 mb-3">
+        Exemplo: Classificação de Média
+      </h4>
+      <p>
+        Vamos classificar a situação de um aluno: Aprovado (>= 7.0), Recuperação
+        (>= 5.0) ou Reprovado.
+      </p>
+      <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-6">
+        <pre id="code-else-if-media"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    float media;
+
+    printf("Digite a media do aluno: ");
+    scanf("%f", &media);
+
+    if (media >= 7.0) {
+        printf("Situacao: APROVADO.\n");
+    } else if (media >= 5.0) { // So e testado se o primeiro 'if' for falso
+        printf("Situacao: RECUPERACAO.\n");
+    } else { // Executado se nenhuma das condicoes anteriores for verdadeira
+        printf("Situacao: REPROVADO.\n");
+    }
+
+    return 0;
+}
+</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="section__subtitle mb-6">Atividade Prática em Duplas</h3>
+    <div class="card p-8 shadow-elevation-2">
+      <p class="mb-4">
+        Em duplas, implementem a solução em C para o seguinte problema:
+      </p>
+      <div class="bg-primary-50 p-6 rounded-2xl">
+        <h5 class="font-bold text-primary-800 mb-2">
+          Problema: Classificação de Faixa Etária
+        </h5>
+        <p>
+          Crie um programa que leia a idade de uma pessoa e exiba a sua faixa
+          etária, de acordo com as seguintes regras:
+        </p>
+        <ul class="list-disc list-inside mt-2">
+          <li>0 a 12 anos: Criança</li>
+          <li>13 a 17 anos: Adolescente</li>
+          <li>18 a 59 anos: Adulto</li>
+          <li>60 anos ou mais: Idoso</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tarefa da Aula 12 -->
+  <section
+    id="proximos-passos-aula12"
+    class="mb-16"
+    aria-labelledby="ted12-heading"
+  >
+    <h3 id="ted12-heading" class="section__subtitle mb-6">
+      Próximos Passos e Tarefa (TED)
+    </h3>
+    <div class="callout callout-info">
+      <h4 class="font-bold text-xl mb-4">Tarefa para a próxima aula</h4>
+      <p class="mb-4">
+        O objetivo é praticar a lógica de comparação com estruturas condicionais
+        para consolidar o que foi visto na Aula 10 e 12.
+      </p>
+      <ol class="list-decimal list-inside space-y-3 font-semibold">
+        <li>
+          Crie um programa em C chamado
+          <code-text>aula12_maior_numero.c</code-text>.
+        </li>
+        <li>O programa deve ler dois números inteiros.</li>
+        <li>
+          Utilizando <code-text>if</code-text>, <code-text>else if</code-text> e
+          <code-text>else</code-text>, o programa deve informar qual dos números
+          é o maior, ou se eles são iguais.
+        </li>
+        <li>
+          Poste o ficheiro <code-text>.c</code-text> na Atividade da "Aula 12"
+          no Moodle.
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section
+    id="teste-codigo-aula12"
+    class="mb-16"
+    aria-labelledby="teste-codigo-heading10"
+  >
+    <h2 id="teste-codigo-heading12" class="section__title mb-8">
+      💻 Área de Testes Interativa
+    </h2>
+    <div class="card p-6">
+      <h4 class="font-bold text-xl mb-3">💻 Teste seu Código</h4>
+      <p class="mb-4">
+        Abra o editor OnlineGDB em uma nova aba para compilar e executar seus
+        programas em C.
+      </p>
+      <md3-external
+        href="https://www.onlinegdb.com/online_c_compiler"
+        label="Abrir OnlineGDB"
+        icon="fa-solid fa-up-right-from-square"
+        variant="tonal"
+      ></md3-external>
+    </div>
+  </section>
+
+  <!-- Seção: Vídeos de Apoio (corrigida) -->
+  <section
+    id="recursos-apoio-aula12"
+    class="mb-16"
+    aria-labelledby="recursos-heading12"
+  >
+    <h2 id="recursos-heading12" class="section__title mb-8">
+      🎥 Vídeos de Apoio
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Video 1: else if aninhado em C -->
+      <div class="card p-4">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          Estruturas Condicionais Aninhadas (<code-text>else if</code-text>) em
+          C
+        </h3>
+        <!-- NOTE (EN): Responsive container; keeps 16:9 ratio -->
+        <div class="aspect-video w-full">
+          <iframe
+            class="w-full h-full rounded-xl"
+            src="https://www.youtube-nocookie.com/embed/JBFgiNJevqc"
+            title="Linguagem C | Aula 15 - Aninhamento if-else"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- NOTE (EN): Fallback link if the embed can't load -->
+        <details class="mt-2">
+          <summary class="text-sky-700 hover:underline text-sm">
+            Problemas para carregar? Abrir no YouTube
+          </summary>
+          <a
+            class="text-sky-700 underline text-sm"
+            href="https://www.youtube.com/watch?v=JBFgiNJevqc"
+            target="_blank"
+            rel="noopener"
+            >Assistir no YouTube</a
+          >
+        </details>
+      </div>
+
+      <!-- Video 2: if / else if / else em C -->
+      <div class="card p-4">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          Lógica de Programação – <code-text>if</code-text>,
+          <code-text>else if</code-text>, <code-text>else</code-text> em C
+        </h3>
+        <!-- NOTE (EN): Responsive container; keeps 16:9 ratio -->
+        <div class="aspect-video w-full">
+          <iframe
+            class="w-full h-full rounded-xl"
+            src="https://www.youtube-nocookie.com/embed/LpVDGm-FT78"
+            title="Estrutura de decisão if-else em C"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <!-- NOTE (EN): Fallback link if the embed can't load -->
+        <details class="mt-2">
+          <summary class="text-sky-700 hover:underline text-sm">
+            Problemas para carregar? Abrir no YouTube
+          </summary>
+          <a
+            class="text-sky-700 underline text-sm"
+            href="https://www.youtube.com/watch?v=LpVDGm-FT78"
+            target="_blank"
+            rel="noopener"
+            >Assistir no YouTube</a
+          >
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="checklist-aula12" class="mt-16">
+    <div class="callout callout-success">
+      <h3 class="font-bold text-lg mb-3">
+        ✅ Ao final desta aula você deve ser capaz de:
+      </h3>
+      <ul class="list-none space-y-2">
+        <li>
+          <i class="fa-solid fa-check text-green-600 mr-2"></i>Explicar a
+          diferença entre <code-text>if-else</code-text> e uma cadeia de
+          <code-text>if-else if</code-text>.
+        </li>
+        <li>
+          <i class="fa-solid fa-check text-green-600 mr-2"></i>Construir uma
+          estrutura <code-text>else if</code-text> para lidar com múltiplas
+          condições excludentes.
+        </li>
+        <li>
+          <i class="fa-solid fa-check text-green-600 mr-2"></i>Combinar
+          operadores lógicos (<code-text>&&</code-text>,
+          <code-text>||</code-text>) nas condições para criar regras mais
+          complexas.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section
+    id="bibliografia-aula12"
+    class="mt-16"
+    aria-labelledby="bibliografia-heading12"
+  >
+    <h2 id="bibliografia-heading12" class="section__title mb-6">
+      📚 Bibliografia de Apoio
+    </h2>
+    <div class="card p-8 space-y-4">
+      <p>
+        <strong>BACKES, André.</strong>
+        <em>Linguagem C: completa e descomplicada.</em> Rio de Janeiro:
+        Elsevier, 2019.
+      </p>
+      <p>
+        <strong>MANZANO, José Augusto N.G.; OLIVEIRA, Jayr Figueiredo.</strong>
+        <em
+          >Algoritmos: lógica para desenvolvimento de programação de
+          computadores.</em
+        >
+        São Paulo: Érica, 2019.
+      </p>
+    </div>
+  </section>
+</section>

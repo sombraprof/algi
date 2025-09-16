@@ -1,0 +1,248 @@
+<!-- Seção da Aula 9 -->
+<section id="aula9" class="mb-16 pt-16">
+    <header class="mb-12">
+        <h2 class="section__title">Aula 9: Problemas Sequenciais Aplicados em C</h2>
+        <p class="text-body-large text-neutral-700 dark:text-neutral-300 mt-2">Resolvendo problemas do cotidiano com leitura, processamento e saída de
+            dados.</p>
+    </header>
+
+    <!-- Seção: Plano da Aula -->
+    <section id="plano-aula" class="mb-16 bg-primary-50 border border-primary-200 p-8 rounded-2xl shadow-elevation-3"
+        aria-labelledby="plano-aula9-heading">
+        <h2 id="plano-aula9-heading" class="text-3xl font-bold text-primary-700 mb-6 text-center">
+            Plano da Aula
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card">
+                <h3 class="font-semibold text-lg text-primary-800 mb-2">
+                    <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+                </h3>
+                <p class="text-neutral-600">
+                    Resolução de problemas sequenciais clássicos: cálculo de salário líquido, IMC e descontos
+                    cumulativos, integrando <code-text>scanf</code-text> e <code-text>printf</code-text>.
+                </p>
+            </div>
+            <div class="card">
+                <h3 class="font-semibold text-lg text-primary-800 mb-2">
+                    <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO
+                </h3>
+                <p class="text-neutral-600">
+                    Construir programas em C que resolvam problemas do cotidiano, integrando leitura de dados,
+                    processamento e saída detalhada.
+                </p>
+            </div>
+            <div class="card">
+                <h3 class="font-semibold text-lg text-primary-800 mb-2">
+                    <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA
+                </h3>
+                <p class="text-neutral-600">
+                    Aula expositiva com resolução de problemas clássicos, seguida de atividade colaborativa em duplas
+                    para codificar e testar soluções, desenvolvendo autonomia.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="card p-8 shadow-elevation-2 mb-12">
+        <h3 class="section__subtitle mb-4">Plano de Voo da Aula de Hoje</h3>
+        <ul class="list-disc list-inside space-y-2 text-neutral-700">
+            <li>Revisão do fluxo Entrada → Processamento → Saída.</li>
+            <li>Estudo de Caso 1: Desvendando o cálculo do Salário Líquido.</li>
+            <li>Estudo de Caso 2: Construindo uma Calculadora de IMC.</li>
+            <li>Atividade prática em duplas: Algoritmo de Desconto Cumulativo.</li>
+            <li>Apresentação da tarefa (TED) da Aula 9.</li>
+        </ul>
+    </div>
+
+    <div class="mb-16">
+        <h3 class="section__subtitle mb-6">Estudo de Caso 1: Cálculo do Salário Líquido</h3>
+        <div class="card p-8 shadow-elevation-2">
+            <p class="text-lg mb-4">Um dos problemas mais comuns em sistemas de negócios é o cálculo de um salário
+                líquido a partir de um salário base, aplicando gratificações e descontos. Vamos decompor este problema.
+            </p>
+
+            <div class="mt-4 space-y-2">
+                <p><strong>1. Entrada:</strong> Precisamos do salário-base do funcionário.</p>
+                <p><strong>2. Processamento:</strong>
+                <ul class="list-disc list-inside ml-5">
+                    <li>Calcular uma gratificação de 5% sobre o salário-base.</li>
+                    <li>Calcular um imposto de 7% sobre o salário-base.</li>
+                    <li>Calcular o salário líquido: <code-text>Salario Base + Gratificação - Imposto</code-text>.</li>
+                </ul>
+                </p>
+                <p><strong>3. Saída:</strong> Exibir o salário a receber.</p>
+            </div>
+
+            <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-6">
+                <pre id="code-salario"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    // Input variable
+    float salario_base;
+
+    // Processing variables
+    float gratificacao, imposto, salario_liquido;
+
+    // 1. INPUT
+    printf("Digite o salario-base do funcionario: R$ ");
+    scanf("%f", &salario_base);
+
+    // 2. PROCESSING
+    gratificacao = salario_base * 0.05f; // 5% bonus
+    imposto = salario_base * 0.07f;      // 7% tax
+    salario_liquido = salario_base + gratificacao - imposto;
+
+    // 3. OUTPUT
+    printf("\n--- Holerite ---\n");
+    printf("Salario Base: R$ %10.2f\n", salario_base);
+    printf("Gratificacao: R$ %10.2f\n", gratificacao);
+    printf("Imposto:      R$ %10.2f\n", imposto);
+    printf("--------------------------\n");
+    printf("Salario Liquido: R$ %8.2f\n", salario_liquido);
+
+    return 0;
+}
+</code></pre>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-16">
+        <h3 class="section__subtitle mb-6">Estudo de Caso 2: Calculadora de IMC</h3>
+        <div class="card p-8 shadow-elevation-2">
+            <p class="text-lg mb-4">O Índice de Massa Corporal (IMC) é uma medida internacional usada para saber se uma
+                pessoa está no peso ideal. A sua fórmula é <code-text>IMC = Peso / (Altura * Altura)</code-text>.</p>
+
+            <div class="mt-4 space-y-2">
+                <p><strong>1. Entrada:</strong> O peso (em kg) e a altura (em metros) da pessoa.</p>
+                <p><strong>2. Processamento:</strong> Aplicar a fórmula do IMC.</p>
+                <p><strong>3. Saída:</strong> Exibir o valor do IMC calculado.</p>
+            </div>
+
+            <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm mt-6">
+                <pre id="code-imc"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    // Input variables
+    float peso, altura;
+
+    // Processing variable
+    float imc;
+
+    // 1. INPUT
+    printf("Digite seu peso (em kg): ");
+    scanf("%f", &peso);
+    printf("Digite sua altura (em metros): ");
+    scanf("%f", &altura);
+
+    // 2. PROCESSING
+    imc = peso / (altura * altura);
+
+    // 3. OUTPUT
+    printf("\n--- Resultado do IMC ---\n");
+    printf("Peso: %.2f kg\n", peso);
+    printf("Altura: %.2f m\n", altura);
+    printf("Seu IMC e: %.2f\n", imc);
+
+    return 0;
+}
+</code></pre>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-16">
+        <h3 class="section__subtitle mb-6">Atividade Prática em Duplas</h3>
+        <div class="card p-8 shadow-elevation-2">
+            <p class="mb-4">Agora é a vossa vez! Em duplas, escolham um dos problemas abaixo, discutam a lógica
+                (Entrada, Processamento, Saída) e implementem a solução em C.</p>
+            <div class="grid md:grid-cols-2 gap-6 mt-4">
+                <div class="bg-primary-50 p-6 rounded-2xl">
+                    <h5 class="font-bold text-primary-800 mb-2">Problema A: Desconto Cumulativo</h5>
+                    <p>Uma loja oferece 12% de desconto sobre o valor de um produto. Crie um programa que leia o preço
+                        original e exiba o preço final com o desconto e o valor do desconto economizado.</p>
+                </div>
+                <div class="bg-primary-50 p-6 rounded-2xl">
+                    <h5 class="font-bold text-primary-800 mb-2">Problema B: Conversor de Moedas</h5>
+                    <p>Crie um programa que leia um valor em Reais (R$) e a cotação do Dólar Americano (US$). O programa
+                        deve calcular e exibir o valor correspondente em dólares.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tarefa da Aula 9 -->
+    <section id="proximos-passos-aula9" class="mb-16" aria-labelledby="ted9-heading">
+        <h3 id="ted9-heading" class="section__subtitle mb-6">Próximos Passos e Tarefa (TED)</h3>
+        <div class="callout callout-info">
+            <h4 class="font-bold text-xl mb-4">Tarefa para a próxima aula</h4>
+            <p class="mb-4">O objetivo é desenvolver autonomia na resolução de problemas sequenciais.</p>
+            <ol class="list-decimal list-inside space-y-3 font-semibold">
+                <li>Escolha um problema **diferente** dos trabalhados em sala (pode ser da lista de exercícios ou um que
+                    você crie).</li>
+                <li>Crie um programa em C completo, com entradas, processamento e saídas bem formatadas.</li>
+                <li>Adicione comentários em inglês no seu código explicando a lógica.</li>
+                <li>Poste o ficheiro <code-text>.c</code-text> na Atividade da "Aula 9" no Moodle.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="teste-codigo-aula9" class="mb-16" aria-labelledby="teste-codigo-heading9">
+        <h2 id="teste-codigo-heading9" class="section__title mb-8">
+            💻 Área de Testes Interativa
+        </h2>
+          <div class="card p-6">
+            <h4 class="font-bold text-xl mb-3">💻 Teste seu Código</h4>
+            <p class="mb-4">Abra o editor OnlineGDB em uma nova aba para compilar e executar seus programas em C.</p>
+            <md3-external href="https://www.onlinegdb.com/online_c_compiler" label="Abrir OnlineGDB" icon="fa-solid fa-up-right-from-square" variant="tonal"></md3-external>
+          </div>
+    </section>
+
+<!-- Vídeos de Apoio - Aula 9 -->
+<section id="recursos-apoio-aula9" class="mb-16" aria-labelledby="recursos-heading9">
+  <h2 id="recursos-heading9" class="section__title mb-8">
+    🎥 Vídeos de Apoio
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <md3-video title="Função printf e scanf – Português (BR)" src="https://www.youtube.com/embed/if6pvcwrW10"></md3-video>
+    <md3-video title="Introdução à programação C – parte 2: scanf e printf" src="https://www.youtube.com/embed/PtlSgJLq2XA"></md3-video>
+  </div>
+</section>
+
+
+
+    <section id="checklist-aula9" class="mt-16">
+        <div class="callout callout-success">
+            <h3 class="font-bold text-lg mb-3">✅ Ao final desta aula você deve ser capaz de:</h3>
+            <ul class="list-none space-y-2">
+                <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Analisar um problema e identificar as etapas de
+                    Entrada, Processamento e Saída.</li>
+                <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Implementar cálculos matemáticos simples em C.
+                </li>
+                <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Construir um programa sequencial completo e
+                    funcional.</li>
+                <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Explicar a importância de saídas de dados bem
+                    formatadas.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="bibliografia-aula9" class="mt-16" aria-labelledby="bibliografia-heading9">
+        <h2 id="bibliografia-heading9" class="section__title mb-6">
+            📚 Bibliografia de Apoio
+        </h2>
+        <div class="card p-8 space-y-4">
+            <p>
+                <strong>SANTOS, Marcelo Gonçalves dos.</strong> <em>Linguagem de programação.</em> São Paulo: Pearson,
+                2018.
+            </p>
+            <p>
+                <strong>MANZANO, José Augusto N.G.; OLIVEIRA, Jayr Figueiredo.</strong>
+                <em>Algoritmos: lógica para desenvolvimento de programação de computadores.</em> São Paulo: Érica, 2019.
+            </p>
+        </div>
+    </section>
+
+</section>

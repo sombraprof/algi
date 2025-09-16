@@ -1,0 +1,271 @@
+const a=`<!-- Seção da Aula 3 -->
+<section id="aula3" class="mb-16 pt-16">
+  <header class="mb-12">
+    <h2 class="section__title">
+      Aula 3: Estruturando o Raciocínio em Passos
+    </h2>
+    <p class="text-body-large text-neutral-700 dark:text-neutral-300 mt-2">
+      Aprendendo a organizar o pensamento como um computador.
+    </p>
+  </header>
+
+  <!-- NOVA SEÇÃO: Plano da Aula -->
+  <section
+    id="plano-aula3"
+    class="mb-16 callout callout-info p-8"
+    aria-labelledby="plano-aula3-heading"
+  >
+    <h2
+      id="plano-aula3-heading"
+      class="text-3xl font-bold text-primary-700 mb-6 text-center"
+    >
+      Plano da Aula
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+        </h3>
+        <p class="text-neutral-600">
+          Estruturação de algoritmos, importância da sequência de passos, erros
+          comuns ao organizar instruções e prática de decomposição.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO
+        </h3>
+        <p class="text-neutral-600">
+          Desenvolver a capacidade de transformar ideias em sequências lógicas
+          ordenadas, preparando o raciocínio para a implementação em código.
+        </p>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">
+          <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA
+        </h3>
+        <p class="text-neutral-600">
+          Aula expositiva com exemplos visuais, seguida de dinâmica "Fishbowl"
+          para construção coletiva de algoritmos e debate crítico.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="card p-8 shadow-elevation-2 mb-12">
+    <h3 class="section__subtitle mb-4">
+      Plano de Voo da Aula de Hoje
+    </h3>
+    <ul class="list-disc list-inside space-y-2 text-neutral-700">
+      <li>A importância crítica da ordem e do detalhe nos algoritmos.</li>
+      <li>
+        Como transformar uma ideia caótica numa sequência de instruções claras.
+      </li>
+      <li>
+        Atividade prática em grupo (Fishbowl) para construir algoritmos do
+        cotidiano.
+      </li>
+      <li>
+        Análise dos algoritmos criados: o que funciona e o que pode ser
+        melhorado.
+      </li>
+      <li>Apresentação da tarefa (TED) da Aula 3.</li>
+    </ul>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="section__subtitle mb-6">
+      A Ordem dos Fatores Altera (e Muito) o Produto
+    </h3>
+    <div class="card p-8 shadow-elevation-2">
+      <p class="text-lg mb-4">
+        Um computador não tem "bom senso". Ele executa as instruções na ordem
+        exata em que as recebe. Se a ordem estiver errada, o resultado será, na
+        melhor das hipóteses, incorreto e, na pior, um desastre.
+      </p>
+      <h4 class="font-semibold text-xl text-primary-700 mt-6 mb-3">
+        Exemplo: Calçar Meias e Sapatos
+      </h4>
+      <div class="grid md:grid-cols-2 gap-8 mt-4">
+        <div class="callout callout-danger">
+          <h5 class="font-bold callout__title mb-2">Ordem Incorreta</h5>
+          <ol class="list-decimal list-inside">
+            <li>Pegar o sapato.</li>
+            <li>Calçar o sapato.</li>
+            <li>Pegar a meia.</li>
+            <li>Calçar a meia. ⬅️ Impossível!</li>
+          </ol>
+        </div>
+        <div class="callout callout-success">
+          <h5 class="font-bold callout__title mb-2">Ordem Correta</h5>
+          <ol class="list-decimal list-inside">
+            <li>Pegar a meia.</li>
+            <li>Calçar a meia.</li>
+            <li>Pegar o sapato.</li>
+            <li>Calçar o sapato. ✔️ Sucesso!</li>
+          </ol>
+        </div>
+      </div>
+      <p class="mt-6">
+        Esta analogia simples ilustra um princípio fundamental: a
+        <strong>sequência de um algoritmo é sagrada</strong>. Mudar a ordem de
+        duas linhas de código pode mudar completamente o comportamento de um
+        programa.
+      </p>
+    </div>
+  </div>
+
+  <div class="mb-16">
+    <h3 class="section__subtitle mb-6">
+      Atividade Prática: O Desafio do "Fishbowl"
+    </h3>
+    <div class="card p-8 shadow-elevation-2">
+      <p class="mb-4">
+        Agora, vamos praticar a criação de algoritmos em grupo. A metodologia
+        "Fishbowl" (aquário) funciona da seguinte forma:
+      </p>
+      <div class="card p-4">
+      <ul class="list-disc list-inside space-y-2">
+        <li>
+          Um pequeno grupo de alunos senta-se no centro da sala (o "aquário").
+        </li>
+        <li>
+          Este grupo recebe um problema e deve discuti-lo e criar um algoritmo
+          no quadro para o resolver.
+        </li>
+        <li>Os restantes alunos observam de fora, sem intervir.</li>
+        <li>
+          Após um tempo, os grupos trocam. Os observadores entram no "aquário"
+          para refinar, corrigir ou criar uma nova solução para o mesmo problema
+          (ou um novo).
+        </li>
+      </ul>
+      </div>
+      <h4 class="font-semibold text-xl text-primary-700 mt-8 mb-3">
+        Problemas para a Atividade:
+      </h4>
+      <div class="grid md:grid-cols-2 gap-6 mt-4">
+        <div class="callout callout-academic p-6">
+          <h5 class="font-bold mb-2">
+            Problema A: Trocar uma Lâmpada
+          </h5>
+          <p>
+            Crie um algoritmo detalhado para trocar uma lâmpada queimada num
+            candeeiro de teto. Pense em segurança, ferramentas necessárias e
+            possíveis problemas.
+          </p>
+        </div>
+        <div class="callout callout-academic p-6">
+          <h5 class="font-bold mb-2">
+            Problema B: Fazer Matrícula
+          </h5>
+          <p>
+            Crie um algoritmo com os passos que um aluno deve seguir para se
+            matricular numa nova disciplina da faculdade, desde a consulta de
+            horários até à confirmação.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vídeos de Apoio -->
+  <section
+    id="videos-aula3"
+    class="mt-16 mb-16"
+    aria-labelledby="videos-heading"
+  >
+    <h2
+      id="videos-heading"
+      class="section__title mb-8"
+    >
+      🎥 Vídeos de Apoio
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Vídeo 1 -->
+      <md3-video title="O que é um Algoritmo? (Curso em Vídeo)" src="https://www.youtube.com/embed/8mei6uVttho"></md3-video>
+      <!-- Vídeo 2 -->
+      <md3-video title="Estruturação de Algoritmos (CFBCursos)" src="https://www.youtube.com/embed/zyj5vOPA1vA"></md3-video>
+    </div>
+  </section>
+
+  <!-- Tarefa da Aula 3 -->
+  <section id="proximos-passos-aula3" class="mt-16">
+    <h3 class="section__subtitle mb-6">
+      Próximos Passos e Tarefa (TED)
+    </h3>
+    <div
+      class="callout callout-info"
+    >
+      <h4 class="font-bold text-xl mb-4">Objetivo da Tarefa</h4>
+      <p class="mb-4">
+        Praticar a criação de algoritmos claros e ordenados para problemas do
+        cotidiano.
+      </p>
+      <ol class="list-decimal list-inside space-y-2 font-semibold">
+        <li>
+          Escolha um problema simples do seu dia a dia (ex: preparar um lanche,
+          abastecer o carro).
+        </li>
+        <li>Descreva pelo menos 5 passos em ordem lógica para resolvê-lo.</li>
+        <li>Destaque uma decisão (SE) que faça sentido no processo.</li>
+        <li>Poste no Moodle no espaço da "Aula 3".</li>
+      </ol>
+      <div class="mt-6">
+        <md3-external href="https://eadsp.unichristus.edu.br" label="Acessar Moodle" icon="fa-solid fa-graduation-cap" variant="tonal"></md3-external>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checklist da Aula 3 -->
+  <section
+    id="checklist-aula3"
+    class="mt-16"
+    aria-labelledby="checklist-heading"
+  >
+    <h2
+      id="checklist-heading"
+      class="section__title mb-6"
+    >
+      ✅ Checklist da Aula
+    </h2>
+    <div class="card p-8 space-y-4">
+      <p class="text-neutral-700 mb-4">Verifique se você:</p>
+      <ul class="space-y-3 md3-checklist">
+        <li><md3-checkbox label="Entendeu a importância da ordem de execução em algoritmos."></md3-checkbox></li>
+        <li><md3-checkbox label="Praticou a decomposição de problemas em passos lógicos."></md3-checkbox></li>
+        <li><md3-checkbox label="Participou da atividade Fishbowl criando ou analisando algoritmos."></md3-checkbox></li>
+        <li><md3-checkbox label="Postou a TED no Moodle com pelo menos 5 passos lógicos para um problema real."></md3-checkbox></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Bibliografia -->
+  <section
+    id="bibliografia-aula3"
+    class="mt-16"
+    aria-labelledby="bibliografia-heading"
+  >
+    <h2
+      id="bibliografia-heading"
+      class="section__title mb-6"
+    >
+      📚 Bibliografia de Apoio
+    </h2>
+    <div class="card p-8 space-y-4">
+      <p>
+        <strong>FORBELLONE, A. L. V; EBERSPÄCHER, H. F.</strong>
+        <em>Lógica de Programação</em>. 3. ed. Pearson, 2021.
+      </p>
+      <p>
+        <strong>MANZANO, J. A. N. G; OLIVEIRA, J. F.</strong>
+        <em>Algoritmos</em>. Saraiva, 2020.
+      </p>
+      <p>
+        <strong>BACKES, André.</strong>
+        <em>Linguagem C: Completa e Descomplicada</em>. Novatec, 2020.
+      </p>
+    </div>
+  </section>
+</section>
+`;export{a as default};

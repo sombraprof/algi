@@ -1,0 +1,228 @@
+<section id="aula15" class="mb-16 pt-16">
+  <header class="mb-12">
+    <h2 class="section__title">Aula 15: Correção da NP1 e Aprofundamento</h2>
+    <p class="text-body-large text-neutral-700 dark:text-neutral-300 mt-2">Devolutiva da avaliação, análise de erros comuns e reforço de condicionais compostas.</p>
+  </header>
+
+  <!-- Plano da Aula -->
+  <section id="plano-aula15" class="mb-16 bg-primary-50 border border-primary-200 p-8 rounded-2xl shadow-elevation-3" aria-labelledby="plano-aula15-heading">
+    <h2 id="plano-aula15-heading" class="text-3xl font-bold text-primary-700 mb-6 text-center">Plano da Aula</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2"><i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO</h3>
+        <p class="text-neutral-600">Correção comentada da NP1, erros recorrentes, boas práticas e aprofundamento em <code-text>if</code-text>/<code-text>else if</code-text> com operadores lógicos.</p>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2"><i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO</h3>
+        <p class="text-neutral-600">Consolidar pontos críticos identificados na prova e fortalecer a escrita de condições compostas e cadeias de decisão claras.</p>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2"><i class="fa-solid fa-gears mr-2"></i>METODOLOGIA</h3>
+        <p class="text-neutral-600">Discussão guiada de soluções, exemplificação de correções e exercícios curtos de reescrita e refatoração.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Devolutiva NP1 -->
+  <section class="mb-16" aria-labelledby="devolutiva15">
+    <h3 id="devolutiva15" class="section__subtitle mb-6">Devolutiva da NP1</h3>
+    <div class="card p-8 shadow-elevation-2">
+      <ul class="list-disc list-inside space-y-2 text-neutral-700">
+        <li>Critérios de correção relembrados: fidelidade ao enunciado, correção lógica e organização do código.</li>
+        <li>Panorama geral das notas e distribuição por questão.</li>
+        <li>Trechos representativos de respostas corretas e incorretas (sem identificação).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Erros comuns e correções -->
+  <section class="mb-16" aria-labelledby="erros15">
+    <h3 id="erros15" class="section__subtitle mb-6">Erros Comuns e Como Corrigir</h3>
+    <div class="space-y-6">
+      <div class="card">
+        <h4 class="font-semibold text-xl text-primary-700 mb-3">1) Atribuição (=) vs. Comparação (==)</h4>
+        <p class="mb-2">Confundir <code-text>=</code-text> com <code-text>==</code-text> altera a lógica. Compare sempre com <code-text>==</code-text>.</p>
+        <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm">
+<pre><code>// Ruim
+if (opcao = 1) { /* sempre verdadeiro */ }
+
+// Correto
+if (opcao == 1) { /* compara valor */ }
+</code></pre>
+          
+        </div>
+      </div>
+
+      <div class="card">
+        <h4 class="font-semibold text-xl text-primary-700 mb-3">2) Intervalos e Fronteiras</h4>
+        <p class="mb-2">Defina claramente os limites e evite sobreposição nas cadeias <code-text>else if</code-text>.</p>
+        <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm">
+<pre><code>// Classificar media: A (>=9), B (>=7), C (>=5), D (<5)
+if (media &gt;= 9.0) {
+    // A
+} else if (media &gt;= 7.0) {
+    // B
+} else if (media &gt;= 5.0) {
+    // C
+} else {
+    // D
+}
+</code></pre>
+          
+        </div>
+      </div>
+
+      <div class="card">
+        <h4 class="font-semibold text-xl text-primary-700 mb-3">3) Combinações Lógicas (&&, ||, !)</h4>
+        <p class="mb-2">Agrupe condições relacionadas e use parênteses para deixar a intenção clara.</p>
+        <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm">
+<pre><code>// Elegibilidade: (estudante OU idoso) E cadastro ativo
+if ((estudante == 1 || idoso == 1) && cadastroAtivo == 1) {
+    printf("Elegivel\n");
+} else {
+    printf("Nao elegivel\n");
+}
+</code></pre>
+          
+        </div>
+      </div>
+
+      <div class="card">
+        <h4 class="font-semibold text-xl text-primary-700 mb-3">4) Entrada/Saída e Formatação</h4>
+        <p class="mb-2">Atenção aos especificadores de formato e aos espaços/linhas na saída.</p>
+        <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm">
+<pre><code>int idade; float renda;
+scanf("%d %f", &idade, &renda); // tipos corretos
+printf("Idade: %d\nRenda: %.2f\n", idade, renda);
+</code></pre>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aprofundamento: condicionais compostas -->
+  <section class="mb-16" aria-labelledby="aprofundamento15">
+    <h3 id="aprofundamento15" class="section__subtitle mb-6">Aprofundamento: Condições Compostas e Estruturação</h3>
+    <div class="card p-8 shadow-elevation-2 space-y-4">
+      <p>Use cadeias <code-text>else if</code-text> quando os casos forem <em>mutuamente exclusivos</em>. Para validações independentes, prefira <code-text>if</code-text> separados.</p>
+      <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm">
+<pre><code>// Ex.: Faixas de IMC com mensagens mutuamente exclusivas
+if (imc &lt; 18.5) {
+    printf("Abaixo do peso\n");
+} else if (imc &lt; 25.0) {
+    printf("Peso normal\n");
+} else if (imc &lt; 30.0) {
+    printf("Sobrepeso\n");
+} else {
+    printf("Obesidade\n");
+}
+</code></pre>
+        
+      </div>
+      <p>Para deixar o fluxo mais limpo, considere <em>guard clauses</em> (saídas antecipadas) em funções.</p>
+      <div class="bg-neutral-800 text-white p-4 rounded-xl mono text-sm">
+<pre><code>int podeAcessar(int ativo, int tentativas, int bloqueado) {
+    if (!ativo) return 0;
+    if (bloqueado) return 0;
+    if (tentativas &gt;= 3) return 0;
+    return 1;
+}
+</code></pre>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Mini-lab -->
+  <section class="mb-16" aria-labelledby="minilab15">
+    <h3 id="minilab15" class="section__subtitle mb-6">Mini-laboratório de Recuperação</h3>
+    <div class="card p-8 shadow-elevation-2 space-y-6">
+      <div>
+        <h4 class="font-semibold text-primary-700 mb-2">Exercício 1: Classificação de Triângulos</h4>
+        <p>Leia três lados e indique se formam triângulo. Se sim, classifique em equilátero, isósceles ou escaleno.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-primary-700 mb-2">Exercício 2: Reembolso de Despesas</h4>
+        <p>Funcionário recebe reembolso se for <em>interno</em> e despesa ≤ teto, ou se for <em>externo</em> com autorização prévia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tarefa (TED) -->
+  <section id="proximos-passos-aula15" class="mb-16" aria-labelledby="ted15-heading">
+    <h3 id="ted15-heading" class="section__subtitle mb-6">Próximos Passos e Tarefa (TED)</h3>
+    <div class="callout callout-info">
+      <h4 class="font-bold text-xl mb-4">Tarefa para a próxima aula</h4>
+      <ol class="list-decimal list-inside space-y-3 font-semibold">
+        <li>Crie o programa <code-text>aula15_revisao_condicionais.c</code-text>.</li>
+        <li>Leia: <em>idade</em>, <em>renda</em> e <em>temDeficiencia</em> (0/1).</li>
+        <li>Regras: elegível se (idade ≥ 60) OU (idade ≥ 18 E renda ≤ 2 SM) OU (temDeficiencia == 1) — e cadastro ativo.</li>
+        <li>Imprima “Elegível”/“Não elegível”. Use <code-text>&&</code-text>, <code-text>||</code-text> e <code-text>!</code-text> de forma clara.</li>
+        <li>Poste o arquivo <code-text>.c</code-text> na atividade “Aula 15” no Moodle.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Área de testes -->
+  <section id="teste-codigo-aula15" class="mb-16" aria-labelledby="teste-codigo-heading15">
+    <h2 id="teste-codigo-heading15" class="section__title mb-8">💻 Área de Testes Interativa</h2>
+    <div class="card p-4 mb-8">
+      <div class="w-full aspect-video">
+        <div class="card p-6">
+          <h4 class="font-bold text-xl mb-3">💻 Teste seu Código</h4>
+          <p class="mb-4">Abra o editor OnlineGDB em uma nova aba para compilar e executar seus programas em C.</p>
+          <md3-external href="https://www.onlinegdb.com/online_c_compiler" label="Abrir OnlineGDB" icon="fa-solid fa-up-right-from-square" variant="tonal"></md3-external>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vídeos de apoio -->
+  <section id="recursos-apoio-aula15" class="mb-16" aria-labelledby="recursos-heading15">
+    <h2 id="recursos-heading15" class="section__title mb-8">🎥 Vídeos de Apoio</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="card p-4">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">Cadeias if / else if / else</h3>
+        <div class="aspect-video w-full">
+          <iframe class="w-full h-full rounded-xl" src="https://www.youtube-nocookie.com/embed/JBFgiNJevqc" title="Aninhamento e cadeias de decisão em C" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <details class="mt-2">
+          <summary class="text-sky-700 hover:underline text-sm">Problemas para carregar? Abrir no YouTube</summary>
+          <a class="text-sky-700 underline text-sm" href="https://www.youtube.com/watch?v=JBFgiNJevqc" target="_blank" rel="noopener">Assistir no YouTube</a>
+        </details>
+      </div>
+      <div class="card p-4">
+        <h3 class="font-semibold text-lg text-primary-800 mb-2">Operadores lógicos (&&, ||, !)</h3>
+        <div class="aspect-video w-full">
+          <iframe class="w-full h-full rounded-xl" src="https://www.youtube-nocookie.com/embed/LpVDGm-FT78" title="Operadores lógicos e decisão em C" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <details class="mt-2">
+          <summary class="text-sky-700 hover:underline text-sm">Problemas para carregar? Abrir no YouTube</summary>
+          <a class="text-sky-700 underline text-sm" href="https://www.youtube.com/watch?v=LpVDGm-FT78" target="_blank" rel="noopener">Assistir no YouTube</a>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checklist -->
+  <section id="checklist-aula15" class="mt-16">
+    <div class="callout callout-success">
+      <h3 class="font-bold text-lg mb-3">✅ Ao final desta aula você deve ser capaz de:</h3>
+      <ul class="list-none space-y-2">
+        <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Reconhecer e corrigir os erros mais frequentes da NP1.</li>
+        <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Escrever cadeias <code-text>if/else if/else</code-text> sem sobreposição.</li>
+        <li><i class="fa-solid fa-check text-green-600 mr-2"></i>Combinar <code-text>&&</code-text>, <code-text>||</code-text> e <code-text>!</code-text> em regras claras.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Bibliografia -->
+  <section id="bibliografia-aula15" class="mt-16" aria-labelledby="bibliografia-heading15">
+    <h2 id="bibliografia-heading15" class="section__title mb-6">📚 Bibliografia de Apoio</h2>
+    <div class="card p-8 space-y-4">
+      <p><strong>BACKES, André.</strong> <em>Linguagem C: completa e descomplicada.</em> Rio de Janeiro: Elsevier, 2019.</p>
+      <p><strong>MANZANO, José Augusto N.G.; OLIVEIRA, Jayr Figueiredo.</strong> <em>Algoritmos: lógica para desenvolvimento de programação de computadores.</em> São Paulo: Érica, 2019.</p>
+    </div>
+  </section>
+</section>
