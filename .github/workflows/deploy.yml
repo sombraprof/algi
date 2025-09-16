@@ -1,0 +1,37 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Set this to your default branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Or your preferred Node.js version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          # The following line is important for single-page applications
+          # It ensures that all requests are routed to index.html
+          # This is crucial for client-side routing to work correctly
+          # cname: # Optional: if you have a custom domain, specify it here (e.g., 'your-domain.com')
+          # If your project is deployed to a subdirectory (like /algi/), you might need to set a base URL in your Vite config.
+          # We already did this in vite.config.js with base: '/algi/'
