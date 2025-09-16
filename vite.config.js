@@ -11,7 +11,10 @@ export default defineConfig({
       registerType: 'prompt',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg', 'imagens/icon.svg', 'imagens/icon-192.png', 'imagens/icon-512.png'],
       devOptions: { enabled: false },
-      selfDestroying: true,
+      strategies: 'generateSW',
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}']
+      },
       manifest: {
         name: 'Curso – Instituição',
         short_name: 'Curso',
